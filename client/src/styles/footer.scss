@@ -1,0 +1,55 @@
+@use './variables.scss' as *;
+
+
+
+.footer{
+
+    .footerMainContainer{
+        padding: 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        background-color: $primaryModalColor;
+
+        .footerTopContainer{
+            text-align: center;
+            align-self: center;
+            p{
+                font-size: 14px;
+                font-weight: bold;
+                margin: .5rem 0;
+            }
+            img{
+                width: 100px;
+            }
+        }
+
+        .middleContainer{
+            display: grid;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            grid-template-columns: 1fr 1fr;
+            gap:10px;
+
+            .getHelpContainer, .legalContainer{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                p{
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .icons{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            svg{
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

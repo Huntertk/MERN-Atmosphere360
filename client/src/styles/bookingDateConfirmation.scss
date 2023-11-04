@@ -1,0 +1,103 @@
+@use './variables.scss' as *;
+
+
+.bookingDateConfirmationMainContainer{
+    max-width: $maxWidth;
+    margin: 4rem auto;
+    min-height: 60vh;
+    position: relative;
+
+    .bookingDateWrapper{
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        h1{
+            font-size: 16px;
+            font-weight: 400;
+            text-transform: capitalize;
+        }
+
+
+        .dateBtnContainer{
+            display: flex;
+            align-items: center;
+            gap:10px;
+
+            
+            button{
+                cursor: pointer;
+                background-color: transparent;
+                padding: 0.5rem 1rem;
+                color: #000;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+                border: none;
+                outline: none;
+                transition: all 0.3s linear;
+                 &:hover{
+                    color: #000;
+                    background-color: $primaryModalColor;
+                 }
+            }
+
+            .moreDates{
+                padding: 1rem;
+                font-size: 1.1rem;
+                background-color: $primaryModalColor;
+                border-radius: 8px;
+            }
+            .active {
+                color: #fff;
+                background-color: $primary;
+                border-radius: 8px;
+            }
+        }
+        .selectedDate{
+
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            button{
+                color: #fff;
+                background-color: $primary;
+                border-radius: 8px;
+                padding: 0.5rem 1rem;
+                font-size: 1.2rem;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 763px) {
+.bookingDateConfirmationMainContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-top: -1rem;
+
+        .bookingDateWrapper {
+
+            h1 {
+                font-size: 18px;
+            }
+
+
+            .dateBtnContainer {
+
+
+                button {
+                   font-size: 1.3rem;
+                }
+
+            }
+        }
+    }
+}

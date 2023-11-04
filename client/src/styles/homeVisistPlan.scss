@@ -1,0 +1,72 @@
+@use './variables.scss' as *;
+
+.homeVisitPlanMainContainer{
+    margin: 1rem 0;
+
+    .btnContainer{
+        display: flex;
+        gap: 20px;
+        padding: 1rem 0;
+        margin: 1rem 0;
+        overflow-x: scroll;
+
+        .active{
+            color: $primary;
+            border-top: 2px solid $primary;
+        }
+
+
+        button{
+            cursor: pointer;
+            font-size: 18px;
+            text-transform: capitalize;
+            padding: 8px;
+            line-height: 24px;
+            background-color: transparent;
+            outline: none;
+            font-weight: 600;
+            border: none;
+            
+        }
+    }
+
+        .card {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid $cardBorderColor;
+            box-shadow: 1px 1px 10px 1px $cardBorderColor;
+
+
+            .content {
+                padding: 1rem;
+                ul{
+                    padding-inline-start: 1rem;
+                    li{
+                        font-size: 15px;
+                        font-weight: 300;
+                        line-height: 24px;
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+        }
+}
+
+
+
+
+@media screen and (min-width: 767px) {
+    .homeVisitPlanMainContainer {
+
+            .btnContainer {
+                overflow-x: unset;
+
+            }
+
+            .card {
+               display: grid;
+               grid-template-columns: 500px 1fr;
+            }
+        }
+    
+}

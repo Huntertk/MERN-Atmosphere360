@@ -1,0 +1,56 @@
+@use './variables.scss' as *;
+
+.allBookingsContainer{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    margin-top: 1rem;
+    padding: 10px;
+
+    .cardContainer{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 10px;
+        background-color: $primaryModalColor;
+
+        .personCount{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+
+            p{
+                background-color: $primary;
+                color: $backgroundColor;
+                padding: 5px;
+            }
+        }
+        .bookingStatus{
+
+
+            .updateBtn{
+               background-color: $primary;
+               color: $backgroundColor; 
+               border: none; 
+               padding: 0 5px;   
+               cursor: pointer;
+               box-shadow: 1px 1px 1px 1px #000;
+               margin-left: 5px;
+               &:active{
+                box-shadow: 1px 1px 1px 1px $primary;
+               }
+            }
+        }
+
+    }
+}
+
+
+@media screen and (min-width: 767px) {
+    .allBookingsContainer {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+}

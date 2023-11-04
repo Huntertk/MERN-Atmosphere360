@@ -1,0 +1,63 @@
+@use './variables.scss' as *;
+
+.HomeBuffetOptionMainContainer {
+    margin: 3rem 0;
+
+    h1 {
+        font-size: 21px;
+        font-weight: 600;
+        line-height: 28px;
+        letter-spacing: 0px;
+        margin: 1rem 0;
+    }
+
+    .cardMainContainer {
+        display: grid;
+        grid-template-columns: repeat(3,350px);
+        overflow-x: scroll;
+        gap: 1.5rem;
+        padding-bottom: 1rem;
+
+
+        .card {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid $cardBorderColor;
+            box-shadow: 1px 1px 10px 1px $cardBorderColor;
+
+
+            .content {
+                padding: 1rem;
+
+                h3 {
+                    font-size: 18px;
+                    font-weight: 600;
+                    line-height: 24px;
+                    letter-spacing: 0.6px;
+                    margin: 0.5rem 0;
+                }
+
+                p {
+                    font-size: 15px;
+                    font-weight: 300;
+                    line-height: 24px;
+                    letter-spacing: 0.6px;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 767px) {
+    .HomeBuffetOptionMainContainer {
+
+
+        .cardMainContainer {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            overflow-x: unset;
+        }
+    }
+}

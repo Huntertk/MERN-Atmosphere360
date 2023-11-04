@@ -1,0 +1,115 @@
+@use './variables.scss' as *;
+
+.paxSelectorContainer{
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 120vh;
+    text-align: center;
+    top: 0px;
+    background-color: $primaryModalColor;
+    padding: 1rem;
+
+    .crossIcon{
+        background-color: transparent;
+        display: block;
+        margin-left: auto;
+        font-size: 1rem;
+        color: $primary;
+        border: 0;
+    }
+
+    h1{
+        font-size: 16px;
+    }
+
+    .paxSelector{
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+        margin-top: 2rem;
+        width: 100%;
+
+        .pax{
+            display: grid;
+            grid-template-columns: 1fr 100px 1fr;
+            align-items: center;
+            // display: flex;
+            // justify-content: space-between;
+            gap: 10px;
+            padding: 1rem;
+            align-content: center;
+            border: 1px solid $cardBorderColor;
+            border-radius: 8px;
+            box-shadow: 1px 1px 10px 1px $cardBorderColor;
+
+            p{
+                text-align: start;                
+                gap: 5px;
+
+                span{
+                    display: block;
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+            }
+            .btnContainer{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+                p{
+                    font-size: 1.4rem;
+                }
+              
+
+                svg{
+                    color: $primary;
+                    font-size: 2rem;
+                }
+                .disabledBtn {
+                    color: #808080;
+                    cursor: not-allowed;
+                }
+            }
+            .price{
+
+                text-align: end;
+            }
+        }
+    }
+
+    .totalPayable,
+    .dateContainer{
+        display: flex;
+        margin-top: 2rem;
+        align-items: center;
+        justify-content: space-between;
+        span, p{
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+
+        button{
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: $primary;
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            border: none;
+            outline: none;
+        }
+    }
+
+}
+
+
+
+@media screen and (min-width: 763px) {
+    .paxSelectorContainer {
+            width: 50%;
+            height: 100vh;
+            top: 10px;
+        }
+}

@@ -1,0 +1,10 @@
+@use './variables.scss' as *;
+
+@media screen and (min-width: 767px) {
+    
+    #mainContainerWrapper{
+        display: grid;
+        grid-template-columns: 200px 1fr;
+
+    }
+}

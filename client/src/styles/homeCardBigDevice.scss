@@ -1,0 +1,41 @@
+@use './variables.scss' as *;
+
+.HomeCardBigDeviceMainContainer{
+    display: none;
+}
+
+
+@media screen and (min-width: 767px) {
+    .HomeCardBigDeviceMainContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+
+        .cardMainContainer{
+            border-radius: 8px;
+            padding: 1.2rem;
+            display: grid;
+            grid-template-columns: 250px 2.2fr 0.8fr;
+            gap: 20px;
+            border: 1px solid $cardBorderColor;
+
+            .imageContainer{
+
+                img{
+                    border-radius: 8px;
+                }
+            }
+
+            .contentContainer{
+
+                h1{
+                    font-size: 1.3rem;
+                    text-align: center;
+                    letter-spacing: 0.6px;
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,13 @@
+@use './variables.scss' as *;
+.homeMainContainer{
+    padding: 1rem;
+    max-width: $maxWidth;
+    margin:  3rem auto;
+}
+
+
+@media screen and (min-width:1023px) {
+    .homeMainContainer{
+        margin-top: 1rem;
+    }
+}
