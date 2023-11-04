@@ -37,7 +37,6 @@ app.use(errorHandlerMiddleware)
 const dbConn = async () => {
     try {
         await mongoose.connect(process.env.MONGODB_URL)
-        console.log("Server is Connected to DB");
         app.listen(PORT, () => {
             console.log("Server is Runnning on PORT : ", PORT);
         })
