@@ -1,8 +1,50 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import axios from 'axios'
+import {useDispatch, useSelector} from 'react-redux'
+import '../../styles/allBookings.scss'
+
+import BookingCard from '../../components/adminComponents/BookingCard';
+import { getBookingStart, getPendingSucess } from '../../features/bookingDetails/bookingDetailsSlice';
+import LoadingSpinner from '../../components/LoadingSpinner';
 
 const PendingBooking = () => {
+
+   const {pendingBookingsDetails, loading} = useSelector(state => state.bookingDetails)
+
+  const dispatch = useDispatch()
+  const getPendingBookings = async () => {
+    try {
+      dispatch(getBookingStart())
+      const res = await axios.get("/api/v1/booking/pending")
+      console.log(res.data.pendingBookings);
+      dispatch(getPendingSucess(res.data.pendingBookings))
+      
+    } catch (error) {
+      console.log(error);
+      
+    }
+  }
+
+  useEffect(() => {
+    getPendingBookings()
+  },[])
+
+
+  if(loading) {
+    return <LoadingSpinner />
+  }
+
+  if(!pendingBookingsDetails){
+    return <div>
+      <h1>You No Bookings Now</h1>
+    </div>
+  }
   return (
-    <div>PendingBooking</div>
+   <div className='allBookingsContainer'>
+      {pendingBookingsDetails.map((booking, index) => {
+       return <BookingCard key={booking._id} booking={booking} index={index} />
+      })}
+    </div>
   )
 }
 

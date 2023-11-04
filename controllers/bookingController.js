@@ -23,3 +23,42 @@ export const getAllBooking = async(req, res, next) => {
         next(error)
     }
 }
+
+export const getConfirmedBooking = async(req, res, next) => {
+    try {
+        const booking = await Booking.find({bookingStatus:'confirmed'}).sort({createdAt:-1})
+        res.status(StatusCodes.OK).json({confirmedBookings: booking})
+    } catch (error) {
+        next(error)
+    }
+}
+
+
+export const getPendingBooking = async(req, res, next) => {
+    try {
+        const booking = await Booking.find({bookingStatus:'pending'}).sort({createdAt:-1})
+        res.status(StatusCodes.OK).json({pendingBookings: booking})
+    } catch (error) {
+        next(error)
+    }
+}
+
+
+export const getCompletedBooking = async(req, res, next) => {
+    try {
+        const booking = await Booking.find({bookingStatus:'completed'}).sort({createdAt:-1})
+        res.status(StatusCodes.OK).json({completedBookings: booking})
+    } catch (error) {
+        next(error)
+    }
+}
+
+
+export const getCancelledBooking = async(req, res, next) => {
+    try {
+        const booking = await Booking.find({bookingStatus:'cancelled'}).sort({createdAt:-1})
+        res.status(StatusCodes.OK).json({cancelledBookings: booking})
+    } catch (error) {
+        next(error)
+    }
+}

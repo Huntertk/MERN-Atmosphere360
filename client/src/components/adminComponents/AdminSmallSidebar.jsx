@@ -9,6 +9,7 @@ import {VscGraph} from 'react-icons/vsc'
 import {AiFillCheckSquare} from 'react-icons/ai'
 import {MdOutlinePending} from 'react-icons/md'
 import {ImCancelCircle} from 'react-icons/im'
+import {GiConfirmed} from 'react-icons/gi'
 
 const AdminSmallSidebar = () => {
   const dispatch = useDispatch()
@@ -21,6 +22,10 @@ const AdminSmallSidebar = () => {
           to="/admin/all-booking"
           onClick={() => dispatch(adminSidebarClose())}
           ><VscGraph /> All Booking</NavLink>
+          <NavLink 
+          to="/admin/confirmed-booking"
+          onClick={() => dispatch(adminSidebarClose())}
+          ><GiConfirmed /> Confirmed Booking</NavLink>
           <NavLink 
           to="/admin/completed-booking"
           onClick={() => dispatch(adminSidebarClose())}

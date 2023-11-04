@@ -14,6 +14,7 @@ import AllBookings from './pages/adminPage/AllBookings'
 import PendingBooking from './pages/adminPage/PendingBooking'
 import CompletedBooking from './pages/adminPage/CompletedBooking'
 import CancelledBooking from './pages/adminPage/CancelledBooking'
+import ConfirmedBooking from './pages/adminPage/ConfirmedBooking'
 
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
         <Route element={<AdminProtectedRoute />}>
           <Route element={<AdminLayout />}>
             <Route path="/admin/all-booking" element={<AllBookings />} />
+            <Route path="/admin/confirmed-booking" element={<ConfirmedBooking />} />
             <Route path="/admin/completed-booking" element={<CompletedBooking />} />
             <Route path="/admin/pending-booking" element={<PendingBooking />} />
             <Route path="/admin/cancelled-booking" element={<CancelledBooking />} />

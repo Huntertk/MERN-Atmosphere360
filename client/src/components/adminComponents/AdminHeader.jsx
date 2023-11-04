@@ -16,7 +16,6 @@ const AdminHeader = () => {
       try {
         const res = await axios.get('/api/v1/admin/logout')
         dispatch(adminLogout())
-        console.log(res);
       } catch (error) {
         toast.error("Something went wrong....")
         console.log(error);
