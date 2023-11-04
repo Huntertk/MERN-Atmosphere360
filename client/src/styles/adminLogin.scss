@@ -48,6 +48,11 @@
                 border: 1px solid $primary;
                 border-radius: 0.5rem;
                 box-shadow: 1px 1px 8px #000;
+
+                &:disabled{
+                    opacity: 0.6;
+                    cursor: not-allowed;
+                }
             }
         }
     }

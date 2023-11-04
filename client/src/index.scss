@@ -25,3 +25,9 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
+
+button:disabled{
+    opacity: 75%;
+    cursor: not-allowed;
+}

@@ -3,7 +3,7 @@ import '../../styles/adminLogin.scss'
 import bgImg from '../../assets/images/adminLogin.jpg'
 import axios from 'axios'
 import {useSelector, useDispatch} from 'react-redux'
-import { adminLoginStart, adminLoginSuccess } from '../../features/admin/adminSlice'
+import { adminLoginFailed, adminLoginStart, adminLoginSuccess } from '../../features/admin/adminSlice'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 
@@ -24,6 +24,7 @@ const AdminLogin = () => {
       navigate("/admin/all-booking")
     } catch (error) {
       console.log(error);
+      dispatch(adminLoginFailed(error.response.data.msg))
       toast.error(error.response.data.msg)
     }
   }
