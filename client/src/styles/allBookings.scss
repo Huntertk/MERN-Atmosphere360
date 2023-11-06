@@ -32,15 +32,18 @@
             .updateBtn{
                background-color: $primary;
                color: $backgroundColor; 
-               border: none; 
-               padding: 0 5px;   
+               border: none;
                cursor: pointer;
                box-shadow: 1px 1px 1px 1px #000;
                margin-left: 5px;
+               padding: 0px 5px;
                &:active{
                 box-shadow: 1px 1px 1px 1px $primary;
                }
             }
+        }
+        .totalBill{
+            font-weight: bold;
         }
 
     }

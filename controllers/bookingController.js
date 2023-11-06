@@ -62,3 +62,15 @@ export const getCancelledBooking = async(req, res, next) => {
         next(error)
     }
 }
+
+
+export const updateBooking = async (req, res, next) => {
+    const {bookingStatus} = req.body
+    const {id} = req.params
+    try {
+        const updatedBooking = await Booking.findByIdAndUpdate(id, {bookingStatus})
+        res.status(200).json({message:"Booking Updated Successfully"})
+    } catch (error) {
+        next(error)
+    }
+}

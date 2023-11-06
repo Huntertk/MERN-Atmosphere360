@@ -30,7 +30,7 @@ const ConfirmedBooking = () => {
     return <LoadingSpinner />
   } 
 
-  if(!confirmedBookingsDetails){
+  if(!confirmedBookingsDetails.length === 0){
     return <div>
       <h1>You Have No Bookings Now</h1>
     </div>

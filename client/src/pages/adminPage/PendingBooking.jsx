@@ -16,7 +16,6 @@ const PendingBooking = () => {
     try {
       dispatch(getBookingStart())
       const res = await axios.get("/api/v1/booking/pending")
-      console.log(res.data.pendingBookings);
       dispatch(getPendingSucess(res.data.pendingBookings))
       
     } catch (error) {
@@ -34,7 +33,8 @@ const PendingBooking = () => {
     return <LoadingSpinner />
   }
 
-  if(!pendingBookingsDetails){
+  if(!pendingBookingsDetails.length === 0){
+    
     return <div>
       <h1>You No Bookings Now</h1>
     </div>

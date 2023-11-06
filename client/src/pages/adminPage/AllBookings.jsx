@@ -30,7 +30,7 @@ const AllBookings = () => {
     return <LoadingSpinner />
   }
 
-  if(!allBookings){
+  if(!allBookings.length === 0){
     return <div>
       <h1>You No Bookings Now</h1>
     </div>

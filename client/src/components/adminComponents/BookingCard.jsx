@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import { format } from 'date-fns';
 import '../../styles/allBookings.scss'
+import axios from 'axios'
+import {toast} from 'react-toastify'
 
 const BookingCard = (props) => {
+
+
     const {
+      _id,
         bookingDate, 
         name, 
         mobileNumber,
@@ -18,9 +23,20 @@ const BookingCard = (props) => {
         updatedAt,
         totalAmount
     }  = props.booking
+
+    const [newBookingStatus, setNewBookingStatus] = useState("")
+      const updateBooking = async () => {
+        try {
+          const res = await axios.patch(`/api/v1/booking/${_id}`, {bookingStatus: newBookingStatus})
+          toast.success(`Booking ${_id} is Updated`)
+        } catch (error) {
+           toast.error("Something Went Wrong")
+        }
+  }
   return (
     <div className="cardContainer">
         <span>{props.index + 1}</span>
+        <span>Booking ID: {_id}</span>
           <p>Date of Reservation : {bookingDate}</p>
           <p>Booked By : {name}</p>
           <p>Contact : {mobileNumber}</p>
@@ -34,16 +50,16 @@ const BookingCard = (props) => {
           </div>
           <div className="bookingStatus">
             <span>Booking Status : </span>
-            <select>
+            <select onChange={(e) => setNewBookingStatus(e.target.value)}>
               <option value={bookingStatus}>{bookingStatus}</option>
               <option value={"confirmed"}>confirmed</option>
               <option value={"completed"}>completed</option>
               <option value={"cancelled"}>cancelled</option>
               <option value={"pending"}>pending</option>
             </select>
-            <button className='updateBtn'>update</button>
+            <button className='updateBtn' onClick={updateBooking}>update</button>
           </div>
-          <p>Total Bill : MYR {totalAmount}</p>
+          <p className='totalBill'>Total Bill : MYR {totalAmount}</p>
           <p>Order Created On : {format(new Date(createdAt), 'MM/dd/yyyy')}</p>
           <p>Last Update at  {formatDistanceToNow(new Date(updatedAt), { addSuffix: true })}</p>
       </div>

@@ -20,6 +20,7 @@ const adminSlice = createSlice({
             state.loading = false
             state.error = null
             state.adminEmail = action.payload
+            state.isSidebarOpen = false
             setAdmin(state)
         },
         adminLoginFailed: (state, action) => {
