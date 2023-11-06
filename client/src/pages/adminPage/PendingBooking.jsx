@@ -28,7 +28,6 @@ const PendingBooking = () => {
     getPendingBookings()
   },[updateBookingStatus])
 
-
   if(loading) {
     return <LoadingSpinner />
   }
