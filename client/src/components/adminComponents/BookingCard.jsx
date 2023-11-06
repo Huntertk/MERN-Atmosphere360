@@ -4,9 +4,11 @@ import { format } from 'date-fns';
 import '../../styles/allBookings.scss'
 import axios from 'axios'
 import {toast} from 'react-toastify'
+import { useDispatch } from 'react-redux';
+import {updateBookingStats} from '../../features/bookingDetails/bookingDetailsSlice'
 
 const BookingCard = (props) => {
-
+  const dispatch = useDispatch()
 
     const {
       _id,
@@ -28,6 +30,7 @@ const BookingCard = (props) => {
       const updateBooking = async () => {
         try {
           const res = await axios.patch(`/api/v1/booking/${_id}`, {bookingStatus: newBookingStatus})
+          dispatch(updateBookingStats())
           toast.success(`Booking ${_id} is Updated`)
         } catch (error) {
            toast.error("Something Went Wrong")

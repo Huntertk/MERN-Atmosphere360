@@ -9,7 +9,7 @@ import LoadingSpinner from '../../components/LoadingSpinner';
 
 const PendingBooking = () => {
 
-   const {pendingBookingsDetails, loading} = useSelector(state => state.bookingDetails)
+   const {pendingBookingsDetails, loading, updateBookingStatus} = useSelector(state => state.bookingDetails)
 
   const dispatch = useDispatch()
   const getPendingBookings = async () => {
@@ -26,17 +26,17 @@ const PendingBooking = () => {
 
   useEffect(() => {
     getPendingBookings()
-  },[])
+  },[updateBookingStatus])
 
 
   if(loading) {
     return <LoadingSpinner />
   }
 
-  if(!pendingBookingsDetails.length === 0){
+  if(pendingBookingsDetails.length === 0){
     
     return <div>
-      <h1>You No Bookings Now</h1>
+       <h1>No Bookings Now</h1>
     </div>
   }
   return (

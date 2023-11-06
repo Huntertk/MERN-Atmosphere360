@@ -8,7 +8,7 @@ import BookingCard from '../../components/adminComponents/BookingCard';
 import LoadingSpinner from '../../components/LoadingSpinner';
 
 const ConfirmedBooking = () => {
-  const {confirmedBookingsDetails, loading} = useSelector(state => state.bookingDetails)
+  const {confirmedBookingsDetails, loading, updateBookingStatus} = useSelector(state => state.bookingDetails)
   const dispatch = useDispatch()
   const getConfirmedBookings = async () => {
     try {
@@ -24,15 +24,15 @@ const ConfirmedBooking = () => {
 
   useEffect(() => {
     getConfirmedBookings()
-  },[])
+  },[updateBookingStatus])
 
   if(loading) {
     return <LoadingSpinner />
   } 
 
-  if(!confirmedBookingsDetails.length === 0){
+  if(confirmedBookingsDetails.length === 0){
     return <div>
-      <h1>You Have No Bookings Now</h1>
+       <h1>No Bookings Now</h1>
     </div>
   }
   return (

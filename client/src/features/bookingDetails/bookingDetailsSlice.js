@@ -6,7 +6,8 @@ const initialState = {
     completedBookingsDetails: [],
     confirmedBookingsDetails: [],
     cancelledBookingsDetails: [],
-    loading: false
+    loading: false,
+    updateBookingStatus: false
 }
 
 
@@ -37,6 +38,9 @@ const bookingDetails  = createSlice({
             state.loading = false
             state.cancelledBookingsDetails = action.payload
         },
+        updateBookingStats : (state) => {
+            state.updateBookingStatus = state.updateBookingStatus ? false : true
+        }
     }
 })
 
@@ -47,7 +51,8 @@ export const {
     getPendingSucess,
     getCompletedSucess,
     getConfirmedSucess,
-    getCancelledSucess
+    getCancelledSucess,
+    updateBookingStats
 }  = bookingDetails.actions
 
 export default bookingDetails.reducer
