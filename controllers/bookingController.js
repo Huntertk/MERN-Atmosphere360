@@ -21,9 +21,9 @@ export const createBooking = async (req, res) => {
     const mailOptions = {
         from:'factsofuniverse8@gmail.com',
         to: `${req.body.email},
-        factsofuniverse8@gmail.com`,
+        ${process.env.EMAIL}`,
         subject: `Booking Successfully`,
-        text:`Hello, \n I am MD TAUFIK from Ticket Malaysia ${req.body.name} your booking on ${req.body.bookingDate} is confirmed \n and your total payable amount is MYR ${req.body.totalAmount}. \n if any issue feel free to connect with us @factsofuniverse8@gmail.com`
+        text:`Hello, \n Hello ${req.body.name} and I am MD TAUFIK from Ticket Malaysia and your booking on ${req.body.bookingDate} is confirmed \n and your total payable amount is MYR ${req.body.totalAmount}. \n if any issue feel free to connect with us @${process.env.EMAIL}`
     };
     transporter.sendMail(mailOptions, function(error, info){
         if(error){
