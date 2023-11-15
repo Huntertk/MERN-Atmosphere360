@@ -1,6 +1,8 @@
 import { StatusCodes } from "http-status-codes"
 import { BadRequestError } from "../error/customError.js"
 import Booking from "../models/booking.js"
+import nodemailer from 'nodemailer'
+
 
 export const createBooking = async (req, res) => {
     try {
@@ -8,6 +10,29 @@ export const createBooking = async (req, res) => {
         if(!booking){
             throw BadRequestError("Something Went Wrong")
         }
+    const transporter = nodemailer.createTransport({
+        service:'gmail',
+        auth:{
+            user: process.env.EMAIL,
+            pass: process.env.MAIL_PASS
+        }
+    })
+
+    const mailOptions = {
+        from:'factsofuniverse8@gmail.com',
+        to: `${req.body.email},
+        factsofuniverse8@gmail.com`,
+        subject: `Booking Successfully`,
+        text:`Hello, \n I am MD TAUFIK from Ticket Malaysia ${req.body.name} your booking on ${req.body.bookingDate} is confirmed \n and your total payable amount is MYR ${req.body.totalAmount}. \n if any issue feel free to connect with us @factsofuniverse8@gmail.com`
+    };
+    transporter.sendMail(mailOptions, function(error, info){
+        if(error){
+            console.log(error);
+        } else{
+            
+            console.log(info.response, " Email sent");
+        }
+    })
         res.status(StatusCodes.CREATED).json({message:"Your Order is Booked Successfully"})
     } catch (error) {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({message:"Something Wrong"})
