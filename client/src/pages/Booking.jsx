@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import image from '../assets/images/IMGNINE.jpg'
 import axios from 'axios'
-import {BiEditAlt} from 'react-icons/bi'
+import { BiEditAlt } from 'react-icons/bi'
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { bookingFailed, bookingStart, bookingSucess } from '../features/booking/bookingSlice'
@@ -13,8 +13,8 @@ import '../styles/booking.scss'
 const Booking = () => {
     const navigate = useNavigate()
     const {
-        bookingDate, 
-        adultCount, 
+        bookingDate,
+        adultCount,
         adultTotal,
         childCount,
         childTotal,
@@ -31,22 +31,25 @@ const Booking = () => {
     const dispatch = useDispatch()
 
 
-    const handleSubmit = async(e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         try {
             dispatch(bookingStart())
-            const res = await axios.post('/api/v1/booking', {
+            const res = await axios.post('http://localhost:4000/api/v1/booking', {
                 name,
                 email,
                 mobileNumber,
-                bookingDate, 
+                bookingDate,
                 adultCount,
                 childCount,
                 infantCount,
                 seniorCount,
                 totalAmount,
             })
-            dispatch(bookingSucess())
+            // dispatch(bookingSucess())
+            const response = res.data;
+            console.log(response);
+            window.location.href = response.url;
 
         } catch (error) {
             dispatch(bookingFailed())
@@ -54,69 +57,69 @@ const Booking = () => {
         }
 
     }
-    
 
-    if(totalAmount === 0) {
-        return <Navigate to ="/" />
+
+    if (totalAmount === 0) {
+        return <Navigate to="/" />
     }
-  return (
-    <section className='bookingMainContainer'>
-        <div className="bookingWrapper">
-            <img className='banner' src={image} alt="" />
-            <h1>Confirm and Pay</h1>
-            <div className="detailsWrapper">
-                <div className="topContainer">
-                    <p>{bookingDate}</p>
-                    <Link to="/date-confirm"><BiEditAlt /></Link>
-                </div>
-                 
-                <div className="guestQuantity">
-                    {
-                        adultCount === 0 ? "" :
-                        <div className="guest">
-                            <p> Adult <span> X {adultCount}</span>
-                            </p>
-                            <span>MYR {adultTotal}</span>
-                        </div>
-                    }
-                    {
-                        childCount === 0 ? "" : <div className="guest">
-                        <p> Child <span> X {childCount}</span></p>
-                        <span>MYR {childTotal}</span>
+    return (
+        <section className='bookingMainContainer'>
+            <div className="bookingWrapper">
+                <img className='banner' src={image} alt="" />
+                <h1>Confirm and Pay</h1>
+                <div className="detailsWrapper">
+                    <div className="topContainer">
+                        <p>{bookingDate}</p>
+                        <Link to="/date-confirm"><BiEditAlt /></Link>
                     </div>
-                    }
 
-                    {
-                        infantCount === 0 ? "" : <div className="guest">
-                        <p> Infant <span> X {infantCount}</span></p>
-                        <span>MYR {infantTotal}</span>
+                    <div className="guestQuantity">
+                        {
+                            adultCount === 0 ? "" :
+                                <div className="guest">
+                                    <p> Adult <span> X {adultCount}</span>
+                                    </p>
+                                    <span>MYR {adultTotal}</span>
+                                </div>
+                        }
+                        {
+                            childCount === 0 ? "" : <div className="guest">
+                                <p> Child <span> X {childCount}</span></p>
+                                <span>MYR {childTotal}</span>
+                            </div>
+                        }
+
+                        {
+                            infantCount === 0 ? "" : <div className="guest">
+                                <p> Infant <span> X {infantCount}</span></p>
+                                <span>MYR {infantTotal}</span>
+                            </div>
+                        }
+
+                        {
+                            seniorCount === 0 ? "" : <div className="guest">
+                                <p> Senior <span> X {seniorCount}</span></p>
+                                <span>MYR {seniorTotal}</span>
+                            </div>
+                        }
+
+
+                        <div className="guest">
+                            <p className='totalPayable'>Total Payable</p>
+                            <span className='totalPayable'>MYR {seniorTotal + infantTotal + childTotal + adultTotal}</span>
+                        </div>
                     </div>
-                    }
-                    
-                    {
-                        seniorCount === 0 ? "" : <div className="guest">
-                        <p> Senior <span> X {seniorCount}</span></p>
-                        <span>MYR {seniorTotal}</span>
-                    </div>
-                    }
-                    
-                    
-                    <div className="guest">
-                        <p className='totalPayable'>Total Payable</p>
-                        <span className='totalPayable'>MYR {seniorTotal + infantTotal + childTotal + adultTotal}</span>
-                    </div>
-                </div>
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="name">Full Name</label>
-                    <input 
-                    type="text" 
-                    id='name'   
-                    autoComplete="off"
-                    required
-                    onChange={(e) => setName(e.target.value)}
-                    value={name}
-                    />
-                    {/* <label htmlFor="phone">Mobile Number</label>
+                    <form onSubmit={handleSubmit}>
+                        <label htmlFor="name">Full Name</label>
+                        <input
+                            type="text"
+                            id='name'
+                            autoComplete="off"
+                            required
+                            onChange={(e) => setName(e.target.value)}
+                            value={name}
+                        />
+                        {/* <label htmlFor="phone">Mobile Number</label>
                     <input 
                     type="text" 
                     id="phone" 
@@ -129,36 +132,36 @@ const Booking = () => {
                     /> */}
 
 
-                    <PhoneInput
-                        defaultCountry="MY"
-                        placeholder="Enter phone number"
-                        value={mobileNumber}
-                        onChange={setMobileNumber}
+                        <PhoneInput
+                            defaultCountry="MY"
+                            placeholder="Enter phone number"
+                            value={mobileNumber}
+                            onChange={setMobileNumber}
                         />
-                    <label htmlFor="email">Email</label>
-                    <input 
-                    type="email" 
-                    id='email' 
-                    autoComplete="off" 
-                    required 
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={email}
-                    />
-                    <label htmlFor="email">Confirm Email</label>
-                    <input 
-                    type="email" 
-                    id='cemail' 
-                    autoComplete="off" 
-                    required 
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={email}
-                    />
-                    <button type='submit' disabled={loading}>{loading ? "Loading....": "Pay Now"}</button>
-                </form>
+                        <label htmlFor="email">Email</label>
+                        <input
+                            type="email"
+                            id='email'
+                            autoComplete="off"
+                            required
+                            onChange={(e) => setEmail(e.target.value)}
+                            value={email}
+                        />
+                        <label htmlFor="email">Confirm Email</label>
+                        <input
+                            type="email"
+                            id='cemail'
+                            autoComplete="off"
+                            required
+                            onChange={(e) => setEmail(e.target.value)}
+                            value={email}
+                        />
+                        <button type='submit' disabled={loading}>{loading ? "Loading...." : "Pay Now"}</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </section>
-  )
+        </section>
+    )
 }
 
 export default Booking

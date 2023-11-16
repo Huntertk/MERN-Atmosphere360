@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 import path from 'path'
 import cookieParser from 'cookie-parser'
 dotenv.config()
-
+import cors from 'cors';
 //Router
 import bookingRouter from './routes/bookingRoute.js'
 import adminRouter from './routes/adminRoute.js'
@@ -14,6 +14,7 @@ import errorHandlerMiddleware from './middlewares/errorHandleMiddleware.js'
 const __dirname = path.resolve();
 
 const app = express()
+app.use(cors());
 
 
 const PORT = process.env.PORT || 4000
