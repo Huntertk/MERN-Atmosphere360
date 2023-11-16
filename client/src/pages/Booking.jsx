@@ -4,7 +4,7 @@ import axios from 'axios'
 import { BiEditAlt } from 'react-icons/bi'
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { bookingFailed, bookingStart, bookingSucess } from '../features/booking/bookingSlice'
+import { bookingFailed,  bookingStart, bookingSucess } from '../features/booking/bookingSlice'
 
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
@@ -46,13 +46,12 @@ const Booking = () => {
                 seniorCount,
                 totalAmount,
             })
-            dispatch(bookingSucess())
             const response = res.data;
             console.log(response);
             window.location.href = response.url;
-
+            bookingSucess({name, email, mobileNumber})
         } catch (error) {
-            dispatch(bookingFailed())
+            dispatch(bookingFailed({name, email, mobileNumber}))
             console.log(error);
         }
 

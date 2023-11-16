@@ -15,6 +15,8 @@ import PendingBooking from './pages/adminPage/PendingBooking'
 import CompletedBooking from './pages/adminPage/CompletedBooking'
 import CancelledBooking from './pages/adminPage/CancelledBooking'
 import ConfirmedBooking from './pages/adminPage/ConfirmedBooking'
+import PaymentSucess from './pages/PaymentSucess'
+import PaymentFailed from './pages/PaymentFailed'
 
 
 const App = () => {
@@ -26,6 +28,8 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path="/date-confirm" element={<BookingDateConfirmation />} />
           <Route path="/booking" element={<Booking />} />
+          <Route path="/success" element={<PaymentSucess />} />
+          <Route path="/failed" element={<PaymentFailed />} />
         </Route>
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route element={<AdminProtectedRoute />}>

@@ -15,7 +15,10 @@ const initialState = {
     totalAmount: 0,
     bookingDate: "",
     isPaxModal: false,
-    loading: false
+    loading: false,
+    name:"", 
+    email:"",
+    mobileNumber:""
 }
 
 
@@ -56,19 +59,19 @@ const bookingSlice = createSlice({
             setBookingDetailsFromLocalStorage(state)
         },
         adultTotalAmount: (state) => {
-            state.adultTotal = state.adultCount * 10
+            state.adultTotal = state.adultCount * 200
             setBookingDetailsFromLocalStorage(state)
         },
         childTotalAmount: (state) => {
-            state.childTotal = state.childCount * 10
+            state.childTotal = state.childCount * 150
             setBookingDetailsFromLocalStorage(state)
         },
         infantTotalAmount: (state) => {
-            state.infantTotal = state.infantCount * 10
+            state.infantTotal = state.infantCount * 50
             setBookingDetailsFromLocalStorage(state)
         },
         seniorTotalAmount: (state) => {
-            state.seniorTotal = state.seniorCount * 10
+            state.seniorTotal = state.seniorCount * 150
             setBookingDetailsFromLocalStorage(state)
         },
         countTotalBookingAmount: (state) => {
@@ -92,15 +95,19 @@ const bookingSlice = createSlice({
         }, 
         bookingStart: (state,action) =>{
             state.loading  = true
+            
         },
         bookingSucess: (state, action) => {
-            setBookingDetailsFromLocalStorage(initialState)
-            return state = initialState
+            state.loading  = false
+            state.name = action.payload.name
+            state.email = action.payload.email
+            state.mobileNumber = action.payload.mobileNumber
+            setBookingDetailsFromLocalStorage(state)
         },
         bookingFailed: (state, action) => {
             state.loading = false
             toast.error("Booking Failed")
-        }
+        },
     }
 })
 
@@ -124,7 +131,8 @@ export const {
     cancelBooking,
     bookingFailed,
     bookingSucess,
-    bookingStart
+    bookingStart,
+    bookingPaymentInitiated
 } = bookingSlice.actions
 
 export default bookingSlice.reducer
