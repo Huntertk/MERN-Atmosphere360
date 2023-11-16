@@ -95,7 +95,6 @@ const bookingSlice = createSlice({
         },
         bookingSucess: (state, action) => {
             setBookingDetailsFromLocalStorage(initialState)
-            toast.success("Booking Successfully")
             return state = initialState
         },
         bookingFailed: (state, action) => {

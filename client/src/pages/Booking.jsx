@@ -35,7 +35,7 @@ const Booking = () => {
         e.preventDefault()
         try {
             dispatch(bookingStart())
-            const res = await axios.post('http://localhost:4000/api/v1/booking', {
+            const res = await axios.post('/api/v1/booking', {
                 name,
                 email,
                 mobileNumber,
@@ -46,7 +46,7 @@ const Booking = () => {
                 seniorCount,
                 totalAmount,
             })
-            // dispatch(bookingSucess())
+            dispatch(bookingSucess())
             const response = res.data;
             console.log(response);
             window.location.href = response.url;

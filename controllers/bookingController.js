@@ -36,8 +36,8 @@ export const createBooking = async (req, res) => {
                 },
             ],
             mode: 'payment',
-            success_url: 'http://localhost:5173/',
-            cancel_url: 'http://localhost:5173/',
+            success_url: 'https://atmosphere-360.onrender.com/',
+            cancel_url: 'https://atmosphere-360.onrender.com/',
             payment_intent_data: {
                 setup_future_usage: 'off_session',
                 description: 'Booking payment',
