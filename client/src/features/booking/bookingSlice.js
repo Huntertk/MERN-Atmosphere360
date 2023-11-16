@@ -132,7 +132,6 @@ export const {
     bookingFailed,
     bookingSucess,
     bookingStart,
-    bookingPaymentInitiated
 } = bookingSlice.actions
 
 export default bookingSlice.reducer

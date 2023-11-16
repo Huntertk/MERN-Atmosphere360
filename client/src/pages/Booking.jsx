@@ -51,7 +51,7 @@ const Booking = () => {
             window.location.href = response.url;
             bookingSucess({name, email, mobileNumber})
         } catch (error) {
-            dispatch(bookingFailed({name, email, mobileNumber}))
+            dispatch(bookingFailed())
             console.log(error);
         }
 
