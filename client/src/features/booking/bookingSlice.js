@@ -56,19 +56,19 @@ const bookingSlice = createSlice({
             setBookingDetailsFromLocalStorage(state)
         },
         adultTotalAmount: (state) => {
-            state.adultTotal = state.adultCount * 199
+            state.adultTotal = state.adultCount * 10
             setBookingDetailsFromLocalStorage(state)
         },
         childTotalAmount: (state) => {
-            state.childTotal = state.childCount * 150
+            state.childTotal = state.childCount * 10
             setBookingDetailsFromLocalStorage(state)
         },
         infantTotalAmount: (state) => {
-            state.infantTotal = state.infantCount * 50
+            state.infantTotal = state.infantCount * 10
             setBookingDetailsFromLocalStorage(state)
         },
         seniorTotalAmount: (state) => {
-            state.seniorTotal = state.seniorCount * 150
+            state.seniorTotal = state.seniorCount * 10
             setBookingDetailsFromLocalStorage(state)
         },
         countTotalBookingAmount: (state) => {
