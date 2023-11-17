@@ -47,9 +47,8 @@ const Booking = () => {
                 totalAmount,
             })
             const response = res.data;
-            console.log(response);
+            dispatch(bookingSucess({name, email, mobileNumber, bookingResponse: response.url}))
             window.location.href = response.url;
-            bookingSucess({name, email, mobileNumber})
         } catch (error) {
             dispatch(bookingFailed())
             console.log(error);
@@ -130,8 +129,9 @@ const Booking = () => {
                     maxLength={"10"}
                     /> */}
 
-
+                        <label htmlFor="phone">Phone</label>
                         <PhoneInput
+                        id="phone"
                             defaultCountry="MY"
                             placeholder="Enter phone number"
                             value={mobileNumber}

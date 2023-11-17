@@ -69,6 +69,22 @@ export const createBooking = async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 
+   
+}
+
+export const successBooking = async (req, res, next) => {
+    const {
+        name,
+        email,
+        mobileNumber,
+        bookingDate,
+        adultCount,
+        childCount,
+        infantCount,
+        seniorCount,
+        totalAmount,
+    } = req.body;
+
     try {
         const booking = await Booking.create(req.body)
         if (!booking) {
@@ -97,10 +113,11 @@ export const createBooking = async (req, res) => {
                 console.log(info.response, " Email sent");
             }
         })
-        // res.status(StatusCodes.CREATED).json({ message: "Your Order is Booked Successfully" })
+        res.status(StatusCodes.CREATED).json({ message: "Your Order is Booked Successfully", bookingDetails: booking })
     } catch (error) {
-        // res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: "Something Wrong" })
+        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error })
     }
+
 }
 
 

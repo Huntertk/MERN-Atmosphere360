@@ -4,14 +4,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    z-index: 1;
-    position: absolute;
+    // z-index: 1;
+    // position: absolute;
+    // height: 120vh;
     width: 100%;
-    height: 120vh;
     text-align: center;
     top: 0px;
     background-color: $primaryModalColor;
     padding: 1rem;
+    box-shadow: 1px 1px 10px 1px #000;
 
     .crossIcon{
         background-color: transparent;

@@ -18,7 +18,8 @@ const initialState = {
     loading: false,
     name:"", 
     email:"",
-    mobileNumber:""
+    mobileNumber:"",
+    bookingResponse: ""
 }
 
 
@@ -76,10 +77,12 @@ const bookingSlice = createSlice({
         },
         countTotalBookingAmount: (state) => {
             state.totalAmount = state.adultTotal + state.childTotal + state.infantTotal + state.seniorTotal
+            state.bookingResponse = ""
             setBookingDetailsFromLocalStorage(state)
         },
         setBookingDate: (state, action) => {
             state.bookingDate = action.payload
+            state.bookingResponse = ""
             setBookingDetailsFromLocalStorage(state)
         },
         openPaxModel: (state) => {
@@ -95,6 +98,7 @@ const bookingSlice = createSlice({
         }, 
         bookingStart: (state,action) =>{
             state.loading  = true
+            state.bookingResponse = ""
             
         },
         bookingSucess: (state, action) => {
@@ -102,11 +106,17 @@ const bookingSlice = createSlice({
             state.name = action.payload.name
             state.email = action.payload.email
             state.mobileNumber = action.payload.mobileNumber
+            state.bookingResponse = action.payload.bookingResponse
+            console.log(state);
             setBookingDetailsFromLocalStorage(state)
         },
         bookingFailed: (state, action) => {
             state.loading = false
             toast.error("Booking Failed")
+        },
+        bookingConfirm: (state, action) => {
+            setBookingDetailsFromLocalStorage(initialState)
+            return state = initialState
         },
     }
 })
@@ -132,6 +142,7 @@ export const {
     bookingFailed,
     bookingSucess,
     bookingStart,
+    bookingConfirm
 } = bookingSlice.actions
 
 export default bookingSlice.reducer
