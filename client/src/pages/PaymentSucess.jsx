@@ -20,7 +20,8 @@ const PaymentSucess = () => {
     name,
     email,
     mobileNumber,
-    totalBookingsCount
+    totalBookingsCount,
+    type
   } = useSelector(store => store.booking)
   const dispatch = useDispatch()
   const url = bookingResponse?.split('/')
@@ -38,7 +39,8 @@ const PaymentSucess = () => {
           infantCount,
           seniorCount,
           totalAmount,
-          bookingId: createBookingId
+          bookingId: createBookingId,
+          bookingType: type
       })
       toast.success("Booking Successfully....")
       } catch (error) {

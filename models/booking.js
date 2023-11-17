@@ -35,6 +35,9 @@ const bookingSchema = new mongoose.Schema({
     },
     bookingId:{
         type: String
+    },
+    bookingType:{
+        type:String
     }
 },{timestamps: true})
 

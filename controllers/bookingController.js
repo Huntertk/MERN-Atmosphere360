@@ -238,6 +238,8 @@ export const successBooking = async (req, res, next) => {
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td align="left" class="esd-block-text es-p10t">
+                                                                                        <p><b>Booking ID ${req.body.bookingId}</b></p>
+                                                                                        <p><b>Type ${req.body.bookingType === 'dinner' ? "Dinner Buffet" : req.body.bookingType === 'lunch' ? "Lunch Buffet" : "Tea Buffet"}</b></p>
                                                                                         <p><b>${req.body.bookingDate}</b></p>
                                                                                     </td>
                                                                                 </tr>
