@@ -40,7 +40,7 @@ const PaymentSucess = () => {
           totalAmount,
           bookingId: createBookingId
       })
-      toast.success("Booking Successfully")
+      toast.success("Booking Successfully....")
       } catch (error) {
         console.log(error);
       }
