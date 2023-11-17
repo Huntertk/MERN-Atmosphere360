@@ -73,19 +73,12 @@ export const createBooking = async (req, res) => {
 }
 
 export const successBooking = async (req, res, next) => {
-    const {
-        name,
-        email,
-        mobileNumber,
-        bookingDate,
-        adultCount,
-        childCount,
-        infantCount,
-        seniorCount,
-        totalAmount,
-    } = req.body;
 
     try {
+        const isBookingIdExist = await Booking.find({bookingId: req.body.bookingId})
+        if(isBookingIdExist.length > 1){
+            throw BadRequestError("Order Already Placed")
+        }
         const booking = await Booking.create(req.body)
         if (!booking) {
             throw BadRequestError("Something Went Wrong")
@@ -396,7 +389,7 @@ export const successBooking = async (req, res, next) => {
                 console.log(info.response, " Email sent");
             }
         })
-        res.status(StatusCodes.CREATED).json({ message: "Your Order is Booked Successfully", bookingDetails: booking })
+        res.status(StatusCodes.CREATED).json({ message: "Your Order is Booked Successfully"})
     } catch (error) {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error })
     }
@@ -408,6 +401,15 @@ export const getAllBooking = async (req, res, next) => {
     try {
         const booking = await Booking.find().sort({ createdAt: -1 })
         res.status(StatusCodes.OK).json({ allBookings: booking })
+    } catch (error) {
+        next(error)
+    }
+}
+
+export const getTotalBookingCount = async (req, res, next) => {
+    try {
+        const booking = await Booking.countDocuments()
+        res.status(StatusCodes.OK).json({ totalCount: booking })
     } catch (error) {
         next(error)
     }

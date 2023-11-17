@@ -9,28 +9,23 @@ import { bookingConfirm } from '../features/booking/bookingSlice';
 
 
 const PaymentSucess = () => {
-  const { bookingDate,
+  const { 
+    bookingDate,
     adultCount,
-    adultTotal,
     childCount,
-    childTotal,
     infantCount,
-    infantTotal,
     seniorCount,
-    seniorTotal,
     totalAmount,
-    loading,
     bookingResponse,
     name,
     email,
-    mobileNumber
+    mobileNumber,
+    totalBookingsCount
   } = useSelector(store => store.booking)
   const dispatch = useDispatch()
-  const url = bookingResponse.split('/')
+  const url = bookingResponse?.split('/')
   const render = url[2] === 'checkout.stripe.com'
-  console.log(render);
-  const [bookingData, setBookignData] = useState(null)
-
+  const createBookingId = `ME000${totalBookingsCount + 1}`
     const confirmBooking = async () => {
       try {
         const {data} = await axios.post('/api/v1/booking/successbooking', {
@@ -43,22 +38,19 @@ const PaymentSucess = () => {
           infantCount,
           seniorCount,
           totalAmount,
+          bookingId: createBookingId
       })
-      console.log(data.bookingDetails);
-      setBookignData(data.bookingDetails)
       toast.success("Booking Successfully")
       } catch (error) {
         console.log(error);
       }
     }
 
+    
 
     useEffect(() => {
       if(render){
         confirmBooking()
-
-      } else{
-
       }
     },[])
   if(url[2] !== 'checkout.stripe.com'){
@@ -70,7 +62,7 @@ const PaymentSucess = () => {
         <img src={paymentSuccesImg} alt="" />
         <h1>Booking Successfully</h1>
         <h1>{name}</h1>
-        <h3>Order ID : {bookingData?._id}</h3>
+        <h3>Order ID : {createBookingId}</h3>
         <h3>Date Of Booking : {bookingDate}</h3>
 
         <h3>Please Kindly Check Your Email</h3>

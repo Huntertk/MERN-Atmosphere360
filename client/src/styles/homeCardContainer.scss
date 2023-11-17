@@ -126,21 +126,21 @@
             align-items: center;
             flex-direction: column;
             gap:10px;
-            a{
+            button, a{
                 text-align: center;
                 width: 100%;
                 display: block;
-                padding: 11px;
+                padding: 10px;
                 border-radius: 8px;
                 font-size: 16px;
                 font-weight: 600;
                 outline: none;
                 border: none;
             }
-            .checkAvailability{
-                background-color: $primary;
-                color: #fff;
-            }
+                .checkAvailability{
+                    background-color: $primary;
+                    color: #fff;
+                }
             
         }
 

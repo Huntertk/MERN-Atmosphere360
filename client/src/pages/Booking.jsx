@@ -23,7 +23,8 @@ const Booking = () => {
         seniorCount,
         seniorTotal,
         totalAmount,
-        loading
+        loading,
+        type
     } = useSelector(store => store.booking)
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -47,7 +48,9 @@ const Booking = () => {
                 totalAmount,
             })
             const response = res.data;
-            dispatch(bookingSucess({name, email, mobileNumber, bookingResponse: response.url}))
+            const {data} = await axios.get('/api/v1/booking/totalbooking')
+            dispatch(bookingSucess({name, email, mobileNumber, bookingResponse: response.url, totalBookingsCount: data.totalCount}))
+
             window.location.href = response.url;
         } catch (error) {
             dispatch(bookingFailed())
@@ -67,6 +70,7 @@ const Booking = () => {
                 <h1>Confirm and Pay</h1>
                 <div className="detailsWrapper">
                     <div className="topContainer">
+                    <p className='bookingType'>{type === 'dinner' ? "Dinner Buffet" : type === 'lunch' ? "Lunch Buffet": "Tea Buffet"}</p>
                         <p>{bookingDate}</p>
                         <Link to="/date-confirm"><BiEditAlt /></Link>
                     </div>

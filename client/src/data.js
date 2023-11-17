@@ -101,7 +101,8 @@ export const cardData = [
             imgSeven,
         ],
         title:"Atmosphere 360 Revolving Restaurant - Dinner Buffet",
-        desc:"Make your special occasions more memorable by booking a window seat view and opting for the celebration setup, whole cake, and a flower bouquet."
+        desc:"Make your special occasions more memorable by booking a window seat view and opting for the celebration setup, whole cake, and a flower bouquet.",
+        type:"dinner"
     },
     {
         id: uuidv4(),
@@ -116,7 +117,8 @@ export const cardData = [
 
         ],
         title:"Atmosphere 360 Revolving Restaurant - Lunch Buffet",
-        desc:"Experience a memorable lunch 282 meters above the ground in the Kuala Lumpur Tower, Southeast Asia's tallest revolving restaurant."
+        desc:"Experience a memorable lunch 282 meters above the ground in the Kuala Lumpur Tower, Southeast Asia's tallest revolving restaurant.",
+        type:"lunch"
     },
     {
         id: uuidv4(),
@@ -130,7 +132,8 @@ export const cardData = [
             imgSeven,
         ],
         title:"Atmosphere 360 Revolving Restaurant - Dinner Buffet",
-        desc:"Relax in the luxuries of fine dining at 282 meters in the sky at Atmosphere 360, the highest-revolving restaurant in all of Southeast Asia."
+        desc:"Relax in the luxuries of fine dining at 282 meters in the sky at Atmosphere 360, the highest-revolving restaurant in all of Southeast Asia.",
+        type:"dinner"
     },
      {
         id: uuidv4(),
@@ -144,7 +147,8 @@ export const cardData = [
             imgFifteen
         ],
         title:"Atmosphere 360 Revolving Restaurant - Lunch Buffet",
-        desc:"Experience a memorable lunch 282 meters above the ground in the Kuala Lumpur Tower, Southeast Asia's tallest revolving restaurant."
+        desc:"Experience a memorable lunch 282 meters above the ground in the Kuala Lumpur Tower, Southeast Asia's tallest revolving restaurant.",
+        type:"lunch"
     },
     {
         id: uuidv4(),
@@ -158,21 +162,23 @@ export const cardData = [
             imgSeven,
         ],
         title:"Atmosphere 360 Revolving Restaurant - Hi Tea Buffet",
-        desc:"Look over the city of Kuala Lumpur from the observation deck at Atmosphere 360 as you enjoy a delicious Hi-Tea Buffet."
+        desc:"Look over the city of Kuala Lumpur from the observation deck at Atmosphere 360 as you enjoy a delicious Hi-Tea Buffet.",
+        type:"tea"
     },
      {
         id: uuidv4(),
-       image:[
-           imgTwo,
-            lunchBuffet,
-            imgOne,
-            imgFive,
-            imgTen,
-            imgTwelve,
-            imgFifteen
+      image:[
+            imgFour,
+            dinnerBuffet,
+            imgThree,
+            imgEight,
+            imgNine,
+            teaBuffet,
+            imgSeven,
         ],
-        title:"Atmosphere 360 Revolving Restaurant - Lunch Buffet",
-        desc:"Experience a memorable lunch 282 meters above the ground in the Kuala Lumpur Tower, Southeast Asia's tallest revolving restaurant."
+        title:"Atmosphere 360 Revolving Restaurant - Hi Tea Buffet",
+        desc:"Look over the city of Kuala Lumpur from the observation deck at Atmosphere 360 as you enjoy a delicious Hi-Tea Buffet.",
+        type:"tea"
     },
     
 ]

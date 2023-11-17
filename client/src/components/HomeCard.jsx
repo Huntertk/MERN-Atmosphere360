@@ -6,6 +6,8 @@ import './day-picker.css';
 import { DayPicker } from 'react-day-picker';
 import {BiSolidDollarCircle} from 'react-icons/bi'
 import { Link } from 'react-router-dom';
+import {useDispatch} from 'react-redux'
+import { choosingBooking } from '../features/booking/bookingSlice';
 
 const Calender = ({id}) =>{
     const [selectedDate, setSelectedDate] = useState(false)
@@ -53,7 +55,8 @@ const Calender = ({id}) =>{
 
 
 const HomeCard = ({data}) => {
-    const {image, id, title, desc} = data;
+    const {image, id, title, desc, type} = data;
+    const dispatch = useDispatch()
   return (
     <div className="cardContainer">
         <div className="imageContainer">
@@ -66,7 +69,9 @@ const HomeCard = ({data}) => {
                 {/* <Calender id={id} /> */}
             </div>
             <div className="cardBtnContainer">
-                <Link to="/date-confirm" className='checkAvailability'> Book Now</Link>
+                <button onClick={() => dispatch(choosingBooking(type))} className='checkAvailability'>
+                    <Link to="/date-confirm"  > Book Now</Link>
+                </button>
             <div className="cancelPolicy">
                 <BiSolidDollarCircle />
                 <div className="cancelPolicyContent">

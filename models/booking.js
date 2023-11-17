@@ -32,6 +32,9 @@ const bookingSchema = new mongoose.Schema({
         type: String,
         enum: ["pending", "confirmed", "completed", "cancelled"],
         default: "confirmed"
+    },
+    bookingId:{
+        type: String
     }
 },{timestamps: true})
 
