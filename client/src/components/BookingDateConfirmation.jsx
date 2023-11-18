@@ -105,7 +105,7 @@ const BookingDateConfirmation = () => {
                     selectedDate ? <>
                     <p>You selected {format(selectedDate, 'PPP')}.</p>
                     <button onClick={() => {
-                        dispatch(setBookingDate(format(selectedDate, 'PPP')))
+                        dispatch(setBookingDate({selectedBookingDate:format(selectedDate, 'PPP'), selectedDay: selectedDate.toString()}))
                         dispatch(openPaxModel())
                     }}>Next</button>
                     </> : <p>Select One Date</p>

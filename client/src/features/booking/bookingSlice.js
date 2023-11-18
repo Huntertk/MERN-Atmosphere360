@@ -21,7 +21,8 @@ const initialState = {
     mobileNumber:"",
     bookingResponse: "",
     type:"",
-    totalBookingsCount: 0
+    totalBookingsCount: 0,
+    bookingDay: ""
 }
 
 
@@ -62,19 +63,109 @@ const bookingSlice = createSlice({
             setBookingDetailsFromLocalStorage(state)
         },
         adultTotalAmount: (state) => {
-            state.adultTotal = state.type === 'dinner' ? state.adultCount * 199 : state.type === 'lunch' ? state.adultCount * 118 : state.adultCount * 88   
+            if(state.type === 'dinner'){
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                    state.adultTotal = state.adultCount *  248
+                   return 
+                } else{
+                    state.adultTotal =  state.adultCount *  199
+                }
+            } else if(state.type === 'lunch'){
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                    state.adultTotal =  state.adultCount *  148
+                    return 
+                 } else{
+                    state.adultTotal = state.adultCount *  118
+                 }
+            } else if(state.type === 'tea'){
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                    state.adultTotal =  state.adultCount *  110
+                    return
+                 } else{
+                    state.adultTotal = state.adultCount *  88
+                 }
+            }
+            // state.adultTotal = state.type === 'dinner' ?  state.adultCount *  199 : state.type === 'lunch' ? state.adultCount * 118 : state.adultCount * 88   
             setBookingDetailsFromLocalStorage(state)
         },
         childTotalAmount: (state) => {
-            state.childTotal = state.type === 'dinner' ? state.childCount * 150 : state.type === 'lunch' ? state.childCount * 82 : state.childCount * 70
+            if(state.type === 'dinner'){
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                    state.childTotal = state.childCount *  200
+                   return 
+                } else{
+                    state.childTotal =  state.childCount *  150
+                }
+            } else if(state.type === 'lunch'){
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                    state.childTotal =  state.childCount *  111
+                    return 
+                 } else{
+                    state.childTotal = state.childCount *  82
+                 }
+            } else if(state.type === 'tea'){
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                    state.childTotal = state.childCount *  90
+                    return
+                 } else{
+                    state.childTotal = state.childCount *  70
+                 }
+            }
+            // state.childTotal = state.type === 'dinner' ? state.childCount * 150 : state.type === 'lunch' ? state.childCount * 82 : state.childCount * 70
             setBookingDetailsFromLocalStorage(state)
         },
         infantTotalAmount: (state) => {
-            state.infantTotal = state.type === 'dinner' ? state.infantCount * 50 : state.type === 'lunch' ? state.infantCount * 30 : state.infantCount * 25
+            if(state.type === 'dinner'){
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                    state.infantTotal = state.infantCount *  50
+                   return 
+                } else{
+                    state.infantTotal =  state.infantCount *  50
+                }
+            } else if(state.type === 'lunch'){
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                    state.infantTotal =  state.infantCount *  30
+                    return 
+                 } else{
+                    state.infantTotal = state.infantCount *  30
+                 }
+            } else if(state.type === 'tea'){
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                    state.infantTotal = state.infantCount *  25
+                    return
+                 } else{
+                    state.infantTotal = state.infantCount *  25
+                 }
+            }
+
+            // state.infantTotal = state.type === 'dinner' ? state.infantCount * 50 : state.type === 'lunch' ? state.infantCount * 30 : state.infantCount * 25
             setBookingDetailsFromLocalStorage(state)
         },
         seniorTotalAmount: (state) => {
-            state.seniorTotal = state.type === 'dinner' ? state.seniorCount * 150 : state.type === 'lunch' ? state.seniorCount * 82 : state.seniorCount * 70
+            if(state.type === 'dinner'){
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                    state.seniorTotal = state.seniorCount *  200
+                   return 
+                } else{
+                    state.seniorTotal =  state.seniorCount *  150
+                }
+            } else if(state.type === 'lunch'){
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                    state.seniorTotal =  state.seniorCount *  111
+                    return 
+                 } else{
+                    state.seniorTotal = state.seniorCount *  82
+                 }
+            } else if(state.type === 'tea'){
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                    state.seniorTotal = state.seniorCount *  90
+                    return
+                 } else{
+                    state.seniorTotal = state.seniorCount *  70
+                 }
+            }
+
+            // state.seniorTotal = state.type === 'dinner' ? state.seniorCount * 150 : state.type === 'lunch' ? state.seniorCount * 82 : state.seniorCount * 70
             setBookingDetailsFromLocalStorage(state)
         },
         countTotalBookingAmount: (state) => {
@@ -83,8 +174,9 @@ const bookingSlice = createSlice({
             setBookingDetailsFromLocalStorage(state)
         },
         setBookingDate: (state, action) => {
-            state.bookingDate = action.payload
+            state.bookingDate = action.payload.selectedBookingDate
             state.bookingResponse = ""
+            state.bookingDay = action.payload.selectedDay.split(' ')[0]
             setBookingDetailsFromLocalStorage(state)
         },
         openPaxModel: (state) => {
