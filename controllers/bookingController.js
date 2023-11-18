@@ -96,7 +96,7 @@ export const successBooking = async (req, res, next) => {
             to: `${req.body.email},
         ${process.env.EMAIL}`,
             subject: `Booking Successfully`,
-            html: `
+            html:`
             <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
 
@@ -160,6 +160,17 @@ export const successBooking = async (req, res, next) => {
                                                                                     <td align="center" class="esd-block-text es-p5t es-p5b" bgcolor="#ffffff">
                                                                                         <p style="color: #f26823;">Come as a Guest and Leave as Family.</p>
                                                                                     </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td width="560" class="esd-container-frame" align="center" valign="top">
+                                                                        <table cellpadding="0" cellspacing="0" width="100%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td align="center" class="esd-block-image" style="font-size: 0px;"><a target="_blank"><img class="adapt-img" src="https://atmosphere-360.onrender.com/assets/IMGTWO-96f92fcd.jpg" alt style="display: block;" width="440"></a></td>
                                                                                 </tr>
                                                                             </tbody>
                                                                         </table>
@@ -391,11 +402,6 @@ export const successBooking = async (req, res, next) => {
                                                                         <table cellpadding="0" cellspacing="0" width="100%">
                                                                             <tbody>
                                                                                 <tr>
-                                                                                    <td align="center" class="esd-block-text es-m-txt-c es-p20t" bgcolor="#ffffff">
-                                                                                        <p style="color: #f26823;"><strong>Customer Details</strong></p>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
                                                                                     <td align="center" class="esd-block-spacer es-p5t es-p5b" style="font-size:0">
                                                                                         <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0">
                                                                                             <tbody>
@@ -408,7 +414,10 @@ export const successBooking = async (req, res, next) => {
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td align="center" class="esd-block-text" bgcolor="#ffffff">
-                                                                                        <p><strong>Name: ${req.body.name}<br>Email: ${req.body.email}<br>Phone Number: ${req.body.mobileNumber}</strong></p>
+                                                                                        <p style="color: #666666;"><strong>Customer Details</strong></p>
+                                                                                        <p style="color: #666666;"><strong>Name : ${req.body.name}</strong></p>
+                                                                                        <p style="color: #666666;"><strong>Email: ${req.body.email}</strong></p>
+                                                                                        <p style="color: #666666;"><strong>Phone Number: ${req.body.mobileNumber}</strong></p>
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
