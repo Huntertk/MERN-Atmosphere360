@@ -17,6 +17,12 @@
         font-size: 1rem;
         color: $primary;
         border: 0;
+        transition: all 0.3s linear;
+        &:active,
+        &:hover{
+            transform: scale(1.1);
+            cursor: pointer;
+        }
     }
 
     h1{

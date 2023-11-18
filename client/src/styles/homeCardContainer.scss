@@ -126,7 +126,7 @@
             align-items: center;
             flex-direction: column;
             gap:10px;
-            button, a{
+            button{
                 text-align: center;
                 width: 100%;
                 display: block;
@@ -136,6 +136,11 @@
                 font-weight: 600;
                 outline: none;
                 border: none;
+
+                &:hover{
+                    cursor: pointer;
+                    opacity: .8;
+                }
             }
                 .checkAvailability{
                     background-color: $primary;

@@ -21,19 +21,19 @@ const Header = () => {
             <div className="logoContainer">
                <Link to="/"> <img src={logo} alt="" /> </Link>
             </div>
-            <div className='headerSideContainer'>
+            {/* <div className='headerSideContainer'>
                     <GoGlobe />
                 <div className="iconsContainer" onClick={handleNavbar}>
                     {
                         isNavOpen ? <RxCross1 /> : <IoReorderThreeOutline className='hamburger' />
                     }
                 </div>
-            </div>
+            </div> */}
         </nav>
-        <BigNavbar />
+        {/* <BigNavbar />
         {
         isNavOpen && <SmallSidebar />
-        }
+        } */}
     </header>
   )
 }
