@@ -19,6 +19,7 @@ export const createBooking = async (req, res) => {
         infantCount,
         seniorCount,
         totalAmount,
+        bookingType
     } = req.body;
     try {
         const session = await stripe.checkout.sessions.create({
@@ -28,7 +29,7 @@ export const createBooking = async (req, res) => {
                     price_data: {
                         currency: 'myr',
                         product_data: {
-                            name: 'Booking',
+                            name: bookingType === 'dinner' ? "Atmosphere 360 Revolving Restaurant - Dinner Buffet" : bookingType === 'lunch' ? "Atmosphere 360 Revolving Restaurant - Lunch Buffet" : "Atmosphere 360 Revolving Restaurant - Tea Buffet",
                         },
                         unit_amount: totalAmount * 100,
                     },

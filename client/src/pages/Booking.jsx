@@ -46,6 +46,7 @@ const Booking = () => {
                 infantCount,
                 seniorCount,
                 totalAmount,
+                bookingType: type
             })
             const response = res.data;
             const {data} = await axios.get('/api/v1/booking/totalbooking')
@@ -70,7 +71,7 @@ const Booking = () => {
                 <h1>Confirm and Pay</h1>
                 <div className="detailsWrapper">
                     <div className="topContainer">
-                    <p className='bookingType'>{type === 'dinner' ? "Dinner Buffet" : type === 'lunch' ? "Lunch Buffet": "Tea Buffet"}</p>
+                    <p className='bookingType'>{type === 'dinner' ? "Dinner Buffet" : type === 'lunch' ? "Lunch Buffet": type === 'tea' && "Tea Buffet"}</p>
                         <p>{bookingDate}</p>
                         <Link to="/date-confirm"><BiEditAlt /></Link>
                     </div>
