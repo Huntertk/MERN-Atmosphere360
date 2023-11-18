@@ -71,6 +71,7 @@
                 svg{
                     color: $primary;
                     font-size: 2rem;
+                    cursor: pointer;
                 }
                 .disabledBtn {
                     color: #808080;
@@ -78,7 +79,6 @@
                 }
             }
             .price{
-
                 text-align: end;
             }
         }
@@ -104,6 +104,10 @@
             padding: 0.5rem 1rem;
             border: none;
             outline: none;
+
+            &:hover{
+                cursor: pointer;
+            }
         }
     }
 

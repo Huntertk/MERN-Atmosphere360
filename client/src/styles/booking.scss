@@ -79,7 +79,10 @@
                     font-weight: bold;
                     font-size: 1.2rem;
                     box-shadow: 1px 1px 10px 2px $cardBorderColor;
-
+                    &:hover{
+                        cursor: pointer;
+                        opacity: .8;
+                    }
                     &:disabled {
                         opacity: 0.6;
                         cursor: not-allowed;
@@ -87,6 +90,7 @@
                 }
 
                 input{
+                    font-size: 1rem;
                     padding: 1rem;
                     border-radius: 8px;
                     border: none;
