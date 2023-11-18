@@ -3,6 +3,7 @@ import '../styles/paxModal.scss'
 import {AiOutlinePlusCircle, AiOutlineMinusCircle} from 'react-icons/ai'
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import {useNavigate} from 'react-router-dom'
 import { 
     adultCountIncrease, 
     adultCountDecrease, 
@@ -83,10 +84,14 @@ const PaxModal = ({selectedDate}) => {
         dispatch(countTotalBookingAmount())
 
     },[adultCount, childCount, seniorCount, infantCount])
+    const navigate = useNavigate()
 
   return (
     <div className='paxSelectorContainer'>
-        <button  className='crossIcon' onClick={() => dispatch(cancelBooking())}>Cancel</button>
+        <button  className='crossIcon' onClick={() => {
+            dispatch(cancelBooking())
+            return navigate("/")
+        }}>Cancel</button>
         <p className='bookingType'>{type === 'dinner' ? "Dinner Buffet" : type === 'lunch' ? "Lunch Buffet": "Tea Buffet"}</p>
         <h1>Select number of tickets</h1>
         <div className="paxSelector">

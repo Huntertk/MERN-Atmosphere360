@@ -70,7 +70,7 @@ const bookingSlice = createSlice({
             setBookingDetailsFromLocalStorage(state)
         },
         infantTotalAmount: (state) => {
-            state.infantTotal = state.type === 'dinner' ? state.infantCount * 50 : state.type === 'lunch' ? state.infantCount * 30 : state.childCount * 25
+            state.infantTotal = state.type === 'dinner' ? state.infantCount * 50 : state.type === 'lunch' ? state.infantCount * 30 : state.infantCount * 25
             setBookingDetailsFromLocalStorage(state)
         },
         seniorTotalAmount: (state) => {
