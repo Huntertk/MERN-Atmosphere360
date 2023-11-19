@@ -17,6 +17,7 @@ import CancelledBooking from './pages/adminPage/CancelledBooking'
 import ConfirmedBooking from './pages/adminPage/ConfirmedBooking'
 import PaymentSucess from './pages/PaymentSucess'
 import PaymentFailed from './pages/PaymentFailed'
+import TermAndConditionPage from './pages/TermAndConditionPage'
 
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="/booking" element={<Booking />} />
           <Route path="/success" element={<PaymentSucess />} />
           <Route path="/failed" element={<PaymentFailed />} />
+          <Route path="/terms" element={<TermAndConditionPage />} />
         </Route>
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route element={<AdminProtectedRoute />}>

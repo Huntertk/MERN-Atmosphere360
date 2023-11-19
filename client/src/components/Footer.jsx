@@ -17,10 +17,10 @@ const Footer = () => {
                 <div className="getHelpContainer">
                     <p>Chat With Us</p>
                     <p>Call Us</p>
-                    <p>Email Us</p>
+                    <p><a href="mailto:support@travelvago.com"> Email Us </a></p>
                 </div>
                 <div className="legalContainer">
-                    <p>Terms & Conditions</p>
+                    <Link to="/terms"><p>Terms & Conditions</p></Link>
                     <p>Privacy Policy</p>
                     <p>Company Details</p>
                     <Link to="/admin/login"><p>Admin</p></Link>

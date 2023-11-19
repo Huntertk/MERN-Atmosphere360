@@ -1,0 +1,51 @@
+@use './variables.scss' as *;
+
+
+.companyPolicyMainContainer{
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 1rem;
+    
+    img{
+        display: block;
+        margin: 1rem auto;
+        max-width: 300px;
+    }
+    
+    h1{
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+        line-height: 1.6;
+    }
+    
+
+    p{
+        font-size: 1.2rem;
+        word-spacing: 1px;
+        line-height: 1.6;
+    }
+    
+    
+    ul{
+        margin-top: 1.2rem;
+        list-style: none;
+        h3{
+            
+            line-height: 1.6;
+        }
+        li{
+            font-size: 1rem;
+            word-spacing: 1px;
+            line-height: 1.6;
+        }
+    }
+    .underline{
+        height: 4px;
+        width: 20%;
+        background-color: $primary;
+        margin: 0 auto 1rem auto;
+        border-radius: 8px;
+    }
+}

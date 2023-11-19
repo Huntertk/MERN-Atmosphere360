@@ -7,6 +7,7 @@ import PaxModal from './PaxModal';
 import { DayPicker, Row } from 'react-day-picker';
 import { useDispatch, useSelector } from 'react-redux';
 import { openPaxModel, setBookingDate } from '../features/booking/bookingSlice';
+import {Navigate} from 'react-router-dom'
 
 
 function isPastDate(date) {
@@ -75,9 +76,12 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) 
 
 const BookingDateConfirmation = () => {
     const dispatch = useDispatch()
-    const {isPaxModal, bookingDate} = useSelector(store => store.booking)
+    const {isPaxModal, bookingDate, type} = useSelector(store => store.booking)
         const [selectedDate, setSelectedDate] = useState("")
         const [calenderOpen, setCalenderOpen] = useState(false)
+        if(!type){
+            return <Navigate to="/" />
+        }
   return (
     <section className='bookingDateConfirmationMainContainer'>
         <div className="bookingDateWrapper">

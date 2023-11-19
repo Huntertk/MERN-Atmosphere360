@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import paymentSuccesImg from '../assets/images/paymentSucces.png'
 import { toast } from 'react-toastify';
 import { bookingConfirm } from '../features/booking/bookingSlice';
+import { FaCheckCircle } from "react-icons/fa";
 
 
 const PaymentSucess = () => {
@@ -61,16 +62,19 @@ const PaymentSucess = () => {
   return (
     <section className="paymentSuccessPage">
       <div className='content'>
-        <img src={paymentSuccesImg} alt="" />
+        {/* <img src={paymentSuccesImg} alt="" /> */}
+        <FaCheckCircle />
         <h1>Booking Successfully</h1>
-        <h1>{name}</h1>
-        <h3>Order ID : {createBookingId}</h3>
-        <h3>Date Of Booking : {bookingDate}</h3>
-
-        <h3>Please Kindly Check Your Email</h3>
-        <h4>Total Amount: MYR {totalAmount}</h4>
-      </div>
+        <div className='bookingConfirmationDetails'>
+          
+          <h3><span>Name : </span> <span>{name}</span></h3>
+          <h3><span>Order ID : </span> <span>#{createBookingId}</span></h3>
+          <h3><span>Total Amount: </span> <span>MYR {totalAmount}</span></h3>
+          <h3><span>Date: </span> <span> {bookingDate}</span></h3>
+          <h3>More Details Check Your Email</h3>
+        </div>
       <button className='btn' onClick={() => dispatch(bookingConfirm())}>Go Home</button>
+      </div>
     </section>
   )
 }

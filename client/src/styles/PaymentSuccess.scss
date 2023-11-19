@@ -7,25 +7,53 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    
+
     
     .content{
+        padding: 1rem;
+        border: 2px solid lime;
+        border-radius: 8px;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap:10px;
         margin-top: -3rem;
-        img{
-            width: 200px;
+        width: 90%;
+        svg{
+            color: limegreen;
+           font-size: 6rem;
+        }
+
+        .bookingConfirmationDetails{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: start;
+            width: 100%;
+
+            h3{
+                font-weight: 400;
+                font-size: 1.1rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
         }
     }
     .btn{
         color: $backgroundColor;
-        background-color: $primary;
+        background-color: green;
         margin-top: 1rem;
         padding: 0.5rem;
         font-size: 1.1rem;
         border: none;
-        box-shadow: 1px 1px 10px 1px $primary;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .paymentSuccessPage{
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

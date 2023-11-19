@@ -1,0 +1,27 @@
+@use './variables.scss' as *;
+
+.mainPointMainComponents{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    h1{
+        margin: 0;
+        letter-spacing: 0.5px;
+    }
+
+
+    .underline{
+        height: 4px;
+        width: 20%;
+        background-color: $primary;
+        margin: 0 auto 1rem auto;
+        border-radius: 8px;
+    }
+}
+
+
+@media screen and (min-width: 600px) {
+    .mainPointMainComponents{
+        text-align: start;
+          
+    }
+}
