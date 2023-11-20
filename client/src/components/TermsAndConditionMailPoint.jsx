@@ -1,21 +1,12 @@
 import '../styles/mainPoints.scss'
-const TermsAndConditionMailPoint = ({data}) => {
+const TermsAndConditionMailPoint = ({heading, para, mailId}) => {
   return (
-    <div className="homeVisitorTipsMainContainer">
-    {
-      data.map((da, index) => (
-        <div key={index}>
-        <h1 >{da.title}</h1>
-        <ul>
-          {
-            da.list.map((lis, i) => <li key={i}>{lis}</li>)
-          }
-        </ul>
-        </div>
-
-      ))
-    }
-</div>
+    <div className='mainPointMainComponents'>
+        <h1>{heading}</h1>
+        <div className="underline"></div>
+        <p>{para}</p>
+       {mailId  && <a href={`mailto:${mailId}`}>{mailId}</a>}
+    </div>
   )
 }
 
