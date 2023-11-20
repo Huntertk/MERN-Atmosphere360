@@ -356,3 +356,109 @@ export const homeFAQ = [
         ans:"The Dinner dining will be ideal to witness the City of Light."
     },
 ]
+
+
+export const helpCenterBookingFAQ = [
+    {
+        id: uuidv4(),
+        ques:"How do I make a booking on Malaysia Experience?",
+        ans:"Making a booking is easy! Simply browse through our experiences, select the one you love, choose your preferred date and time, and follow the easy booking steps. Your adventure in Malaysia is just a few clicks away!"
+    },
+    {
+        id: uuidv4(),
+        ques:"Is it safe to book through Malaysia Experience?",
+        ans:"Absolutely! We prioritize your safety and security. Our booking platform uses industry-standard encryption to safeguard your personal information, ensuring a worry-free booking experience"
+    },
+    {
+        id: uuidv4(),
+        ques:"Can I book for a group?",
+        ans:"Of course! We welcome group bookings. When selecting an experience, you can specify the number of participants, and our system will guide you through the process to ensure everyone has a fantastic time."
+    },
+    {
+        id: uuidv4(),
+        ques:"The best time to visit Atmosphere 360?",
+        ans:"The Dinner dining will be ideal to witness the City of Light."
+    },
+]
+
+export const helpCenterCancellationFAQ = [
+    {
+        id: uuidv4(),
+        ques:"What is the cancellation policy?",
+        ans:"We understand plans can change. Our cancellation policy varies depending on the experience and the timing of your cancellation. You can find specific details on the experience page during the booking process."
+    },
+    {
+        id: uuidv4(),
+        ques:"How do I cancel or request a refund?",
+        ans:"If you need to cancel, log in to your Malaysia Experience account, go to your bookings, and follow the cancellation instructions. Refund eligibility depends on the cancellation policy of the specific experience. We're here to help, so feel free to reach out to our customer support for assistance."
+    },
+    {
+        id: uuidv4(),
+        ques:"What happens if the experience is canceled by Malaysia Experience?",
+        ans:"In the rare event that we have to cancel an experience, you will be notified promptly, and a full refund will be processed. Your satisfaction and safety are our top priorities."
+    },
+]
+
+
+export const termsandconditiondata = [
+    {
+        id: uuidv4(),
+        title: "Limited License",
+        list:["You are granted a non-exclusive, non-transferable license to access and use our Website in accordance with these Terms."]
+    },
+    {
+        id: uuidv4(),
+        title: "Our Relationship",
+        list:["We serve as an intermediary for purchasing goods/services and do not create any other relationship with users"]
+    },
+    {
+        id: uuidv4(),
+        title: "Legal Compliance:",
+        list:["You agree to comply with all applicable laws and regulations. We may take appropriate action for non-compliance."]
+    },
+    {
+        id: uuidv4(),
+        title: "Eligibility and Registration",
+        list:["You certify being at least 18 years old or having parental permission if aged 13 to 18. Registration in violation of these terms is unauthorized."]
+    },
+    {
+        id: uuidv4(),
+        title: "DMCA Compliance",
+        list:["If you believe your work is infringed, provide required information to support@travelvago.com."]
+    },
+    {
+        id: uuidv4(),
+        title: "Intellectual Property",
+        list:["Our trademarks and Website content are protected. Your use does not grant ownership rights."]
+    },
+    {
+        id: uuidv4(),
+        title: "Linking",
+        list:["You may link to our Website, following guidelines provided."]
+    },
+    {
+        id: uuidv4(),
+        title: "Links to Other Websites",
+        list:["We provide links for convenience, but we do not endorse or have an affiliation with Third Party Websites."]
+    },
+    {
+        id: uuidv4(),
+        title: "Data Protection",
+        list:["We collect and use personal data as necessary. More details in our privacy policy.https://www.travelvago.com/privacy-policy"]
+    },
+    {
+        id: uuidv4(),
+        title: "Warranty Disclaimer",
+        list:["We reserve the right to change Website content without notice. We are not responsible for errors, interruptions, or technical malfunctions."]
+    },
+    {
+        id: uuidv4(),
+        title: "Limitation of Liability",
+        list:["We and our affiliates are not liable for any loss or damage resulting from Website use."]
+    },
+    {
+        id: uuidv4(),
+        title: "Arbitration",
+        list:["Any legal controversy will be settled by binding arbitration. Each party bears one-half of arbitration fees."]
+    },
+]

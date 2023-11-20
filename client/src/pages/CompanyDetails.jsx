@@ -1,6 +1,5 @@
 import '../styles/policypage.scss'
 import logo from '../assets/images/logo.png'
-import TermsAndConditionMailPoint from '../components/TermsAndConditionMailPoint'
 
 const CompanyDetails = () => {
   return (
@@ -11,7 +10,10 @@ const CompanyDetails = () => {
         <p>Discover the Heart of Asia with Travelvago Sdn Bhd</p>
         <br />
         <p>At Malaysia Experience, we curate unforgettable journeys that go beyond the ordinary. Established in 2020 and proudly managed by Travelvago Sdn Bhd, our mission is to immerse you in the vibrant tapestry of Malaysia's diverse culture, breathtaking landscapes, and rich heritage.</p>
-        <TermsAndConditionMailPoint heading="Our Passion for Unique Experiences" para="We believe in the power of travel to transform and enrich lives. That's why we handpick the most exceptional experiences, tours, and attractions across Malaysia. From the bustling streets of Kuala Lumpur to the tranquil beauty of Langkawi's beaches, each adventure is crafted to create lasting memories." />
+        <ul>
+          <h1>Our Passion for Unique Experiences</h1>
+        <li>We believe in the power of travel to transform and enrich lives. That's why we handpick the most exceptional experiences, tours, and attractions across Malaysia. From the bustling streets of Kuala Lumpur to the tranquil beauty of Langkawi's beaches, each adventure is crafted to create lasting memories.</li>
+        </ul>
         <ul>
             <h3>Why Choose Malaysia Experience?</h3>
             <li><span>Authenticity : </span> Immerse yourself in the authentic spirit of Malaysia with experiences that showcase the country's unique charm.</li>

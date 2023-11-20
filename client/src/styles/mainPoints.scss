@@ -1,27 +1,23 @@
 @use './variables.scss' as *;
 
-.mainPointMainComponents{
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    h1{
-        margin: 0;
-        letter-spacing: 0.5px;
-    }
+.homeVisitorTipsMainContainer{
+    margin: 2rem 0;
+    padding-inline-start: 18px;
 
 
-    .underline{
-        height: 4px;
-        width: 20%;
-        background-color: $primary;
-        margin: .5rem auto 1rem auto;
-        border-radius: 8px;
-    }
-}
+    ul{
+        margin-top: 1rem;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 24px;
+        letter-spacing: 0px;
 
+        li{
+            margin: 0.51rem 0;
 
-@media screen and (min-width: 600px) {
-    .mainPointMainComponents{
-        text-align: start;
-          
+            &::marker{
+                font-size: 1.2rem;
+            }
+        }
     }
 }

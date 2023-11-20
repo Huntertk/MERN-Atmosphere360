@@ -12,7 +12,7 @@
         max-width: 300px;
     }
     
-    h1{
+    .heading{
         text-align: center;
         margin-bottom: 10px;
         font-size: 1.8rem;
@@ -31,7 +31,8 @@
     ul{
         margin-top: 1.2rem;
         margin-bottom: 1.2rem;
-        list-style: none;
+        padding: 1rem;
+        // list-style: none;
         h3{
             
             line-height: 1.6;
@@ -43,6 +44,32 @@
             font-size: 1rem;
             word-spacing: 1px;
             line-height: 1.6;
+        }
+    }
+
+    .homeVisitorTipsMainContainer{
+        margin: 2rem 0;
+        padding-inline-start: 18px;
+    
+        h1{
+            font-size: 1.1renm;
+            text-align: start;
+            margin: 0;
+        }
+    
+        ul{
+            margin-top: 0;
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 24px;
+            letter-spacing: 0px;
+            padding: 0;
+            li{
+    
+                &::marker{
+                    font-size: 1.2rem;
+                }
+            }
         }
     }
     .underline{

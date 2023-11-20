@@ -9,11 +9,9 @@ import LoadingSpinner from './LoadingSpinner'
 const HomeCardContainer = () => { 
   const [cardData, setCardData] = useState(null)
 
-
   const getCardData = async () => {
     try {
       const {data} = await axios.get('/api/v1/bookingplan/getallbookingplan')
-      console.log(data);
       setCardData(data.bookingPlan)
     } catch (error) {
       console.log(error);
