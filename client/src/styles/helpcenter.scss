@@ -11,10 +11,14 @@
         margin: 1rem auto;
         max-width: 300px;
     }
+    .heading{
+        text-align: center;
+    }
     
     h1{
-        text-align: center;
+        text-align: start;
         margin-bottom: 10px;
+        margin-top: 10px;
         font-size: 1.8rem;
         letter-spacing: 1px;
         line-height: 1.6;

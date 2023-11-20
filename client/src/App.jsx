@@ -18,6 +18,9 @@ import ConfirmedBooking from './pages/adminPage/ConfirmedBooking'
 import PaymentSucess from './pages/PaymentSucess'
 import PaymentFailed from './pages/PaymentFailed'
 import TermAndConditionPage from './pages/TermAndConditionPage'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import CompanyDetails from './pages/CompanyDetails'
+import HelpCenter from './pages/HelpCenter'
 
 
 const App = () => {
@@ -32,6 +35,9 @@ const App = () => {
           <Route path="/success" element={<PaymentSucess />} />
           <Route path="/failed" element={<PaymentFailed />} />
           <Route path="/terms" element={<TermAndConditionPage />} />
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+          <Route path="/companydetails" element={<CompanyDetails />} />
+          <Route path="/helpcenter" element={<HelpCenter />} />
         </Route>
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route element={<AdminProtectedRoute />}>

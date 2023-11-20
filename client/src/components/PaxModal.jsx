@@ -18,7 +18,8 @@ import {
     infantTotalAmount,
     seniorTotalAmount,
     countTotalBookingAmount,
-    cancelBooking
+    cancelBooking,
+    closePaxModel
 } from '../features/booking/bookingSlice';
 
 
@@ -88,10 +89,13 @@ const PaxModal = ({selectedDate}) => {
 
   return (
     <div className='paxSelectorContainer'>
-        <button  className='crossIcon' onClick={() => {
-            dispatch(cancelBooking())
-            return navigate("/")
-        }}>Cancel</button>
+        <div className='cancelBookingContainer'>
+            <button  className='backIcon' onClick={() => dispatch(closePaxModel())}>Back</button>
+            <button  className='crossIcon' onClick={() => {
+                dispatch(cancelBooking())
+                return navigate("/")
+            }}>Cancel</button>
+        </div>
         <p className='bookingType'>{type === 'dinner' ? "Dinner Buffet" : type === 'lunch' ? "Lunch Buffet": "Tea Buffet"}</p>
         <h1>Select number of tickets</h1>
         <div className="paxSelector">

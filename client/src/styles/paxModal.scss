@@ -10,21 +10,41 @@
     background-color: $primaryModalColor;
     padding: 1rem;
 
-    .crossIcon{
-        background-color: transparent;
-        display: block;
-        margin-left: auto;
-        font-size: 1rem;
-        color: $primary;
-        border: 0;
-        transition: all 0.3s linear;
-        &:active,
-        &:hover{
-            transform: scale(1.1);
-            cursor: pointer;
+    .cancelBookingContainer{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        .crossIcon{
+            background-color: transparent;
+            display: block;
+            margin-left: auto;
+            font-size: 1rem;
+            color: $primary;
+            border: 0;
+            transition: all 0.3s linear;
+            &:active,
+            &:hover{
+                transform: scale(1.1);
+                cursor: pointer;
+            }
+        }
+        
+        .backIcon{
+            background-color: transparent;
+            display: block;
+            margin-right: auto;
+            font-size: 1rem;
+            color: $primary;
+            border: 0;
+            transition: all 0.3s linear;
+            &:active,
+            &:hover{
+                transform: scale(1.1);
+                cursor: pointer;
+            }
         }
     }
-
     h1{
         margin-top: 1rem;
         margin-bottom: 1rem;

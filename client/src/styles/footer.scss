@@ -4,11 +4,14 @@
 
 .footer{
 
+    background-color: $primaryModalColor;
     .footerMainContainer{
         padding: 2rem 1rem;
         display: flex;
         flex-direction: column;
-        background-color: $primaryModalColor;
+        justify-content: center;
+        max-width: 1100px;
+        margin: 0 auto;
 
         .footerTopContainer{
             text-align: center;
