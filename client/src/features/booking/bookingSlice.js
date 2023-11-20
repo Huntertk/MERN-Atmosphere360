@@ -89,29 +89,29 @@ const bookingSlice = createSlice({
             setBookingDetailsFromLocalStorage(state)
         },
         childTotalAmount: (state) => {
-            if(state.type === 'dinner'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
-                    state.childTotal = state.childCount *  200
-                   return 
-                } else{
-                    state.childTotal =  state.childCount *  150
-                }
-            } else if(state.type === 'lunch'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
-                    state.childTotal =  state.childCount *  111
-                    return 
-                 } else{
-                    state.childTotal = state.childCount *  82
-                 }
-            } else if(state.type === 'tea'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
-                    state.childTotal = state.childCount *  90
-                    return
-                 } else{
-                    state.childTotal = state.childCount *  70
-                 }
-            }
-            // state.childTotal = state.type === 'dinner' ? state.childCount * 150 : state.type === 'lunch' ? state.childCount * 82 : state.childCount * 70
+            // if(state.type === 'dinner'){
+            //     if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+            //         state.childTotal = state.childCount *  200
+            //        return 
+            //     } else{
+            //         state.childTotal =  state.childCount *  150
+            //     }
+            // } else if(state.type === 'lunch'){
+            //     if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+            //         state.childTotal =  state.childCount *  111
+            //         return 
+            //      } else{
+            //         state.childTotal = state.childCount *  82
+            //      }
+            // } else if(state.type === 'tea'){
+            //     if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+            //         state.childTotal = state.childCount *  90
+            //         return
+            //      } else{
+            //         state.childTotal = state.childCount *  70
+            //      }
+            // }
+            state.childTotal = state.type === 'dinner' ? state.childCount * 10 : state.type === 'lunch' ? state.childCount * 10 : state.childCount * 10
             setBookingDetailsFromLocalStorage(state)
         },
         infantTotalAmount: (state) => {
