@@ -11,7 +11,7 @@
     
     .content{
         padding: 1rem;
-        border: 2px solid lime;
+        border: 2px solid $primary;
         border-radius: 8px;
         display: flex;
         flex-direction: column;
@@ -20,7 +20,7 @@
         margin-top: -3rem;
         width: 90%;
         svg{
-            color: limegreen;
+            color: $primary;
            font-size: 6rem;
         }
 
@@ -42,7 +42,7 @@
     }
     .btn{
         color: $backgroundColor;
-        background-color: green;
+        background-color: $primary;
         margin-top: 1rem;
         padding: 0.5rem;
         font-size: 1.1rem;
