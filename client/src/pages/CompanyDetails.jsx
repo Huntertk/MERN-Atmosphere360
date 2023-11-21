@@ -1,5 +1,6 @@
 import '../styles/policypage.scss'
 import logo from '../assets/images/logo.png'
+import tvagologo from '../assets/images/tvagologo.png'
 
 const CompanyDetails = () => {
   return (
@@ -10,6 +11,7 @@ const CompanyDetails = () => {
         <p>Discover the Heart of Asia with Travelvago Sdn Bhd</p>
         <br />
         <p>At Malaysia Experience, we curate unforgettable journeys that go beyond the ordinary. Established in 2020 and proudly managed by Travelvago Sdn Bhd, our mission is to immerse you in the vibrant tapestry of Malaysia's diverse culture, breathtaking landscapes, and rich heritage.</p>
+        <img src={tvagologo} alt="Image" /> 
         <ul>
           <h1>Our Passion for Unique Experiences</h1>
         <li>We believe in the power of travel to transform and enrich lives. That's why we handpick the most exceptional experiences, tours, and attractions across Malaysia. From the bustling streets of Kuala Lumpur to the tranquil beauty of Langkawi's beaches, each adventure is crafted to create lasting memories.</li>

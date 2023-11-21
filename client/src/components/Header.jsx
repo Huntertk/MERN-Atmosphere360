@@ -7,6 +7,8 @@ import {RxCross1} from 'react-icons/rx'
 import SmallSidebar from './SmallSidebar'
 import BigNavbar from './BigNavbar'
 import { Link } from 'react-router-dom'
+import tvagologo from '../assets/images/tvagologo.png'
+
 const Header = () => {
 
 
@@ -19,7 +21,7 @@ const Header = () => {
     <header>
         <nav >
             <div className="logoContainer">
-               <Link to="/"> <img src={logo} alt="" /> </Link>
+               <Link to="/"> <img src={logo} alt="" /> <img className='companyImg' src={tvagologo} alt="Image" /> </Link>
             </div>
             {/* <div className='headerSideContainer'>
                     <GoGlobe />
