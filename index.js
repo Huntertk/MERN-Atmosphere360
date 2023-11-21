@@ -24,6 +24,7 @@ const PORT = process.env.PORT || 4000
 app.use(express.json())
 app.use(cookieParser())
 
+app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use("/api/v1/booking", bookingRouter)
 app.use("/api/v1/admin", adminRouter)
