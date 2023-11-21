@@ -4,11 +4,13 @@ import '../styles/homeCardContainer.scss'
 import HomeCard from './HomeCard';
 import axios from 'axios'
 import LoadingSpinner from './LoadingSpinner'
+import {useDispatch} from 'react-redux'
+import { initialRender } from '../features/booking/bookingSlice';
 
 
 const HomeCardContainer = () => { 
   const [cardData, setCardData] = useState(null)
-
+  const dispatch = useDispatch()
   const getCardData = async () => {
     try {
       const {data} = await axios.get('/api/v1/bookingplan/getallbookingplan')
@@ -21,6 +23,7 @@ const HomeCardContainer = () => {
 
   useEffect(() => {
     getCardData()
+    dispatch(initialRender())
   },[])
 
   if(!cardData){

@@ -22,7 +22,8 @@ const initialState = {
     bookingResponse: "",
     type:"",
     totalBookingsCount: 0,
-    bookingDay: ""
+    bookingDay: "",
+    bookingId:""
 }
 
 
@@ -216,7 +217,17 @@ const bookingSlice = createSlice({
         choosingBooking: (state, action) => {
             state.type = action.payload
             setBookingDetailsFromLocalStorage(state)
-        }
+        },
+        settingBookingResponse: (state, action) => {
+            console.log(action.payload);
+            state.bookingResponse = ""
+            state.bookingId = action.payload.createBookingId
+            setBookingDetailsFromLocalStorage(state)
+        },
+        initialRender: (state) => {
+            setBookingDetailsFromLocalStorage(initialState)
+            return state = initialState
+        },
     }
 })
 
@@ -242,7 +253,9 @@ export const {
     bookingSucess,
     bookingStart,
     bookingConfirm,
-    choosingBooking
+    choosingBooking,
+    settingBookingResponse,
+    initialRender
 } = bookingSlice.actions
 
 export default bookingSlice.reducer

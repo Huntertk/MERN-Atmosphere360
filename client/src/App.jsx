@@ -21,6 +21,7 @@ import TermAndConditionPage from './pages/TermAndConditionPage'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import CompanyDetails from './pages/CompanyDetails'
 import HelpCenter from './pages/HelpCenter'
+import ConfirmBooking from './pages/ConfirmBooking'
 
 
 const App = () => {
@@ -33,7 +34,7 @@ const App = () => {
           <Route path="/date-confirm" element={<BookingDateConfirmation />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/success" element={<PaymentSucess />} />
-          <Route path="/failed" element={<PaymentFailed />} />
+          <Route path="/bookingconfirm" element={<ConfirmBooking />} />
           <Route path="/terms" element={<TermAndConditionPage />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           <Route path="/companydetails" element={<CompanyDetails />} />

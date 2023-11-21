@@ -20,6 +20,12 @@ header{
                 display: flex;
                 align-items: center;
             }
+            span{
+                font-weight: 600;
+                margin-left: 10px;
+                font-size: 0.7rem;
+                color: $primary;
+            }
             
             img{
                 width: 90px;
@@ -28,6 +34,7 @@ header{
             }
             
             .companyImg{
+                margin-left: 0;
                 transform: scale(1);
                 opacity: 1;
                 animation: fade-out 4s  linear infinite;

@@ -21,7 +21,7 @@ const Header = () => {
     <header>
         <nav >
             <div className="logoContainer">
-               <Link to="/"> <img src={logo} alt="" /> <img className='companyImg' src={tvagologo} alt="Image" /> </Link>
+               <Link to="/"> <img src={logo} alt="" /> <span>By</span> <img className='companyImg' src={tvagologo} alt="Image" /> </Link>
             </div>
             {/* <div className='headerSideContainer'>
                     <GoGlobe />
