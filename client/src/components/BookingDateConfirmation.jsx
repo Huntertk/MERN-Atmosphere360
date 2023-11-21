@@ -22,6 +22,7 @@ function OnlyFutureRow(props) {
 
 const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) => {
     let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"]
+    
 
     const day = new Date().getDay()
     const date = new Date(Date.now()).getDate()
@@ -76,6 +77,11 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) 
 
 const BookingDateConfirmation = () => {
     const dispatch = useDispatch()
+    const disabledDays = [
+        new Date(2023, 12, 1),
+        new Date(2023, 11, 31),
+        new Date(2023, 11, 25),
+      ];
     const {isPaxModal, bookingDate, type} = useSelector(store => store.booking)
         const [selectedDate, setSelectedDate] = useState("")
         const [calenderOpen, setCalenderOpen] = useState(false)
@@ -94,14 +100,16 @@ const BookingDateConfirmation = () => {
             />
             <div className="moreDatesContainer">
                 <DayPicker
-            style={calenderOpen === false && {display:'none'}}
-            mode="single"
-            selected={selectedDate} 
-            fromDate={new Date()}
-      components={{ Row: OnlyFutureRow }}
-      hidden={isPastDate}
-            showOutsideDays
-            onSelect={setSelectedDate}
+                defaultMonth={new Date(Date.now())}
+                style={calenderOpen === false && {display:'none'}}
+                mode="single"
+                selected={selectedDate} 
+                fromDate={new Date()}
+                // components={{ Row: OnlyFutureRow }}
+                // showOutsideDays
+                hidden={isPastDate}
+                disabled={disabledDays}
+                onSelect={setSelectedDate}
             />
             </div>
             <div className="selectedDate">
