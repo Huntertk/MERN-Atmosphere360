@@ -22,7 +22,10 @@ import PrivacyPolicy from './pages/PrivacyPolicy'
 import CompanyDetails from './pages/CompanyDetails'
 import HelpCenter from './pages/HelpCenter'
 import ConfirmBooking from './pages/ConfirmBooking'
+import ReactGa from 'react-ga'
 
+const TRACKING_ID = 'G-CZWEX6791Q'
+ReactGa.initialize(TRACKING_ID)
 
 const App = () => {
   return (
