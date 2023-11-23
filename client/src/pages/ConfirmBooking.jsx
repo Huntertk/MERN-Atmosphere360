@@ -4,8 +4,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { FaCheckCircle } from "react-icons/fa";
 import { toast } from 'react-toastify';
 import { bookingConfirm } from '../features/booking/bookingSlice';
+import { useEffect } from 'react';
+import ReactGa from 'react-ga'
 
 const ConfirmBooking = () => {
+
+  useEffect(() => {
+    ReactGa.pageview(window.location.pathname)
+  },[])
     const { 
         bookingDate,
         totalAmount,

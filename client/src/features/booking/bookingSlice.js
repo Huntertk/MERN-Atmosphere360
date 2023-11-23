@@ -65,21 +65,21 @@ const bookingSlice = createSlice({
         },
         adultTotalAmount: (state) => {
             if(state.type === 'dinner'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
                     state.adultTotal = state.adultCount *  248
                    return 
                 } else{
                     state.adultTotal =  state.adultCount *  199
                 }
             } else if(state.type === 'lunch'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
                     state.adultTotal =  state.adultCount *  148
                     return 
                  } else{
                     state.adultTotal = state.adultCount *  118
                  }
             } else if(state.type === 'tea'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
                     state.adultTotal =  state.adultCount *  110
                     return
                  } else{
@@ -91,21 +91,21 @@ const bookingSlice = createSlice({
         },
         childTotalAmount: (state) => {
             if(state.type === 'dinner'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
                     state.childTotal = state.childCount *  200
                    return 
                 } else{
                     state.childTotal =  state.childCount *  150
                 }
             } else if(state.type === 'lunch'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
                     state.childTotal =  state.childCount *  111
                     return 
                  } else{
                     state.childTotal = state.childCount *  82
                  }
             } else if(state.type === 'tea'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
                     state.childTotal = state.childCount *  90
                     return
                  } else{
@@ -117,21 +117,21 @@ const bookingSlice = createSlice({
         },
         infantTotalAmount: (state) => {
             if(state.type === 'dinner'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
                     state.infantTotal = state.infantCount *  50
                    return 
                 } else{
                     state.infantTotal =  state.infantCount *  50
                 }
-            } else if(state.type === 'lunch'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+            }   else if(state.type === 'lunch'){
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
                     state.infantTotal =  state.infantCount *  30
                     return 
                  } else{
                     state.infantTotal = state.infantCount *  30
                  }
             } else if(state.type === 'tea'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
                     state.infantTotal = state.infantCount *  25
                     return
                  } else{
@@ -144,21 +144,21 @@ const bookingSlice = createSlice({
         },
         seniorTotalAmount: (state) => {
             if(state.type === 'dinner'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
                     state.seniorTotal = state.seniorCount *  200
                    return 
                 } else{
                     state.seniorTotal =  state.seniorCount *  150
                 }
             } else if(state.type === 'lunch'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
                     state.seniorTotal =  state.seniorCount *  111
                     return 
                  } else{
                     state.seniorTotal = state.seniorCount *  82
                  }
             } else if(state.type === 'tea'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat') {
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
                     state.seniorTotal = state.seniorCount *  90
                     return
                  } else{
