@@ -149,7 +149,7 @@ export const successBooking = async (req, res, next) => {
                                                                                     <table cellpadding="0" cellspacing="0" width="100%">
                                                                                         <tbody>
                                                                                             <tr>
-                                                                                                <td align="center" class="esd-block-image" style="font-size: 0px;"><a target="_blank"><img class="adapt-img" src="https://atmosphere-360.onrender.com/assets/logo-6324076a.png" alt style="display: block;" width="440"></a></td>
+                                                                                                <td align="center" class="esd-block-image" style="font-size: 0px;"><a target="_blank"><img class="adapt-img" src="https://i.postimg.cc/J4DR0BZG/logo.png" alt style="display: block;" width="440"></a></td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td align="center" class="esd-block-text" bgcolor="#ffffff">
@@ -170,7 +170,7 @@ export const successBooking = async (req, res, next) => {
                                                                                     <table cellpadding="0" cellspacing="0" width="100%">
                                                                                         <tbody>
                                                                                             <tr>
-                                                                                                <td align="center" class="esd-block-image" style="font-size: 0px;"><a target="_blank"><img class="adapt-img" src="https://atmosphere-360.onrender.com/assets/IMGTWO-96f92fcd.jpg" alt style="display: block;" width="440"></a></td>
+                                                                                                <td align="center" class="esd-block-image" style="font-size: 0px;"><a target="_blank"><img class="adapt-img" src="https://i.postimg.cc/zX63kDCg/IMGONE.jpg" alt style="display: block;" width="440"></a></td>
                                                                                             </tr>
                                                                                         </tbody>
                                                                                     </table>
@@ -243,7 +243,7 @@ export const successBooking = async (req, res, next) => {
                                                                                                     <table cellpadding="0" cellspacing="0" width="100%">
                                                                                                         <tbody>
                                                                                                             <tr>
-                                                                                                                <td align="center" class="esd-block-image" style="font-size: 0px;"><a target="_blank" href="https://atmosphere-360.onrender.com/"><img class="adapt-img p_image" src="https://atmosphere-360.onrender.com/assets/IMGTWO-96f92fcd.jpg" alt="Marshall Monitor" style="display: block;" width="160" title="Marshall Monitor"></a></td>
+                                                                                                                <td align="center" class="esd-block-image" style="font-size: 0px;"><a target="_blank" href="https://atmosphere-360.onrender.com/"><img class="adapt-img p_image" src="https://i.postimg.cc/zX63kDCg/IMGONE.jpg" alt="Marshall Monitor" style="display: block;" width="160" title="Marshall Monitor"></a></td>
                                                                                                             </tr>
                                                                                                         </tbody>
                                                                                                     </table>
@@ -263,7 +263,7 @@ export const successBooking = async (req, res, next) => {
                                                                                                             <tr>
                                                                                                                 <td align="center" class="esd-block-text es-p20t es-p20b es-m-p0t es-m-p0b es-m-txt-l">
                                                                                                                     <h3 style="color: #f26823;"><br></h3>
-                                                                                                                    <h3 style="color: #f26823;"><strong class="p_name">${req.body.type==='dinner' ? "Dinner Buffet" : req.body.type === 'lunch' ? "Lunch Buffet" :  req.body.type === 'tea' && "Tea Buffet"}</strong></h3>
+                                                                                                                    <h3 style="color: #f26823;"><strong class="p_name">${req.body.bookingType==='dinner' ? "Dinner Buffet" : req.body.bookingType === 'lunch' ? "Lunch Buffet" :  req.body.bookingType === 'tea' && "Tea Buffet"}</strong></h3>
                                                                                                                 </td>
                                                                                                             </tr>
                                                                                                         </tbody>
