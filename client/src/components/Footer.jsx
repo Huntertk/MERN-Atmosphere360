@@ -19,7 +19,7 @@ const Footer = () => {
                     <a href="tel:+60356124646">
                         <p>Call Us</p>
                     </a>
-                    <p><a href="mailto:support@travelvago.com"> Email Us </a></p>
+                    <p><a href="mailto:support@malaysia-experience.com"> Email Us </a></p>
                     <Link to={"/helpcenter"}>
                         <p>Help Center</p>
                     </Link>
@@ -34,9 +34,11 @@ const Footer = () => {
                 </div>
             </div>
             <div className="icons">
-                <BsFacebook />
-                <FaXTwitter />
-                <BsInstagram />
+                <a href="https://m.facebook.com/travelvagoasia"><BsFacebook /></a>
+                <a href="https://instagram.com/jomtravellocal?igshid=OGQ5ZDc2ODk2ZA==">
+                    <BsInstagram />
+                </a>
+                    <FaXTwitter />
 
             </div>
         </div>

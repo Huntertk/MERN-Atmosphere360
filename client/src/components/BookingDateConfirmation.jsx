@@ -81,6 +81,8 @@ const BookingDateConfirmation = () => {
         new Date(2023, 12, 1),
         new Date(2023, 11, 31),
         new Date(2023, 11, 25),
+        new Date(2023, 10, 24),
+        new Date(2023, 10, 23),
       ];
     const {isPaxModal, bookingDate, type} = useSelector(store => store.booking)
         const [selectedDate, setSelectedDate] = useState("")
