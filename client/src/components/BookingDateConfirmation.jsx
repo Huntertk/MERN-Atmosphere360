@@ -23,7 +23,9 @@ function OnlyFutureRow(props) {
 const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) => {
     let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"]
     
-
+    function getDayName(date) {
+        return new Date(date).toLocaleDateString('en-US', {weekday: 'short'});
+      }
     const day = new Date().getDay()
     const date = new Date(Date.now()).getDate()
     return (
@@ -34,7 +36,7 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) 
                 {date}
             </span>
             <span>
-                {days[day]}
+                {getDayName(Date.now())}
             </span>
            </button>
            <button 
@@ -44,7 +46,7 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) 
                 {date + 1}
             </span>
             <span>
-                {days[day + 1]}
+                {getDayName(Date.now() + 1000 * 60 * 60 * 24)}
             </span>
             </button>
            <button  
@@ -55,7 +57,7 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) 
                 {date + 2}
             </span>
             <span>
-                {days[day + 2]}
+                {getDayName(Date.now() + 1000 * 60 * 60 * 24 * 2)}
             </span>
             </button>
            <button 
@@ -66,7 +68,7 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) 
                 {date + 3}
             </span>
             <span>
-                {days[day + 3]}
+                {getDayName(Date.now() + 1000 * 60 * 60 * 24 * 3)}
             </span>
             </button>
            <button className={calenderOpen ? "moreDates active" : "moreDates"} onClick={() => setCalenderOpen(prev => !prev)}>More Dates</button>
@@ -75,6 +77,7 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) 
 }
 
 const BookingDateConfirmation = () => {
+
     const dispatch = useDispatch()
     const disabledDays = [
         new Date(2023, 12, 1),
