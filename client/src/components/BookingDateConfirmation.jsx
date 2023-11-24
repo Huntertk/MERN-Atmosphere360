@@ -50,7 +50,7 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) 
            <button  
             className={selectedDate.toString() == new Date(Date.now() + 1000*60*60*24 * 2)  ? "active" : ""}
            onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60*24 * 2))}
-           >
+           disabled >
             <span>
                 {date + 2}
             </span>
@@ -82,6 +82,7 @@ const BookingDateConfirmation = () => {
         new Date(2023, 11, 25),
         new Date(Date.now()),  
         new Date(Date.now() + 1000 * 60 * 60 * 24 ),
+        new Date(Date.now() + 1000 * 60 * 60 * 24 * 2 ),
       ];
     const {isPaxModal, bookingDate, type} = useSelector(store => store.booking)
         const [selectedDate, setSelectedDate] = useState("")
