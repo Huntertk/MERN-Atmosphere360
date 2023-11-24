@@ -28,8 +28,7 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) 
     const date = new Date(Date.now()).getDate()
     return (
         <div className="dateBtnContainer">
-           <button className={selectedDate.toString() == new Date(Date.now())  ? "active" : ""}
-           onClick={() => setSelectedDate(new Date(Date.now()))}
+           <button className={selectedDate.toString() == new Date(Date.now())  ? "active" : ""} disabled
            >
             <span>
                 {date}
@@ -40,7 +39,7 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) 
            </button>
            <button 
            className={selectedDate.toString() == new Date(Date.now() + 1000*60*60*24)  ? "active" : ""}
-           onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60*24))}>
+ disabled>
             <span>
                 {date + 1}
             </span>
