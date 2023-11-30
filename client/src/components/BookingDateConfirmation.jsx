@@ -33,7 +33,7 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) 
            <button className={selectedDate.toString() == new Date(Date.now())  ? "active" : ""} disabled
            >
             <span>
-                {date}
+                {new Date(Date.now()).getDate()}
             </span>
             <span>
                 {getDayName(Date.now())}
@@ -43,7 +43,7 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) 
            className={selectedDate.toString() == new Date(Date.now() + 1000*60*60*24)  ? "active" : ""}
  disabled>
             <span>
-                {date + 1}
+            {new Date(Date.now() + 1000 *60 *60 *24).getDate()}
             </span>
             <span>
                 {getDayName(Date.now() + 1000 * 60 * 60 * 24)}
@@ -54,7 +54,7 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) 
            onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60*24 * 2))}
            disabled >
             <span>
-                {date + 2}
+            {new Date(Date.now() + 1000 *60 *60 *24 *2).getDate()}
             </span>
             <span>
                 {getDayName(Date.now() + 1000 * 60 * 60 * 24 * 2)}
@@ -65,7 +65,7 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) 
            onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60*24 * 3))}
            >
             <span>
-                {date + 3}
+            {new Date(Date.now() + 1000 *60 *60 *24 *3).getDate()}
             </span>
             <span>
                 {getDayName(Date.now() + 1000 * 60 * 60 * 24 * 3)}

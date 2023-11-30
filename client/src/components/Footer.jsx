@@ -15,7 +15,7 @@ const Footer = () => {
             </div>
             <div className="middleContainer">
                 <div className="getHelpContainer">
-                    <p>Chat With Us</p>  
+                <a href='https://direct.lc.chat/16744881/' target='_blank'><p>Chat With Us</p></a>  
                     <a href="tel:+60356124646">
                         <p>Call Us</p>
                     </a>
