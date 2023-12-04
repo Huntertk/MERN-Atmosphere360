@@ -21,6 +21,7 @@ function OnlyFutureRow(props) {
 }
 
 const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) => {
+    const {type} = useSelector(store => store.booking)
     let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"]
     
     function getDayName(date) {
@@ -30,7 +31,9 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) 
     const date = new Date(Date.now()).getDate()
     return (
         <div className="dateBtnContainer">
-           <button className={selectedDate.toString() == new Date(Date.now())  ? "active" : ""} disabled
+           <button className={selectedDate.toString() == new Date(Date.now())  ? "active" : ""}
+             onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60))}
+           disabled={type === 'dinner'}
            >
             <span>
                 {new Date(Date.now()).getDate()}
@@ -41,7 +44,9 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) 
            </button>
            <button 
            className={selectedDate.toString() == new Date(Date.now() + 1000*60*60*24)  ? "active" : ""}
-           onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60*24))}>
+           onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60*24))}
+           
+           >
             <span>
             {new Date(Date.now() + 1000 *60 *60 *24).getDate()}
             </span>
@@ -51,8 +56,7 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) 
             </button>
            <button  
             className={selectedDate.toString() == new Date(Date.now() + 1000*60*60*24 * 2)  ? "active" : ""}
-           onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60*24 * 2))}
-           disabled >
+           onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60*24 * 2))} >
             <span>
             {new Date(Date.now() + 1000 *60 *60 *24 *2).getDate()}
             </span>
@@ -77,17 +81,15 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) 
 }
 
 const BookingDateConfirmation = () => {
-
     const dispatch = useDispatch()
+    const {isPaxModal, bookingDate, type} = useSelector(store => store.booking)
     const disabledDays = [
         new Date(2023, 12, 1),
         new Date(2023, 11, 31),
         new Date(2023, 11, 25),
         new Date(Date.now()),  
-        // new Date(Date.now() + 1000 * 60 * 60 * 24 ),
-        new Date(Date.now() + 1000 * 60 * 60 * 24 * 2 ),
+        type === 'dinner' && new Date(Date.now() + 1000 * 60 * 60 * 24 ),
       ];
-    const {isPaxModal, bookingDate, type} = useSelector(store => store.booking)
         const [selectedDate, setSelectedDate] = useState("")
         const [calenderOpen, setCalenderOpen] = useState(false)
         if(!type){
