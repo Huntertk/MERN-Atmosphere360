@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/bookingDateConfirmation.scss'
 import 'react-day-picker/dist/style.css';
 import './day-picker.css';
@@ -8,6 +8,8 @@ import { DayPicker, Row } from 'react-day-picker';
 import { useDispatch, useSelector } from 'react-redux';
 import { openPaxModel, setBookingDate } from '../features/booking/bookingSlice';
 import {Navigate} from 'react-router-dom'
+import axios from 'axios'
+import moment from 'moment';
 
 
 function isPastDate(date) {
@@ -20,7 +22,7 @@ function OnlyFutureRow(props) {
   return <Row {...props} />;
 }
 
-const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) => {
+const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen, disabledDays}) => {
     const {type} = useSelector(store => store.booking)
     let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"]
     
@@ -29,50 +31,54 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) 
       }
     const day = new Date().getDay()
     const date = new Date(Date.now()).getDate()
+    const stringDate = disabledDays?.map(d => moment(d).format('l'))
     return (
         <div className="dateBtnContainer">
-           <button className={selectedDate.toString() == new Date(Date.now())  ? "active" : ""}
-             onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60))}
-           disabled={type === 'dinner'}
+           <button className={selectedDate.toString() == new Date(Date.now()+ 1000*60*60 * 24)  ? "active" : ""}
+             onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60 * 24))}
+             disabled={stringDate?.find(d => d== new Date(Date.now() + 1000*60*60*24).toLocaleDateString())}
            >
             <span>
-                {new Date(Date.now()).getDate()}
+                {new Date(Date.now()+ 1000*60*60 * 24).getDate()}
             </span>
             <span>
                 {getDayName(Date.now())}
             </span>
            </button>
            <button 
-           className={selectedDate.toString() == new Date(Date.now() + 1000*60*60*24)  ? "active" : ""}
-           onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60*24))}
-           
+           className={selectedDate.toString() == new Date(Date.now() + 1000*60*60*24*2)  ? "active" : ""}
+           onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60*24*2))}
+           disabled={stringDate?.find(d => d== new Date(Date.now() + 1000*60*60*24*2).toLocaleDateString())}
            >
             <span>
-            {new Date(Date.now() + 1000 *60 *60 *24).getDate()}
+            {new Date(Date.now() + 1000 *60 *60 *24*2).getDate()}
             </span>
             <span>
                 {getDayName(Date.now() + 1000 * 60 * 60 * 24)}
             </span>
             </button>
            <button  
-            className={selectedDate.toString() == new Date(Date.now() + 1000*60*60*24 * 2)  ? "active" : ""}
-           onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60*24 * 2))} >
-            <span>
-            {new Date(Date.now() + 1000 *60 *60 *24 *2).getDate()}
-            </span>
-            <span>
-                {getDayName(Date.now() + 1000 * 60 * 60 * 24 * 2)}
-            </span>
-            </button>
-           <button 
-            className={selectedDate.toString() == new Date(Date.now() + 1000*60*60*24 *3)  ? "active" : ""}
-           onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60*24 * 3))}
+            className={selectedDate.toString() == new Date(Date.now() + 1000*60*60*24 * 3)  ? "active" : ""}
+           onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60*24 * 3))} 
+           disabled={stringDate?.find(d => d == new Date(Date.now() + 1000*60*60*24*3).toLocaleDateString())}
            >
             <span>
             {new Date(Date.now() + 1000 *60 *60 *24 *3).getDate()}
             </span>
             <span>
                 {getDayName(Date.now() + 1000 * 60 * 60 * 24 * 3)}
+            </span>
+            </button>
+           <button 
+            className={selectedDate.toString() == new Date(Date.now() + 1000*60*60*24 *4)  ? "active" : ""}
+           onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60*24 * 4))}
+           disabled={stringDate?.find(d => d== new Date(Date.now() + 1000*60*60*24*4).toLocaleDateString())}
+           >
+            <span>
+            {new Date(Date.now() + 1000 *60 *60 *24 *4).getDate()}
+            </span>
+            <span>
+                {getDayName(Date.now() + 1000 * 60 * 60 * 24 * 4)}
             </span>
             </button>
            <button className={calenderOpen ? "moreDates active" : "moreDates"} onClick={() => setCalenderOpen(prev => !prev)}>More Dates</button>
@@ -83,17 +89,28 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) 
 const BookingDateConfirmation = () => {
     const dispatch = useDispatch()
     const {isPaxModal, bookingDate, type} = useSelector(store => store.booking)
-    const disabledDays = [
-        new Date(2023, 12, 1),
-        new Date(2023, 11, 31),
-        new Date(2023, 11, 25),
-        new Date(Date.now()),  
-      ];
+    const [blockedDates, setBlockedDates] = useState([])
+    const disabledDates = blockedDates?.map((dates) => new Date(dates.blockDates))
         const [selectedDate, setSelectedDate] = useState("")
         const [calenderOpen, setCalenderOpen] = useState(false)
+        const disabledDays  = [
+            ...disabledDates
+        ]
         if(!type){
             return <Navigate to="/" />
         }
+
+        const getBlockDates = async () => {
+            try {
+                const {data} = await axios.get('/api/v1/dates-manage/block-dates')
+                setBlockedDates(data.blockDates)
+              } catch (error) {
+                  console.log(error);
+              }
+          }
+        useEffect(() => {
+            getBlockDates()
+          },[selectedDate])
   return (
     <section className='bookingDateConfirmationMainContainer'>
         <div className="bookingDateWrapper">
@@ -103,6 +120,7 @@ const BookingDateConfirmation = () => {
             setCalenderOpen={setCalenderOpen} 
             selectedDate={selectedDate}
             calenderOpen={calenderOpen}
+            disabledDays={disabledDates}
             />
             <div className="moreDatesContainer">
                 <DayPicker

@@ -1,0 +1,47 @@
+@use './variables.scss' as *;
+
+.mainDateManageContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2rem;
+
+
+    .btn{
+        padding: 0.5rem 1rem;
+        background-color: $primary;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .blockedDateContainer{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+
+        h1{
+            text-align: center;
+        }
+        div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        button{
+            padding: 0.5rem 1rem;
+            background-color: $primary;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+    }
+}

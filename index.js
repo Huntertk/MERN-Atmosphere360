@@ -9,6 +9,7 @@ import cors from 'cors';
 import bookingRouter from './routes/bookingRoute.js'
 import adminRouter from './routes/adminRoute.js'
 import bookingPlanRouter from './routes/bookingPlanRoute.js'
+import datesRouter from './routes/datesRoutes.js'
 import errorHandlerMiddleware from './middlewares/errorHandleMiddleware.js'
 
 
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, '/client/dist')))
 app.use("/api/v1/booking", bookingRouter)
 app.use("/api/v1/admin", adminRouter)
 app.use("/api/v1/bookingplan", bookingPlanRouter)
+app.use("/api/v1/dates-manage", datesRouter)
 
 
 app.get('*', (req, res) => {

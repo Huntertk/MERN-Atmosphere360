@@ -10,6 +10,7 @@ import {AiFillCheckSquare} from 'react-icons/ai'
 import {MdOutlinePending} from 'react-icons/md'
 import {ImCancelCircle} from 'react-icons/im'
 import {GiConfirmed} from 'react-icons/gi'
+import { IoCalendarNumberOutline } from 'react-icons/io5'
 
 const AdminSmallSidebar = () => {
   const dispatch = useDispatch()
@@ -38,6 +39,10 @@ const AdminSmallSidebar = () => {
           <NavLink to="/admin/cancelled-booking"
            onClick={() => dispatch(adminSidebarClose())}
           ><ImCancelCircle /> Cancelled Booking</NavLink>
+
+          <NavLink to="/admin/manage-dates"
+           onClick={() => dispatch(adminSidebarClose())}
+          ><IoCalendarNumberOutline /> Manages Dates</NavLink>
       </div>
     </div>
   )
