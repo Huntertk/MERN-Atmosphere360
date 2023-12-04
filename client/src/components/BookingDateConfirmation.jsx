@@ -88,7 +88,6 @@ const BookingDateConfirmation = () => {
         new Date(2023, 11, 31),
         new Date(2023, 11, 25),
         new Date(Date.now()),  
-        type === 'dinner' && new Date(Date.now() + 1000 * 60 * 60 * 24 ),
       ];
         const [selectedDate, setSelectedDate] = useState("")
         const [calenderOpen, setCalenderOpen] = useState(false)
