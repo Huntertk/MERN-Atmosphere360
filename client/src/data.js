@@ -357,6 +357,41 @@ export const homeFAQ = [
     },
 ]
 
+export const addQues = [
+    {
+        id: uuidv4(),
+        ques:"Operating Hours ?",
+        ans:[
+            "Lunch starts at: 12pm-2.30pm", 
+            "Hi-Tea starts at: 3.30pm-5.30pm",
+            "Dinner starts at: 7.00pm-10.00pm"
+        ]
+    },
+    {
+        id: uuidv4(),
+        ques:"For Your Concern",
+        ans:[
+            "Shorts and Slippers are prohibited.",
+            "Recommend to make advanced reservations to confirm your preferred dining slot.",
+            "Consider upgrading to window seat for better sky view(Subject to availability).",
+            "Observe decorum and follow staff instruction for a pleasant visit.",
+            "Remark about any dietary restrictions or allergies during booking."
+        ]
+    },
+    {
+        id: uuidv4(),
+        ques:"Refund/Cancellation Policy",
+        ans:[
+            "No cancellation and refund are allowed once purchased."
+        ]
+    },
+    {
+        id: uuidv4(),
+        ques:"Redemption Guide",
+        ans:["Upon arrival, show your ticket/e-voucher at the counter."]
+    },
+]
+
 
 export const helpCenterBookingFAQ = [
     {
