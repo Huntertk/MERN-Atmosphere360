@@ -28,7 +28,7 @@ const Home = () => {
       <HomeBuffetOption />
       {/* <HomeVisitPlan /> */}
       <HomeAdditionalInformation />
-      <HomeVisitorTips />
+      {/* <HomeVisitorTips /> */}
       <HomeMap />
       <HomeFaq />
      </section>
