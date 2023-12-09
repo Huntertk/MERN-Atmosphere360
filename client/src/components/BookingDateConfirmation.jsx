@@ -47,7 +47,7 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen, d
                 {new Date(Date.now()+ 1000*60*60 * 24).getDate()}
             </span>
             <span>
-                {getDayName(Date.now())}
+                {getDayName(Date.now()+ 1000*60*60 * 24)}
             </span>
            </button>
            <button 
@@ -59,7 +59,7 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen, d
             {new Date(Date.now() + 1000 *60 *60 *24*2).getDate()}
             </span>
             <span>
-                {getDayName(Date.now() + 1000 * 60 * 60 * 24)}
+                {getDayName(Date.now() + 1000 * 60 * 60 * 24*2)}
             </span>
             </button>
            <button  
