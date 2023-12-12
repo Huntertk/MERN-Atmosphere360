@@ -105,16 +105,44 @@ const BookingDateConfirmation = () => {
             return <Navigate to="/" />
         }
 
-        const getBlockDates = async () => {
+        const getDinnerBlockDates = async () => {
             try {
-                const {data} = await axios.get('/api/v1/dates-manage/block-dates')
+                const {data} = await axios.get('/api/v1/dinner-dates-manage/block-dates')
                 setBlockedDates(data.blockDates)
               } catch (error) {
                   console.log(error);
               }
           }
+
+          const getLunchBlockDates = async () => {
+            try {
+                const {data} = await axios.get('/api/v1/lunch-dates-manage/block-dates')
+                setBlockedDates(data.blockDates)
+              } catch (error) {
+                  console.log(error);
+              }
+          }
+          const getTeaBlockDates = async () => {
+            try {
+                const {data} = await axios.get('/api/v1/tea-dates-manage/block-dates')
+                setBlockedDates(data.blockDates)
+              } catch (error) {
+                  console.log(error);
+              }
+          }
+
+
         useEffect(() => {
-            getBlockDates()
+            if(type==='dinner'){
+                getDinnerBlockDates()
+                return 
+            } else if(type === 'lunch'){
+                getLunchBlockDates()
+                return
+            }else if(type === 'tea'){
+                getTeaBlockDates()
+                return
+            }
           },[selectedDate])
   return (
     <section className='bookingDateConfirmationMainContainer'>
