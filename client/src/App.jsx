@@ -27,6 +27,7 @@ import ManageDates from './pages/adminPage/ManageDates'
 import DinnerDateManage from './pages/adminPage/DinnerDateManage'
 import TeaDateManage from './pages/adminPage/TeaDateManage'
 import LunchDateManage from './pages/adminPage/LunchDateManage'
+import Analytics from './pages/adminPage/Analytics'
 
 const TRACKING_ID = 'G-CZWEX6791Q'
 ReactGa.initialize(TRACKING_ID)
@@ -59,6 +60,7 @@ const App = () => {
             <Route path="/admin/completed-booking" element={<CompletedBooking />} />
             <Route path="/admin/pending-booking" element={<PendingBooking />} />
             <Route path="/admin/cancelled-booking" element={<CancelledBooking />} />
+            <Route path="/admin/analytics" element={<Analytics />} />
           </Route>
         </Route>
       </Routes>
