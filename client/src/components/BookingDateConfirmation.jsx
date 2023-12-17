@@ -10,6 +10,7 @@ import { openPaxModel, setBookingDate } from '../features/booking/bookingSlice';
 import {Navigate} from 'react-router-dom'
 import axios from 'axios'
 import moment from 'moment';
+import LoadingSpinner from './LoadingSpinner';
 
 
 function isPastDate(date) {
@@ -92,6 +93,7 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen, d
 }
 
 const BookingDateConfirmation = () => {
+    const [isLoading, setIsLoading] = useState(false)
     const dispatch = useDispatch()
     const {isPaxModal, bookingDate, type} = useSelector(store => store.booking)
     const [blockedDates, setBlockedDates] = useState([])
@@ -106,9 +108,12 @@ const BookingDateConfirmation = () => {
         }
 
         const getDinnerBlockDates = async () => {
+
             try {
+                setIsLoading(true)
                 const {data} = await axios.get('/api/v1/dinner-dates-manage/block-dates')
                 setBlockedDates(data.blockDates)
+                setIsLoading(false)
               } catch (error) {
                   console.log(error);
               }
@@ -116,16 +121,20 @@ const BookingDateConfirmation = () => {
 
           const getLunchBlockDates = async () => {
             try {
+                setIsLoading(true)
                 const {data} = await axios.get('/api/v1/lunch-dates-manage/block-dates')
                 setBlockedDates(data.blockDates)
+                setIsLoading(false)
               } catch (error) {
                   console.log(error);
               }
           }
           const getTeaBlockDates = async () => {
             try {
+                setIsLoading(true)
                 const {data} = await axios.get('/api/v1/tea-dates-manage/block-dates')
                 setBlockedDates(data.blockDates)
+                setIsLoading(false)
               } catch (error) {
                   console.log(error);
               }
@@ -144,6 +153,10 @@ const BookingDateConfirmation = () => {
                 return
             }
           },[selectedDate])
+
+          if(isLoading){
+            return <LoadingSpinner />
+          }
   return (
     <section className='bookingDateConfirmationMainContainer'>
         <div className="bookingDateWrapper">
