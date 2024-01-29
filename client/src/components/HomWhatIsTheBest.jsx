@@ -5,8 +5,8 @@ const HomWhatIsTheBest = () => {
      
   return (
     <section className='HomWhatIsTheBestMainContainer'>
-        <h1>What Is The Best Way To Buy ARAS Restaurant Tickets? Book Online</h1>
-        <p>For a seamless and hassle-free experience, the best way to buy ARAS Restaurant tickets is through online booking. Embrace the convenience and benefits of securing your reservation in advance.</p>
+        <h1>What Is The Best Way To Buy Atmosphere 360 Tickets? Book Online</h1>
+        <p>For a seamless and hassle-free experience, the best way to buy Atmosphere 360 tickets is through online booking. Embrace the convenience and benefits of securing your reservation in advance.</p>
         <ul>
             <li>
                 <span>Discounts : </span>
