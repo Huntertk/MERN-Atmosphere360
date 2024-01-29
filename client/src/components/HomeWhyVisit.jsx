@@ -6,7 +6,7 @@ const HomeWhyVisit = () => {
   return (
     <section className='whyVisitMainComponents'>
         
-        <h1>Why Visit Atmosphere 360?</h1>
+        <h1>Why Visit ARAS Restaurant ?</h1>
         <div className="whyVisitCardContainer">
             <div className="listData">
 

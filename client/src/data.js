@@ -239,7 +239,7 @@ export const homeBuffetOptions = [
     {
         id: uuidv4(),
         title:"Lunch Buffet",
-        desc:"Indulge in a delectable array of culinary delights during the Lunch Buffet at Atmosphere 360, offering a diverse selection of dishes to satisfy your midday cravings.",
+        desc:"Indulge in a delectable array of culinary delights during the Lunch Buffet at ARAS Restaurant, offering a diverse selection of dishes to satisfy your midday cravings.",
         image: lunchBuffet
     },
     {
@@ -324,7 +324,7 @@ export const homeVisitPlanData = [
         details:[
             "Guests are required to adhere to the designated dress code of smart casual attire for a comfortable dining experience.",
             "Smoking is strictly prohibited within the premises, ensuring a pleasant environment for all visitors.",
-            "Pets are not allowed inside Atmosphere 360, except for service animals assisting individuals with disabilities.",
+            "Pets are not allowed inside ARAS Restaurant, except for service animals assisting individuals with disabilities.",
             "The use of drones or any unauthorized aerial devices is not permitted on the premises.",
             "Visitors must follow staff instructions and maintain decorum to ensure a harmonious and enjoyable atmosphere for everyone."
         ]
@@ -337,22 +337,22 @@ export const homeVisitPlanData = [
 export const homeFAQ = [
     {
         id: uuidv4(),
-        ques:"Should I make an advance reservation for Atmosphere 360?",
+        ques:"Should I make an advance reservation for ARAS Restaurant ?",
         ans:"Highly Recommended, advance reservations are welcome to confirm your preferred dining slot."
     },
     {
         id: uuidv4(),
-        ques:"How Can I request a window table at Atmosphere 360?",
+        ques:"How Can I request a window table at ARAS Restaurant ?",
         ans:"Yes, you can request window Table during reservation/booking with extra charges."
     },
     {
         id: uuidv4(),
-        ques:"What is dress code for guest at Atmosphere 360?",
+        ques:"What is dress code for guest at ARAS Restaurant ?",
         ans:"Recommended smart casual attire and no sandals allowed."
     },
     {
         id: uuidv4(),
-        ques:"The best time to visit Atmosphere 360?",
+        ques:"The best time to visit ARAS Restaurant ?",
         ans:"The Dinner dining will be ideal to witness the City of Light."
     },
 ]
