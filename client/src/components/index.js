@@ -9,7 +9,7 @@ import HomeVisitPlan from './HomeVisitPlan'
 import HomeVisitorTips from './HomeVisitorTips'
 import HomeFaq from './HomeFaq'
 import HomeMap from './HomeMap'
-
+import HomeAdditionalInformation from './HomeAdditionalInformation'
 
 export {
     HomeTopContainer,
@@ -22,5 +22,6 @@ export {
     HomeVisitPlan,
     HomeVisitorTips,
     HomeFaq,
-    HomeMap
+    HomeMap,
+    HomeAdditionalInformation
 }

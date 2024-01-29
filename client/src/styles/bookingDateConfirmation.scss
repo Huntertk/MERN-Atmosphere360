@@ -41,6 +41,11 @@
                     color: #000;
                     background-color: $primaryModalColor;
                  }
+
+                 &:disabled{
+                    cursor: not-allowed;
+                    background-color: #e5e5e5;
+                 }
             }
 
             .moreDates{

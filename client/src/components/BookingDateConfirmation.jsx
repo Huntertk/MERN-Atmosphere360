@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/bookingDateConfirmation.scss'
 import 'react-day-picker/dist/style.css';
 import './day-picker.css';
@@ -8,6 +8,9 @@ import { DayPicker, Row } from 'react-day-picker';
 import { useDispatch, useSelector } from 'react-redux';
 import { openPaxModel, setBookingDate } from '../features/booking/bookingSlice';
 import {Navigate} from 'react-router-dom'
+import axios from 'axios'
+import moment from 'moment';
+import LoadingSpinner from './LoadingSpinner';
 
 
 function isPastDate(date) {
@@ -20,54 +23,68 @@ function OnlyFutureRow(props) {
   return <Row {...props} />;
 }
 
-const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) => {
+const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen, disabledDates}) => {
+    const disabledBtnToDate = (btnDate) => {
+        const settingHourToZero = disabledDates?.map(d => d.setHours(0,0,0,0))
+        const findingDate = settingHourToZero?.find(d => d === new Date(Date.now() + btnDate).setHours(0,0,0,0))
+        return findingDate
+    }
+    const {type} = useSelector(store => store.booking)
     let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"]
     
-
+    function getDayName(date) {
+        return new Date(date).toLocaleDateString('en-US', {weekday: 'short'});
+      }
     const day = new Date().getDay()
     const date = new Date(Date.now()).getDate()
+
     return (
         <div className="dateBtnContainer">
-           <button className={selectedDate.toString() == new Date(Date.now())  ? "active" : ""}
-           onClick={() => setSelectedDate(new Date(Date.now()))}
+           <button className={selectedDate.toString() == new Date(Date.now()+ 1000*60*60 * 24)  ? "active" : ""}
+             onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60 * 24))}
+             disabled={disabledBtnToDate(1000 *60 *60 *24)}
            >
             <span>
-                {date}
+                {new Date(Date.now()+ 1000*60*60 * 24).getDate()}
             </span>
             <span>
-                {days[day]}
+                {getDayName(Date.now()+ 1000*60*60 * 24)}
             </span>
            </button>
            <button 
-           className={selectedDate.toString() == new Date(Date.now() + 1000*60*60*24)  ? "active" : ""}
-           onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60*24))}>
+           className={selectedDate.toString() == new Date(Date.now() + 1000*60*60*24*2)  ? "active" : ""}
+           onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60*24*2))}
+           disabled={disabledBtnToDate(1000 *60 *60 *24*2)}
+           >
             <span>
-                {date + 1}
+            {new Date(Date.now() + 1000 *60 *60 *24*2).getDate()}
             </span>
             <span>
-                {days[day + 1]}
+                {getDayName(Date.now() + 1000 * 60 * 60 * 24*2)}
             </span>
             </button>
            <button  
-            className={selectedDate.toString() == new Date(Date.now() + 1000*60*60*24 * 2)  ? "active" : ""}
-           onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60*24 * 2))}
+            className={selectedDate.toString() == new Date(Date.now() + 1000*60*60*24 * 3)  ? "active" : ""}
+           onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60*24 * 3))} 
+           disabled={disabledBtnToDate(1000 *60 *60 *24*3)}
            >
             <span>
-                {date + 2}
+            {new Date(Date.now() + 1000 *60 *60 *24 *3).getDate()}
             </span>
             <span>
-                {days[day + 2]}
+                {getDayName(Date.now() + 1000 * 60 * 60 * 24 * 3)}
             </span>
             </button>
            <button 
-            className={selectedDate.toString() == new Date(Date.now() + 1000*60*60*24 *3)  ? "active" : ""}
-           onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60*24 * 3))}
+            className={selectedDate.toString() == new Date(Date.now() + 1000*60*60*24 *4)  ? "active" : ""}
+           onClick={() => setSelectedDate(new Date(Date.now() + 1000*60*60*24 * 4))}
+           disabled={disabledBtnToDate(1000 *60 *60 *24*4)}
            >
             <span>
-                {date + 3}
+            {new Date(Date.now() + 1000 *60 *60 *24 *4).getDate()}
             </span>
             <span>
-                {days[day + 3]}
+                {getDayName(Date.now() + 1000 * 60 * 60 * 24 * 4)}
             </span>
             </button>
            <button className={calenderOpen ? "moreDates active" : "moreDates"} onClick={() => setCalenderOpen(prev => !prev)}>More Dates</button>
@@ -76,18 +93,70 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen}) 
 }
 
 const BookingDateConfirmation = () => {
+    const [isLoading, setIsLoading] = useState(false)
     const dispatch = useDispatch()
-    const disabledDays = [
-        new Date(2023, 12, 1),
-        new Date(2023, 11, 31),
-        new Date(2023, 11, 25),
-      ];
     const {isPaxModal, bookingDate, type} = useSelector(store => store.booking)
+    const [blockedDates, setBlockedDates] = useState([])
+    const disabledDates = blockedDates?.map((dates) => new Date(dates.blockDates))
         const [selectedDate, setSelectedDate] = useState("")
         const [calenderOpen, setCalenderOpen] = useState(false)
+        const disabledDays  = [
+            ...disabledDates
+        ]
         if(!type){
             return <Navigate to="/" />
         }
+
+        const getDinnerBlockDates = async () => {
+
+            try {
+                setIsLoading(true)
+                const {data} = await axios.get('/api/v1/dinner-dates-manage/block-dates')
+                setBlockedDates(data.blockDates)
+                setIsLoading(false)
+              } catch (error) {
+                  console.log(error);
+              }
+          }
+
+          const getLunchBlockDates = async () => {
+            try {
+                setIsLoading(true)
+                const {data} = await axios.get('/api/v1/lunch-dates-manage/block-dates')
+                setBlockedDates(data.blockDates)
+                setIsLoading(false)
+              } catch (error) {
+                  console.log(error);
+              }
+          }
+          const getTeaBlockDates = async () => {
+            try {
+                setIsLoading(true)
+                const {data} = await axios.get('/api/v1/tea-dates-manage/block-dates')
+                setBlockedDates(data.blockDates)
+                setIsLoading(false)
+              } catch (error) {
+                  console.log(error);
+              }
+          }
+
+
+        useEffect(() => {
+            if(type==='dinner'){
+                getDinnerBlockDates()
+                return 
+            } else if(type === 'lunch'){
+                getLunchBlockDates()
+                return
+            }else if(type === 'tea'){
+                getTeaBlockDates()
+                return
+            }
+          },[selectedDate])
+
+          if(isLoading){
+            return <LoadingSpinner />
+          }
   return (
     <section className='bookingDateConfirmationMainContainer'>
         <div className="bookingDateWrapper">
@@ -97,6 +166,7 @@ const BookingDateConfirmation = () => {
             setCalenderOpen={setCalenderOpen} 
             selectedDate={selectedDate}
             calenderOpen={calenderOpen}
+            disabledDates={disabledDates}
             />
             <div className="moreDatesContainer">
                 <DayPicker

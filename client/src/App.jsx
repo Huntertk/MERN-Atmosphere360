@@ -23,6 +23,11 @@ import CompanyDetails from './pages/CompanyDetails'
 import HelpCenter from './pages/HelpCenter'
 import ConfirmBooking from './pages/ConfirmBooking'
 import ReactGa from 'react-ga'
+import ManageDates from './pages/adminPage/ManageDates'
+import DinnerDateManage from './pages/adminPage/DinnerDateManage'
+import TeaDateManage from './pages/adminPage/TeaDateManage'
+import LunchDateManage from './pages/adminPage/LunchDateManage'
+import Analytics from './pages/adminPage/Analytics'
 
 const TRACKING_ID = 'G-CZWEX6791Q'
 ReactGa.initialize(TRACKING_ID)
@@ -47,10 +52,15 @@ const App = () => {
         <Route element={<AdminProtectedRoute />}>
           <Route element={<AdminLayout />}>
             <Route path="/admin/all-booking" element={<AllBookings />} />
+            <Route path="/admin/manage-dates" element={<ManageDates />} />
+            <Route path="/admin/manage-dates/dinner" element={<DinnerDateManage />} />
+            <Route path="/admin/manage-dates/tea" element={<TeaDateManage />} />
+            <Route path="/admin/manage-dates/lunch" element={<LunchDateManage />} />
             <Route path="/admin/confirmed-booking" element={<ConfirmedBooking />} />
             <Route path="/admin/completed-booking" element={<CompletedBooking />} />
             <Route path="/admin/pending-booking" element={<PendingBooking />} />
             <Route path="/admin/cancelled-booking" element={<CancelledBooking />} />
+            <Route path="/admin/analytics" element={<Analytics />} />
           </Route>
         </Route>
       </Routes>

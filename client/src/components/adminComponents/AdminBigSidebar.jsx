@@ -7,6 +7,9 @@ import {AiFillCheckSquare} from 'react-icons/ai'
 import {MdOutlinePending} from 'react-icons/md'
 import {ImCancelCircle} from 'react-icons/im'
 import {GiConfirmed} from 'react-icons/gi'
+import { IoCalendarNumberOutline } from 'react-icons/io5'
+import { TbDeviceAnalytics } from "react-icons/tb";
+
 
 
 const AdminBigSidebar = () => {
@@ -21,6 +24,8 @@ const AdminBigSidebar = () => {
           <NavLink to="/admin/completed-booking"><AiFillCheckSquare /> Completed Booking</NavLink>
           <NavLink to="/admin/pending-booking"><MdOutlinePending /> Pending Booking</NavLink>
           <NavLink to="/admin/cancelled-booking"><ImCancelCircle /> Cancelled Booking</NavLink>
+          <NavLink to="/admin/manage-dates"><IoCalendarNumberOutline  /> Manages Dates</NavLink>
+          <NavLink to="/admin/analytics"><TbDeviceAnalytics   /> Analytics</NavLink>
       </div>
     </aside>
   )
