@@ -263,7 +263,7 @@ export const successBooking = async (req, res, next) => {
                                                                                                             <tr>
                                                                                                                 <td align="center" class="esd-block-text es-p20t es-p20b es-m-p0t es-m-p0b es-m-txt-l">
                                                                                                                     <h3 style="color: #f26823;"><br></h3>
-                                                                                                                    <h3 style="color: #f26823;"><strong class="p_name">${req.body.bookingType==='dinner' ? "Dinner Buffet" : req.body.bookingType === 'lunch' ? "Lunch Buffet" :  req.body.bookingType === 'tea' && "Tea Buffet"}</strong></h3>
+                                                                                                                    <h3 style="color: #f26823;"><strong class="p_name">${req.body.bookingType==='dinner' && "Dinner Buffet"}</strong></h3>
                                                                                                                 </td>
                                                                                                             </tr>
                                                                                                         </tbody>

@@ -112,7 +112,7 @@ const PaxModal = ({selectedDate}) => {
              />
             <Pax  
             category ={"Child"} 
-            ageText={"6 to 12 yrs"} 
+            ageText={"5 to 12 yrs"} 
             price={150}
             count={childCount}
             actionType={{
@@ -132,7 +132,7 @@ const PaxModal = ({selectedDate}) => {
             }}
             total={infantTotal}
             />
-            <Pax  
+            {/* <Pax  
             category ={"Senior"} 
             ageText={"Above 59 yrs"} 
             price={150} 
@@ -142,7 +142,7 @@ const PaxModal = ({selectedDate}) => {
                 decrease: seniorCountDecrease
             }}
             total={seniorTotal}
-            />
+            /> */}
         </div>
             <div className="totalPayable">
                 <span>Total</span>

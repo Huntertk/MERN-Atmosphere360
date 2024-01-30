@@ -152,7 +152,7 @@ const BookingDateConfirmation = () => {
                 getTeaBlockDates()
                 return
             }
-          },[selectedDate])
+          },[])
 
           if(isLoading){
             return <LoadingSpinner />

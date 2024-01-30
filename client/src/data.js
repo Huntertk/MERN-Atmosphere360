@@ -236,18 +236,18 @@ export const cardHighLightsDetails = [
 
 
 export const homeBuffetOptions = [
-    {
-        id: uuidv4(),
-        title:"Lunch Buffet",
-        desc:"Indulge in a delectable array of culinary delights during the Lunch Buffet at Atmosphere 360, offering a diverse selection of dishes to satisfy your midday cravings.",
-        image: lunchBuffet
-    },
-    {
-        id: uuidv4(),
-        title:"Hi-Tea Buffet",
-        desc:"Treat yourself to an afternoon of delightful treats and savory bites at the Hi-Tea Buffet, where an assortment of sweet and savory delicacies awaits your palate.",
-        image: teaBuffet
-    },
+    // {
+    //     id: uuidv4(),
+    //     title:"Lunch Buffet",
+    //     desc:"Indulge in a delectable array of culinary delights during the Lunch Buffet at Atmosphere 360, offering a diverse selection of dishes to satisfy your midday cravings.",
+    //     image: lunchBuffet
+    // },
+    // {
+    //     id: uuidv4(),
+    //     title:"Hi-Tea Buffet",
+    //     desc:"Treat yourself to an afternoon of delightful treats and savory bites at the Hi-Tea Buffet, where an assortment of sweet and savory delicacies awaits your palate.",
+    //     image: teaBuffet
+    // },
     {
         id: uuidv4(),
         title:"Dinner Buffet",
@@ -337,22 +337,22 @@ export const homeVisitPlanData = [
 export const homeFAQ = [
     {
         id: uuidv4(),
-        ques:"Should I make an advance reservation for Atmosphere 360?",
+        ques:"Should I make an advance reservation for ARAS Restaurant KL Tower ?",
         ans:"Highly Recommended, advance reservations are welcome to confirm your preferred dining slot."
     },
     {
         id: uuidv4(),
-        ques:"How Can I request a window table at Atmosphere 360?",
+        ques:"How Can I request a window table at ARAS Restaurant KL Tower ?",
         ans:"Yes, you can request window Table during reservation/booking with extra charges."
     },
     {
         id: uuidv4(),
-        ques:"What is dress code for guest at Atmosphere 360?",
+        ques:"What is dress code for guest at ARAS Restaurant KL Tower ?",
         ans:"Recommended smart casual attire and no sandals allowed."
     },
     {
         id: uuidv4(),
-        ques:"The best time to visit Atmosphere 360?",
+        ques:"The best time to visit ARAS Restaurant KL Tower ?",
         ans:"The Dinner dining will be ideal to witness the City of Light."
     },
 ]
@@ -362,8 +362,6 @@ export const addQues = [
         id: uuidv4(),
         ques:"Operating Hours ?",
         ans:[
-            "Lunch starts at: 12pm-2.30pm", 
-            "Hi-Tea starts at: 3.30pm-5.30pm",
             "Dinner starts at: 7.00pm-10.00pm"
         ]
     },

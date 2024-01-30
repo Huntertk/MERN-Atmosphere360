@@ -20,7 +20,7 @@ const Cards = () => {
 const HomeBuffetOption = () => {
   return (
     <section className='HomeBuffetOptionMainContainer'>
-        <h1>Buffet Options at Atmosphere 360</h1>
+        <h1>Buffet Options at ARAS Restaurant KL Tower</h1>
         <div className="cardMainContainer">
             <Cards />
         </div>

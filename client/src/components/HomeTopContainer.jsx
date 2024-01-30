@@ -7,7 +7,7 @@ const HomeTopContainer = () => {
   return (
     <section className='HomeTopContainer'>
         <div className="content">
-            <h1>Reserve a fantastic dining experience at atmosphere 360 restaurant</h1>
+            <h1>Reserve a fantastic dining experience at ARAS Restaurant KL Tower</h1>
         </div>
         <div className="homeTopImgContainer">
             <img src={image} alt="" />
