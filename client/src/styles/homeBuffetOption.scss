@@ -13,7 +13,7 @@
 
     .cardMainContainer {
         display: grid;
-        grid-template-columns: repeat(3,350px);
+        grid-template-columns: repeat(1,350px);
         overflow-x: scroll;
         gap: 1.5rem;
         padding-bottom: 1rem;
