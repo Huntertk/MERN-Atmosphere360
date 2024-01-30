@@ -71,10 +71,13 @@ const bookingSlice = createSlice({
             } 
         },
         childTotalAmount: (state) => {
+            const  publicHoliday = publicHolidays.includes(state.bookingDate);
             if(state.type === 'dinner'){
                 if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
                     state.childTotal = state.childCount *  149
                    return 
+                } else if(publicHoliday){
+                    state.childTotal = state.childCount *  149
                 } else{
                     state.childTotal =  state.childCount *  119
                 }
