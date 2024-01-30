@@ -57,8 +57,7 @@ const bookingSlice = createSlice({
             state.seniorCount = state.seniorCount - 1
         },
         adultTotalAmount: (state) => {
-            const  publicHoliday = publicHolidays.includes(state.bookingDate)
-            console.log(state.bookingDate);
+            const  publicHoliday = publicHolidays.includes(state.bookingDate);
             if(state.type === 'dinner'){
                 if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
                     state.adultTotal = state.adultCount *  249
