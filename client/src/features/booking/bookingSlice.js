@@ -24,7 +24,8 @@ const initialState = {
     type:"",
     totalBookingsCount: 0,
     bookingDay: "",
-    bookingId:""
+    bookingId:"",
+    title:""
 }
 
 
@@ -143,7 +144,8 @@ const bookingSlice = createSlice({
             return state = initialState
         },
         choosingBooking: (state, action) => {
-            state.type = action.payload
+            state.type = action.payload.type
+            state.title = action.payload.title
             setBookingDetailsFromLocalStorage(state)
         },
         settingBookingResponse: (state, action) => {

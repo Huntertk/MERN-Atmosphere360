@@ -24,7 +24,8 @@ const Booking = () => {
         seniorTotal,
         totalAmount,
         loading,
-        type
+        type,
+        title
     } = useSelector(store => store.booking)
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -46,7 +47,8 @@ const Booking = () => {
                 infantCount,
                 seniorCount,
                 totalAmount,
-                bookingType: type
+                bookingType: type,
+                title
             })
             const response = res.data;
             const {data} = await axios.get('/api/v1/booking/totalbooking')
@@ -67,7 +69,7 @@ const Booking = () => {
     return (
         <section className='bookingMainContainer'>
             <div className="bookingWrapper">
-                <img className='banner' src={image} alt="" />
+                <img className='banner' src={"https://i.postimg.cc/pL6gtb7m/IMG-20240129-WA0072.jpg"} alt="" />
                 <h1>Confirm and Pay</h1>
                 <div className="detailsWrapper">
                     <div className="topContainer">

@@ -19,7 +19,8 @@ export const createBooking = async (req, res) => {
         infantCount,
         seniorCount,
         totalAmount,
-        bookingType
+        bookingType,
+        title
     } = req.body;
     try {
         const session = await stripe.checkout.sessions.create({
@@ -29,7 +30,7 @@ export const createBooking = async (req, res) => {
                     price_data: {
                         currency: 'myr',
                         product_data: {
-                            name: bookingType === 'dinner' ? "Atmosphere 360 Revolving Restaurant - Dinner Buffet" : bookingType === 'lunch' ? "Atmosphere 360 Revolving Restaurant - Lunch Buffet" : "Atmosphere 360 Revolving Restaurant - Tea Buffet",
+                            name: title
                         },
                         unit_amount: totalAmount * 100,
                     },
@@ -170,7 +171,7 @@ export const successBooking = async (req, res, next) => {
                                                                                     <table cellpadding="0" cellspacing="0" width="100%">
                                                                                         <tbody>
                                                                                             <tr>
-                                                                                                <td align="center" class="esd-block-image" style="font-size: 0px;"><a target="_blank"><img class="adapt-img" src="https://i.postimg.cc/zX63kDCg/IMGONE.jpg" alt style="display: block;" width="440"></a></td>
+                                                                                                <td align="center" class="esd-block-image" style="font-size: 0px;"><a target="_blank"><img class="adapt-img" src="https://i.postimg.cc/gJ9QnyGd/IMG-20240129-WA0076.jpg" alt style="display: block;" width="440"></a></td>
                                                                                             </tr>
                                                                                         </tbody>
                                                                                     </table>
@@ -243,7 +244,7 @@ export const successBooking = async (req, res, next) => {
                                                                                                     <table cellpadding="0" cellspacing="0" width="100%">
                                                                                                         <tbody>
                                                                                                             <tr>
-                                                                                                                <td align="center" class="esd-block-image" style="font-size: 0px;"><a target="_blank" href="https://atmosphere-360.onrender.com/"><img class="adapt-img p_image" src="https://i.postimg.cc/zX63kDCg/IMGONE.jpg" alt="Marshall Monitor" style="display: block;" width="160" title="Marshall Monitor"></a></td>
+                                                                                                                <td align="center" class="esd-block-image" style="font-size: 0px;"><a target="_blank" href="https://atmosphere360.malaysia-experience.com/"><img class="adapt-img p_image" src="https://i.postimg.cc/LsgG9QKN/IMG-20240129-WA0077.jpg" alt="Marshall Monitor" style="display: block;" width="160" title="Marshall Monitor"></a></td>
                                                                                                             </tr>
                                                                                                         </tbody>
                                                                                                     </table>

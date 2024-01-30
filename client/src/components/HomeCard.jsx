@@ -71,7 +71,7 @@ const HomeCard = ({data}) => {
             </div>
             <div className="cardBtnContainer">
                 <button onClick={() => {
-                    dispatch(choosingBooking(type))
+                    dispatch(choosingBooking({type, title}))
                     return navigate("/date-confirm")
                 }} className='checkAvailability'>
                     Book Now
