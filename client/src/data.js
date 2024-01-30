@@ -197,37 +197,37 @@ export const  bookTicketDetails = [
 export const cardHighLightsDetails = [
     {
         id: uuidv4(),
-        image: imgSkyHigh,
+        image: "https://i.postimg.cc/gJ9QnyGd/IMG-20240129-WA0076.jpg",
         title:"Sky-High Luxurious Buffet",
         desc:"Delight in glorious Buffets while floating above Kuala Lumpur's skyline, savoring a symphony of flavors with breathtaking views."
     },
     {
         id: uuidv4(),
-        image: imgFifteen,
+        image: "https://i.postimg.cc/fLxFX3bd/IMG-20240129-WA0075.jpg",
         title:"Revolving Enchantment",
         desc:"Be mesmerized by the spaceship-themed décor as the restaurant gently revolves, creating an otherworldly ambiance like dining among the stars."
     },  
     {
         id: uuidv4(),
-        image: imgCelestial,
+        image: "https://i.postimg.cc/7Z6pcYBv/IMG-20240129-WA0073.jpg",
         title:"Celestial Culinary Artistry",
         desc:"Indulge in a culinary masterpiece crafted by expert chefs, where Malay delicacies showcase a harmonious blend of tradition and innovation."
     },  
     {
         id: uuidv4(),
-        image: imgTen,
+        image: "https://i.postimg.cc/wx58Rrtr/IMG-20240129-WA0074.jpg",
         title:"Window to Wonder",
         desc:"Upgrade to window seating and unlock a dazzling perspective of the city, elevating your dining experience to unparalleled heights."
     },  
     {
         id: uuidv4(),
-        image:"https://cdn-imgix.headout.com/media/images/2923e9ecc952c2070abf33010651e025-KL%20Tower%20Atmosphere%20360.jpg?auto=format&w=468.29999999999995&h=267.59999999999997&q=90&fit=crop&ar=7%3A4",
+        image:"https://i.postimg.cc/7h9Wsp0Y/IMG-20240129-WA0078.jpg",
         title:"Astral Elegance",
         desc:"Admire the exquisite interior design that fuses modern sophistication with celestial charm, creating an atmosphere that is both enchanting and sophisticated."
     },  
     {
         id: uuidv4(),
-        image:"https://cdn-imgix.headout.com/tour/37157/TOUR-IMAGE/cc059dcf-f140-40bf-bcd6-652d2304fa3f-19081-kuala-lumpur-atmosphere-360-revolving-restaurant---hi-tea-buffet-06.jpg?auto=format&w=468.29999999999995&h=267.59999999999997&q=90&fit=crop&ar=7%3A4",
+        image:"https://i.postimg.cc/GhzWqsxJ/IMG-20240129-WA0071.jpg",
         title:"Celestial Events",
         desc:"Experience unique celestial events with themed dining nights, creating unforgettable memories under the stars."
     },  
@@ -252,7 +252,7 @@ export const homeBuffetOptions = [
         id: uuidv4(),
         title:"Dinner Buffet",
         desc:"Embark on a gastronomic journey during the Dinner Buffet, featuring an opulent spread of gourmet dishes amidst the enchanting ambiance of the revolving restaurant, creating a truly memorable dining experience.",
-        image: dinnerBuffet
+        image: "https://i.postimg.cc/gJ9QnyGd/IMG-20240129-WA0076.jpg"
     },
 ]
 
