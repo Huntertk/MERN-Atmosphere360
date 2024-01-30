@@ -121,7 +121,7 @@ const PaxModal = ({selectedDate}) => {
             }}
             total={childTotal}
             />
-            <Pax  
+            {/* <Pax  
             category ={"Infant"} 
             ageText={"2 to 5 yrs"} 
             price={50} 
@@ -131,7 +131,7 @@ const PaxModal = ({selectedDate}) => {
                 decrease: infantCountDecrease
             }}
             total={infantTotal}
-            />
+            /> */}
             {/* <Pax  
             category ={"Senior"} 
             ageText={"Above 59 yrs"} 

@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { setBookingDetailsFromLocalStorage, getBookingDetailsFromLocalStorage } from "../../utils/localStorage";
 import { toast } from 'react-toastify';
+import { publicHolidays } from "../../data";
 
 
 const initialState = {
@@ -33,87 +34,51 @@ const bookingSlice = createSlice({
     reducers:{
         adultCountIncrease : (state, action) => {
             state.adultCount = state.adultCount + 1
-            setBookingDetailsFromLocalStorage(state)
         },
         adultCountDecrease : (state, action) => {
             state.adultCount = state.adultCount - 1
-            setBookingDetailsFromLocalStorage(state)
         },
         childCountIncrease : (state, action) => {
             state.childCount = state.childCount + 1
-            setBookingDetailsFromLocalStorage(state)
         },
         childCountDecrease : (state, action) => {
             state.childCount = state.childCount - 1
-            setBookingDetailsFromLocalStorage(state)
         },
         infantCountIncrease : (state, action) => {
             state.infantCount = state.infantCount + 1
-            setBookingDetailsFromLocalStorage(state)
         },
         infantCountDecrease : (state, action) => {
             state.infantCount = state.infantCount - 1
-            setBookingDetailsFromLocalStorage(state)
         },
         seniorCountIncrease : (state, action) => {
             state.seniorCount = state.seniorCount + 1
-            setBookingDetailsFromLocalStorage(state)
         },
         seniorCountDecrease : (state, action) => {
             state.seniorCount = state.seniorCount - 1
-            setBookingDetailsFromLocalStorage(state)
         },
         adultTotalAmount: (state) => {
+            const  publicHoliday = publicHolidays.includes(state.bookingDate)
+            console.log(state.bookingDate);
             if(state.type === 'dinner'){
                 if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
-                    state.adultTotal = state.adultCount *  248
+                    state.adultTotal = state.adultCount *  249
                    return 
+                } else if(publicHoliday){
+                    state.adultTotal = state.adultCount *  249
                 } else{
-                    state.adultTotal =  state.adultCount *  199
+                    state.adultTotal =  state.adultCount *  199 
                 }
-            } else if(state.type === 'lunch'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
-                    state.adultTotal =  state.adultCount *  148
-                    return 
-                 } else{
-                    state.adultTotal = state.adultCount *  118
-                 }
-            } else if(state.type === 'tea'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
-                    state.adultTotal =  state.adultCount *  110
-                    return
-                 } else{
-                    state.adultTotal = state.adultCount *  88
-                 }
-            }
-            // state.adultTotal = state.type === 'dinner' ?  state.adultCount *  199 : state.type === 'lunch' ? state.adultCount * 118 : state.adultCount * 88   
-            setBookingDetailsFromLocalStorage(state)
+            } 
         },
         childTotalAmount: (state) => {
             if(state.type === 'dinner'){
                 if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
-                    state.childTotal = state.childCount *  200
+                    state.childTotal = state.childCount *  149
                    return 
                 } else{
-                    state.childTotal =  state.childCount *  150
+                    state.childTotal =  state.childCount *  119
                 }
-            } else if(state.type === 'lunch'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
-                    state.childTotal =  state.childCount *  111
-                    return 
-                 } else{
-                    state.childTotal = state.childCount *  82
-                 }
-            } else if(state.type === 'tea'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
-                    state.childTotal = state.childCount *  90
-                    return
-                 } else{
-                    state.childTotal = state.childCount *  70
-                 }
             }
-            // state.childTotal = state.type === 'dinner' ? state.childCount * 10 : state.type === 'lunch' ? state.childCount * 10 : state.childCount * 10
-            setBookingDetailsFromLocalStorage(state)
         },
         infantTotalAmount: (state) => {
             if(state.type === 'dinner'){
@@ -123,24 +88,7 @@ const bookingSlice = createSlice({
                 } else{
                     state.infantTotal =  state.infantCount *  50
                 }
-            }   else if(state.type === 'lunch'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
-                    state.infantTotal =  state.infantCount *  30
-                    return 
-                 } else{
-                    state.infantTotal = state.infantCount *  30
-                 }
-            } else if(state.type === 'tea'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
-                    state.infantTotal = state.infantCount *  25
-                    return
-                 } else{
-                    state.infantTotal = state.infantCount *  25
-                 }
-            }
-
-            // state.infantTotal = state.type === 'dinner' ? state.infantCount * 50 : state.type === 'lunch' ? state.infantCount * 30 : state.infantCount * 25
-            setBookingDetailsFromLocalStorage(state)
+            } 
         },
         seniorTotalAmount: (state) => {
             if(state.type === 'dinner'){
@@ -150,24 +98,7 @@ const bookingSlice = createSlice({
                 } else{
                     state.seniorTotal =  state.seniorCount *  150
                 }
-            } else if(state.type === 'lunch'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
-                    state.seniorTotal =  state.seniorCount *  111
-                    return 
-                 } else{
-                    state.seniorTotal = state.seniorCount *  82
-                 }
-            } else if(state.type === 'tea'){
-                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
-                    state.seniorTotal = state.seniorCount *  90
-                    return
-                 } else{
-                    state.seniorTotal = state.seniorCount *  70
-                 }
             }
-
-            // state.seniorTotal = state.type === 'dinner' ? state.seniorCount * 150 : state.type === 'lunch' ? state.seniorCount * 82 : state.seniorCount * 70
-            setBookingDetailsFromLocalStorage(state)
         },
         countTotalBookingAmount: (state) => {
             state.totalAmount = state.adultTotal + state.childTotal + state.infantTotal + state.seniorTotal
@@ -178,7 +109,6 @@ const bookingSlice = createSlice({
             state.bookingDate = action.payload.selectedBookingDate
             state.bookingResponse = ""
             state.bookingDay = action.payload.selectedDay.split(' ')[0]
-            setBookingDetailsFromLocalStorage(state)
         },
         openPaxModel: (state) => {
             state.isPaxModal = true
@@ -203,7 +133,6 @@ const bookingSlice = createSlice({
             state.mobileNumber = action.payload.mobileNumber
             state.bookingResponse = action.payload.bookingResponse
             state.totalBookingsCount = action.payload.totalBookingsCount
-            console.log(state);
             setBookingDetailsFromLocalStorage(state)
         },
         bookingFailed: (state, action) => {
