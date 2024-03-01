@@ -254,6 +254,12 @@ export const homeBuffetOptions = [
         desc:"Embark on a gastronomic journey during the Dinner Buffet, featuring an opulent spread of gourmet dishes amidst the enchanting ambiance of the revolving restaurant, creating a truly memorable dining experience.",
         image: "https://i.postimg.cc/gJ9QnyGd/IMG-20240129-WA0076.jpg"
     },
+    {
+        id: uuidv4(),
+        title:"Tea Buffet",
+        desc:"Embark on a gastronomic journey during the Tea Buffet, featuring an opulent spread of gourmet dishes amidst the enchanting ambiance of the revolving restaurant, creating a truly memorable dining experience.",
+        image: "https://res.cloudinary.com/drrkaak40/image/upload/v1709312901/Malaysia%20Experience/Aras%20Resturant/9_cr1i0t.jpg"
+    },
 ]
 
 

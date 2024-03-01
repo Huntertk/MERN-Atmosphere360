@@ -264,7 +264,7 @@ export const successBooking = async (req, res, next) => {
                                                                                                             <tr>
                                                                                                                 <td align="center" class="esd-block-text es-p20t es-p20b es-m-p0t es-m-p0b es-m-txt-l">
                                                                                                                     <h3 style="color: #f26823;"><br></h3>
-                                                                                                                    <h3 style="color: #f26823;"><strong class="p_name">${req.body.bookingType==='dinner' && "Dinner Buffet"}</strong></h3>
+                                                                                                                    <h3 style="color: #f26823;"><strong class="p_name">${req.body.bookingType==='dinner' ? "Dinner Buffet" : req.body.bookingType==='tea' && "Tea Buffet"}</strong></h3>
                                                                                                                 </td>
                                                                                                             </tr>
                                                                                                         </tbody>
@@ -423,6 +423,41 @@ export const successBooking = async (req, res, next) => {
                                                                                                     <p style="color: #666666;"><strong>Name : ${req.body.name}</strong></p>
                                                                                                     <p style="color: #666666;"><strong>Email: ${req.body.email}</strong></p>
                                                                                                     <p style="color: #666666;"><strong>Phone Number: ${req.body.mobileNumber}</strong></p>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="esd-structure es-p20t es-p20r es-p20l" align="left">
+                                                                                                    <table cellpadding="0" cellspacing="0" width="100%">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td width="560" class="esd-container-frame" align="center" valign="top">
+                                                                                                                    <table cellpadding="0" cellspacing="0" width="100%">
+                                                                                                                        <tbody>
+                                                                                                                            <tr>
+                                                                                                                                <td align="center" class="esd-block-spacer es-p5t es-p5b" style="font-size:0">
+                                                                                                                                    <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0">
+                                                                                                                                        <tbody>
+                                                                                                                                            <tr>
+                                                                                                                                                <td style="border-bottom: 1px solid #a0937d; background: none; height: 1px; width: 100%; margin: 0px;"></td>
+                                                                                                                                            </tr>
+                                                                                                                                        </tbody>
+                                                                                                                                    </table>
+                                                                                                                                </td>
+                                                                                                                            </tr>
+                                                                                                                            <tr>
+                                                                                                                                <td align="left" class="esd-block-text es-p10" esd-links-color="#14a0f6">
+                                                                                                                                    <p style="color: #000000; line-height: 200%; font-size: 15px;">We're delighted to confirm your booking! Your official e-ticket is on its way to your email shortly. In case you don't receive it, please don't hesitate to get in touch with us.</p>
+                                                                                                                                    <p style="color: #000000; line-height: 200%; font-size: 15px;">Contact details:<br>Tel: +6017-2018194, +60173078194, +60193058194<br>Email: <a href="mailto:support@malaysia-experience.com" target="_blank" style="font-size: 15px; color: #14a0f6;">support@malaysia-experience.com</a></p>
+                                                                                                                                    <p style="color: #000000; line-height: 200%; font-size: 15px;">Thank you for choosing Malaysia Experience. We look forward to serving you.</p>
+                                                                                                                                    <p style="color: #000000; line-height: 200%; font-size: 15px;">Best regards,<br>Support Team<br>Malaysia Experience</p>
+                                                                                                                                </td>
+                                                                                                                            </tr>
+                                                                                                                        </tbody>
+                                                                                                                    </table>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
                                                                                                 </td>
                                                                                             </tr>
                                                                                         </tbody>

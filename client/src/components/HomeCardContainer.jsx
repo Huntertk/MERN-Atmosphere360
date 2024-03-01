@@ -20,6 +20,8 @@ const HomeCardContainer = () => {
     }
   }
 
+  console.log(cardData);
+
 
   useEffect(() => {
     getCardData()

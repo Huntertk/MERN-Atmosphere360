@@ -61,12 +61,21 @@ const bookingSlice = createSlice({
             const  publicHoliday = publicHolidays.includes(state.bookingDate);
             if(state.type === 'dinner'){
                 if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
-                    state.adultTotal = state.adultCount *  249
+                    state.adultTotal = state.adultCount *  240
                    return 
                 } else if(publicHoliday){
-                    state.adultTotal = state.adultCount *  249
+                    state.adultTotal = state.adultCount *  240
                 } else{
-                    state.adultTotal =  state.adultCount *  199 
+                    state.adultTotal =  state.adultCount *  194
+                }
+            } else if(state.type === 'tea'){
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
+                    state.adultTotal = state.adultCount *  105
+                   return 
+                } else if(publicHoliday){
+                    state.adultTotal = state.adultCount *  105
+                } else{
+                    state.adultTotal =  state.adultCount *  85
                 }
             } 
         },
@@ -74,12 +83,21 @@ const bookingSlice = createSlice({
             const  publicHoliday = publicHolidays.includes(state.bookingDate);
             if(state.type === 'dinner'){
                 if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
-                    state.childTotal = state.childCount *  149
+                    state.childTotal = state.childCount *  142
                    return 
                 } else if(publicHoliday){
-                    state.childTotal = state.childCount *  149
+                    state.childTotal = state.childCount *  142
                 } else{
-                    state.childTotal =  state.childCount *  119
+                    state.childTotal =  state.childCount *  114
+                }
+            } else if(state.type === 'tea'){
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
+                    state.childTotal = state.childCount *  66
+                   return 
+                } else if(publicHoliday){
+                    state.childTotal = state.childCount *  66
+                } else{
+                    state.childTotal =  state.childCount *  48
                 }
             }
         },
