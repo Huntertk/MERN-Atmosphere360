@@ -25,3 +25,20 @@
         }
     }
 }
+
+
+@media screen and (min-width: 767px) {
+    .carouselContainer{
+        svg{
+            top: 2%;
+            right: 10%;
+           
+        }
+        .imgContainer{
+            img{
+                object-fit: contain;
+                height: 500px;
+            }
+        }
+    }
+}

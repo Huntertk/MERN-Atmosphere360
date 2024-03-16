@@ -17,9 +17,9 @@ const HomeMenu = () => {
                     <div className="menuContainer" key={data.id}>
                         <h1>{data.title}</h1>
                         <div className="menuContainerImgContainer" style={{
-                            gridTemplateColumns:`repeat(${data.images.length}, 350px)`
+                            gridTemplateColumns:`repeat(${data.image.length}, 350px)`
                         }}>
-                            {data.images.map((menu,i) => <img 
+                            {data.image.map((menu,i) => <img 
                                 key={i} 
                                 src={menu} 
                                 alt={data.title} 

@@ -77,7 +77,16 @@ const bookingSlice = createSlice({
                 } else{
                     state.adultTotal =  state.adultCount *  85
                 }
-            } 
+            } else if(state.type === 'ramadanDinner'){
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
+                    state.adultTotal = state.adultCount *  236
+                   return 
+                } else if(publicHoliday){
+                    state.adultTotal = state.adultCount *  236
+                } else{
+                    state.adultTotal =  state.adultCount *  190
+                }
+            }
         },
         childTotalAmount: (state) => {
             const  publicHoliday = publicHolidays.includes(state.bookingDate);
@@ -99,6 +108,15 @@ const bookingSlice = createSlice({
                 } else{
                     state.childTotal =  state.childCount *  48
                 }
+            } else if(state.type === 'ramadanDinner'){
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
+                    state.childTotal = state.childCount *  140
+                   return 
+                } else if(publicHoliday){
+                    state.childTotal = state.childCount *  140
+                } else{
+                    state.childTotal =  state.childCount *  112
+                }
             }
         },
         infantTotalAmount: (state) => {
@@ -112,12 +130,22 @@ const bookingSlice = createSlice({
             } 
         },
         seniorTotalAmount: (state) => {
+            const  publicHoliday = publicHolidays.includes(state.bookingDate);
             if(state.type === 'dinner'){
                 if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
                     state.seniorTotal = state.seniorCount *  200
                    return 
                 } else{
                     state.seniorTotal =  state.seniorCount *  150
+                }
+            } else if(state.type === 'ramadanDinner'){
+                if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
+                    state.seniorTotal = state.seniorCount *  140
+                   return 
+                } else if(publicHoliday){
+                    state.seniorTotal = state.seniorCount *  140
+                } else{
+                    state.seniorTotal = state.seniorCount *  112
                 }
             }
         },

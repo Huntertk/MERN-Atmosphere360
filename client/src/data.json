@@ -1,14 +1,47 @@
-{
-    
-    "title": "ARAS Restaurant KL Tower - Tea Buffet",
-    "desc": "Make your special occasions more memorable by booking a window seat view and opting for the celebration setup, whole cake, and a flower bouquet.",
-    "type": "tea",
-    "image": [
-        "https://res.cloudinary.com/drrkaak40/image/upload/v1709312899/Malaysia%20Experience/Aras%20Resturant/10_wbildv.jpg",
-        "https://res.cloudinary.com/drrkaak40/image/upload/v1709312899/Malaysia%20Experience/Aras%20Resturant/2_xp15vp.jpg",
-        "https://res.cloudinary.com/drrkaak40/image/upload/v1709312902/Malaysia%20Experience/Aras%20Resturant/5_qxkmpa.jpg",
-        "https://res.cloudinary.com/drrkaak40/image/upload/v1709312903/Malaysia%20Experience/Aras%20Resturant/13_o7yqin.jpg",
-        "https://res.cloudinary.com/drrkaak40/image/upload/v1709312905/Malaysia%20Experience/Aras%20Resturant/15_jsnlxt.jpg",
-        "https://res.cloudinary.com/drrkaak40/image/upload/v1709312902/Malaysia%20Experience/Aras%20Resturant/12_stslqi.jpg"
-    ]
-}
+[
+    {
+        "_id": "65e210ea015f2c8c7cd00376",
+        "title": "Ramadan Special Promo - Buffet Dinner",
+        "desc": "Make your special occasions more memorable by booking a window seat view and opting for the celebration setup, whole cake, and a flower bouquet.",
+        "type": "ramadanDinner",
+        "image": [
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1710579501/Malaysia%20Experience/Aras%20Resturant/TVG_Aras_ramadan_main_tzzsnd.jpg",
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1710579501/Malaysia%20Experience/Aras%20Resturant/TVG_Aras_ramadan_01_ekiznc.jpg",
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1710579501/Malaysia%20Experience/Aras%20Resturant/TVG_Aras_ramadan_04_np24gz.jpg",
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1710579501/Malaysia%20Experience/Aras%20Resturant/TVG_Aras_ramadan_05_nnc0ok.jpg",
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1710579501/Malaysia%20Experience/Aras%20Resturant/TVG_Aras_ramadan_03_iqaer5.jpg",
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1710579500/Malaysia%20Experience/Aras%20Resturant/TVG_Aras_ramadan_02_hnofay.jpg"
+        ]
+    },
+    {
+        "_id": "655b09507763fa367efb0d46",
+        "title": "ARAS Restaurant KL Tower - Dinner Buffet",
+        "desc": "Make your special occasions more memorable by booking a window seat view and opting for the celebration setup, whole cake, and a flower bouquet.",
+        "type": "dinner",
+        "image": [
+            "https://i.postimg.cc/GhzWqsxJ/IMG-20240129-WA0071.jpg",
+            "https://i.postimg.cc/Dy2VrcLw/IMG-20240129-WA0070.jpg",
+            "https://i.postimg.cc/pL6gtb7m/IMG-20240129-WA0072.jpg",
+            "https://i.postimg.cc/7Z6pcYBv/IMG-20240129-WA0073.jpg",
+            "https://i.postimg.cc/wx58Rrtr/IMG-20240129-WA0074.jpg",
+            "https://i.postimg.cc/gJ9QnyGd/IMG-20240129-WA0076.jpg"
+        ],
+        "createdAt": "2023-11-20T07:22:56.347Z",
+        "updatedAt": "2023-11-20T07:22:56.347Z",
+        "__v": 0
+    },
+    {
+        "_id": "65e210ea015f2c8c7cd00376",
+        "title": "ARAS Restaurant KL Tower - Tea Buffet",
+        "desc": "Make your special occasions more memorable by booking a window seat view and opting for the celebration setup, whole cake, and a flower bouquet.",
+        "type": "tea",
+        "image": [
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1709312899/Malaysia%20Experience/Aras%20Resturant/10_wbildv.jpg",
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1709312899/Malaysia%20Experience/Aras%20Resturant/2_xp15vp.jpg",
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1709312902/Malaysia%20Experience/Aras%20Resturant/5_qxkmpa.jpg",
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1709312903/Malaysia%20Experience/Aras%20Resturant/13_o7yqin.jpg",
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1709312905/Malaysia%20Experience/Aras%20Resturant/15_jsnlxt.jpg",
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1709312902/Malaysia%20Experience/Aras%20Resturant/12_stslqi.jpg"
+        ]
+    }
+]

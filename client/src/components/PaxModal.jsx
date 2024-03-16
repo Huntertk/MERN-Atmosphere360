@@ -15,7 +15,9 @@ import {
     seniorTotalAmount,
     countTotalBookingAmount,
     cancelBooking,
-    closePaxModel
+    closePaxModel,
+    seniorCountIncrease,
+    seniorCountDecrease
 } from '../features/booking/bookingSlice';
 
 
@@ -66,7 +68,9 @@ const PaxModal = ({selectedDate}) => {
         childTotal, 
         totalAmount,
         bookingDate,
-        type
+        type,
+        title,
+        seniorTotal
     } = useSelector((store) => store.booking)
 
     const dispatch = useDispatch()
@@ -90,7 +94,7 @@ const PaxModal = ({selectedDate}) => {
                 return navigate("/")
             }}>Cancel</button>
         </div>
-        <p className='bookingType'>{type === 'dinner' ? "Dinner Buffet" : type === 'lunch' ? "Lunch Buffet": "Tea Buffet"}</p>
+        <p className='bookingType'>{title}</p>
         <h1>Select number of tickets</h1>
         <div className="paxSelector">
             <Pax  
@@ -115,6 +119,19 @@ const PaxModal = ({selectedDate}) => {
             }}
             total={childTotal}
             />
+            {
+                type === 'ramadanDinner' && <Pax  
+                category ={"Senior"} 
+                ageText={"Above 59 years"} 
+                price={150}
+                count={seniorCount}
+                actionType={{
+                    increase: seniorCountIncrease,
+                    decrease: seniorCountDecrease
+                }}
+                total={seniorTotal}
+                />
+            }
         </div>
             <div className="totalPayable">
                 <span>Total</span>

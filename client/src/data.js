@@ -513,7 +513,7 @@ export const menuData = [
     {
         id:uuidv4(),
         title:"Hi Tea",
-        images:[
+        image:[
             "https://res.cloudinary.com/drrkaak40/image/upload/v1710571903/Malaysia%20Experience/Aras%20Resturant/WhatsApp_Image_2024-03-14_at_14.51.23_bahzni.jpg",
             "https://res.cloudinary.com/drrkaak40/image/upload/v1710571903/Malaysia%20Experience/Aras%20Resturant/WhatsApp_Image_2024-03-14_at_14.51.24_kjifgi.jpg"
         ]
@@ -521,7 +521,7 @@ export const menuData = [
     {
         id:uuidv4(),
         title:"Dinner Buffet Ramadan",
-        images:[
+        image:[
             "https://res.cloudinary.com/drrkaak40/image/upload/v1710571918/Malaysia%20Experience/Aras%20Resturant/Menu_Aras_Bufet_Ramadan_2_Page_1_pqucvw.jpg",
             "https://res.cloudinary.com/drrkaak40/image/upload/v1710571919/Malaysia%20Experience/Aras%20Resturant/Menu_Aras_Bufet_Ramadan_2_Page_2_jq49gh.jpg",
             "https://res.cloudinary.com/drrkaak40/image/upload/v1710571919/Malaysia%20Experience/Aras%20Resturant/Menu_Aras_Bufet_Ramadan_2_Page_3_gy6xpf.jpg",

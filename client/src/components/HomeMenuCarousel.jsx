@@ -12,7 +12,7 @@ const HomeMenuCarousel = ({menuData, setIsCarouselOpen}) => {
          infiniteLoop={true}
         >
             {
-                menuData.images.map((im, i) => (
+                menuData.image.map((im, i) => (
                     <div className="imgContainer" key={i}>
                     <img src={im} alt={menuData.title} />
                 </div>
