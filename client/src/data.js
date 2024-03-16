@@ -354,20 +354,32 @@ export const homeFAQ = [
 export const addQues = [
     {
         id: uuidv4(),
-        ques:"Operating Hours ?",
+        ques:"Child Policy",
         ans:[
-            "Dinner starts at: 7.00pm-10.00pm"
+            "Adult: 13 to 59 years old",
+            "Child: 5 to 12 years old",
+            "Senior citizen: 60 years old and above",
+            "Child below 5 years old FREE"
         ]
     },
     {
         id: uuidv4(),
-        ques:"For Your Concern",
+        ques:"Operating Hours ?",
+        ans:[
+            "Hi-Tea: 3pm to 5:30pm",
+            "Dinner: 6:30pm to 10pm"
+        ]
+    },
+    {
+        id: uuidv4(),
+        ques:"Important Information",
         ans:[
             "Shorts and Slippers are prohibited.",
             "Recommend to make advanced reservations to confirm your preferred dining slot.",
             "Consider upgrading to window seat for better sky view(Subject to availability).",
             "Observe decorum and follow staff instruction for a pleasant visit.",
-            "Remark about any dietary restrictions or allergies during booking."
+            "Remark about any dietary restrictions or allergies during booking.",
+            "This is a Halal certified restaurant. Kindly take note, it is not suitable for Vegetarians as they serve Chickens, Eggs, Seafood and Meats"
         ]
     },
     {
