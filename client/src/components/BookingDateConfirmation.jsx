@@ -107,6 +107,7 @@ const BookingDateConfirmation = () => {
             return <Navigate to="/" />
         }
 
+        const defaultMonth = new Date(Date.now());
         const getDinnerBlockDates = async () => {
 
             try {
@@ -174,7 +175,8 @@ const BookingDateConfirmation = () => {
                 style={calenderOpen === false && {display:'none'}}
                 mode="single"
                 selected={selectedDate} 
-                fromDate={new Date()}
+                fromMonth={defaultMonth}
+                toDate={type === 'ramadanDinner' ?  new Date(2024,3,9) : new Date(Date.now() + 1000 * 60 *60 *24 *60)}
                 // components={{ Row: OnlyFutureRow }}
                 // showOutsideDays
                 hidden={isPastDate}

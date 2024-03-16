@@ -197,37 +197,37 @@ export const  bookTicketDetails = [
 export const cardHighLightsDetails = [
     {
         id: uuidv4(),
-        image: "https://i.postimg.cc/gJ9QnyGd/IMG-20240129-WA0076.jpg",
+        image: "https://res.cloudinary.com/drrkaak40/image/upload/v1710588755/Malaysia%20Experience/Aras%20Resturant/IMG-20240129-WA0076_urqfyw.jpg",
         title:"Sky-High Luxurious Buffet",
         desc:"Delight in glorious Buffets while floating above Kuala Lumpur's skyline, savoring a symphony of flavors with breathtaking views."
     },
     {
         id: uuidv4(),
-        image: "https://i.postimg.cc/fLxFX3bd/IMG-20240129-WA0075.jpg",
+        image: "https://res.cloudinary.com/drrkaak40/image/upload/v1710588754/Malaysia%20Experience/Aras%20Resturant/IMG-20240129-WA0075_ws1ynr.jpg",
         title:"Revolving Enchantment",
         desc:"Be mesmerized by the spaceship-themed décor as the restaurant gently revolves, creating an otherworldly ambiance like dining among the stars."
     },  
     {
         id: uuidv4(),
-        image: "https://i.postimg.cc/7Z6pcYBv/IMG-20240129-WA0073.jpg",
+        image: "https://res.cloudinary.com/drrkaak40/image/upload/v1710588736/Malaysia%20Experience/Aras%20Resturant/IMG-20240129-WA0073_fikxy7.jpg",
         title:"Celestial Culinary Artistry",
         desc:"Indulge in a culinary masterpiece crafted by expert chefs, where Malay delicacies showcase a harmonious blend of tradition and innovation."
     },  
     {
         id: uuidv4(),
-        image: "https://i.postimg.cc/wx58Rrtr/IMG-20240129-WA0074.jpg",
+        image: "https://res.cloudinary.com/drrkaak40/image/upload/v1710588753/Malaysia%20Experience/Aras%20Resturant/IMG-20240129-WA0074_vfboj6.jpg",
         title:"Window to Wonder",
         desc:"Upgrade to window seating and unlock a dazzling perspective of the city, elevating your dining experience to unparalleled heights."
     },  
     {
         id: uuidv4(),
-        image:"https://i.postimg.cc/7h9Wsp0Y/IMG-20240129-WA0078.jpg",
+        image:"https://res.cloudinary.com/drrkaak40/image/upload/v1710588754/Malaysia%20Experience/Aras%20Resturant/IMG-20240129-WA0078_dei1r0.jpg",
         title:"Astral Elegance",
         desc:"Admire the exquisite interior design that fuses modern sophistication with celestial charm, creating an atmosphere that is both enchanting and sophisticated."
     },  
     {
         id: uuidv4(),
-        image:"https://i.postimg.cc/GhzWqsxJ/IMG-20240129-WA0071.jpg",
+        image:"https://res.cloudinary.com/drrkaak40/image/upload/v1710588754/Malaysia%20Experience/Aras%20Resturant/IMG-20240129-WA0077_qwpchc.jpg",
         title:"Celestial Events",
         desc:"Experience unique celestial events with themed dining nights, creating unforgettable memories under the stars."
     },  
@@ -236,23 +236,11 @@ export const cardHighLightsDetails = [
 
 
 export const homeBuffetOptions = [
-    // {
-    //     id: uuidv4(),
-    //     title:"Lunch Buffet",
-    //     desc:"Indulge in a delectable array of culinary delights during the Lunch Buffet at Atmosphere 360, offering a diverse selection of dishes to satisfy your midday cravings.",
-    //     image: lunchBuffet
-    // },
-    // {
-    //     id: uuidv4(),
-    //     title:"Hi-Tea Buffet",
-    //     desc:"Treat yourself to an afternoon of delightful treats and savory bites at the Hi-Tea Buffet, where an assortment of sweet and savory delicacies awaits your palate.",
-    //     image: teaBuffet
-    // },
     {
         id: uuidv4(),
         title:"Dinner Buffet",
         desc:"Embark on a gastronomic journey during the Dinner Buffet, featuring an opulent spread of gourmet dishes amidst the enchanting ambiance of the revolving restaurant, creating a truly memorable dining experience.",
-        image: "https://i.postimg.cc/gJ9QnyGd/IMG-20240129-WA0076.jpg"
+        image: "https://res.cloudinary.com/drrkaak40/image/upload/v1710588736/Malaysia%20Experience/Aras%20Resturant/IMG-20240129-WA0072_j8vve6.jpg"
     },
     {
         id: uuidv4(),

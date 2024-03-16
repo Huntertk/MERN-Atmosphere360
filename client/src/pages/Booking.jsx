@@ -69,11 +69,11 @@ const Booking = () => {
     return (
         <section className='bookingMainContainer'>
             <div className="bookingWrapper">
-                <img className='banner' src={"https://i.postimg.cc/pL6gtb7m/IMG-20240129-WA0072.jpg"} alt="" />
+                <img className='banner' src={"https://res.cloudinary.com/drrkaak40/image/upload/v1709312899/Malaysia%20Experience/Aras%20Resturant/8_olysme.jpg"} alt="Aras Resturant" />
                 <h1>Confirm and Pay</h1>
                 <div className="detailsWrapper">
+                    <p className='bookingType'>{title}</p>
                     <div className="topContainer">
-                    <p className='bookingType'>{type === 'dinner' ? "Dinner Buffet" : type === 'lunch' ? "Lunch Buffet": type === 'tea' && "Tea Buffet"}</p>
                         <p>{bookingDate}</p>
                         <Link to="/date-confirm"><BiEditAlt /></Link>
                     </div>
@@ -143,6 +143,7 @@ const Booking = () => {
                             placeholder="Enter phone number"
                             value={mobileNumber}
                             onChange={setMobileNumber}
+                            required
                         />
                         <label htmlFor="email">Email</label>
                         <input

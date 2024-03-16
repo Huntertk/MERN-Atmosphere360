@@ -6,7 +6,7 @@ const Cards = () => {
     return  (
         cardHighLightsDetails.map((data) => {
             return <div className="card" key={data.id}>
-                <img src={data.image} alt="" />
+                <img src={data.image} alt={data.title} />
                 <div className="content">
                     <h3>{data.title}</h3>
                     <p>{data.desc}</p>

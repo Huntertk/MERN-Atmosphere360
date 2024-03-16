@@ -10,7 +10,7 @@ const HomeTopContainer = () => {
             <h1>Reserve a fantastic dining experience at ARAS Restaurant KL Tower</h1>
         </div>
         <div className="homeTopImgContainer">
-            <img src={"https://i.postimg.cc/gJ9QnyGd/IMG-20240129-WA0076.jpg"} alt="ARAS Restaurant KL Tower" />
+            <img src={"https://res.cloudinary.com/drrkaak40/image/upload/v1710588755/Malaysia%20Experience/Aras%20Resturant/IMG-20240129-WA0076_urqfyw.jpg"} alt="ARAS Restaurant KL Tower" />
         </div>
     </section>
   )
