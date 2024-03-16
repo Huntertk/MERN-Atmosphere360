@@ -507,3 +507,29 @@ export const publicHolidays = [
     "February 1st, 2024",
     "February 12th, 2024",
 ]
+
+
+export const menuData = [
+    {
+        id:uuidv4(),
+        title:"Hi Tea",
+        images:[
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1710571903/Malaysia%20Experience/Aras%20Resturant/WhatsApp_Image_2024-03-14_at_14.51.23_bahzni.jpg",
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1710571903/Malaysia%20Experience/Aras%20Resturant/WhatsApp_Image_2024-03-14_at_14.51.24_kjifgi.jpg"
+        ]
+    },
+    {
+        id:uuidv4(),
+        title:"Dinner Buffet Ramadan",
+        images:[
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1710571918/Malaysia%20Experience/Aras%20Resturant/Menu_Aras_Bufet_Ramadan_2_Page_1_pqucvw.jpg",
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1710571919/Malaysia%20Experience/Aras%20Resturant/Menu_Aras_Bufet_Ramadan_2_Page_2_jq49gh.jpg",
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1710571919/Malaysia%20Experience/Aras%20Resturant/Menu_Aras_Bufet_Ramadan_2_Page_3_gy6xpf.jpg",
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1710571921/Malaysia%20Experience/Aras%20Resturant/Menu_Aras_Bufet_Ramadan_2_Page_5_o6fxuz.jpg",
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1710571920/Malaysia%20Experience/Aras%20Resturant/Menu_Aras_Bufet_Ramadan_2_Page_4_pwgvjh.jpg",
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1710571921/Malaysia%20Experience/Aras%20Resturant/Menu_Aras_Bufet_Ramadan_2_Page_6_cdq3yl.jpg",
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1710571922/Malaysia%20Experience/Aras%20Resturant/Menu_Aras_Bufet_Ramadan_2_Page_7_toyl8a.jpg",
+            "https://res.cloudinary.com/drrkaak40/image/upload/v1710571923/Malaysia%20Experience/Aras%20Resturant/Menu_Aras_Bufet_Ramadan_2_Page_8_ff04dn.jpg"
+        ]
+    },
+]

@@ -1,0 +1,22 @@
+@use './variables.scss' as *;
+
+.homeMenuSection{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    .menuContainer{
+        h1{
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        .menuContainerImgContainer{
+            display: grid;
+            gap: 10px;
+            overflow-x: scroll;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+    }
+}

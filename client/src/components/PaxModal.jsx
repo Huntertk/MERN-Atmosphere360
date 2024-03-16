@@ -9,10 +9,6 @@ import {
     adultCountDecrease, 
     childCountIncrease, 
     childCountDecrease,
-    infantCountDecrease,
-    infantCountIncrease,
-    seniorCountDecrease,
-    seniorCountIncrease,
     adultTotalAmount,
     childTotalAmount,
     infantTotalAmount,
@@ -68,8 +64,6 @@ const PaxModal = ({selectedDate}) => {
         seniorCount,
         adultTotal,
         childTotal, 
-        infantTotal,
-        seniorTotal,
         totalAmount,
         bookingDate,
         type
@@ -121,28 +115,6 @@ const PaxModal = ({selectedDate}) => {
             }}
             total={childTotal}
             />
-            {/* <Pax  
-            category ={"Infant"} 
-            ageText={"2 to 5 yrs"} 
-            price={50} 
-            count={infantCount}
-            actionType={{
-                increase: infantCountIncrease,
-                decrease: infantCountDecrease
-            }}
-            total={infantTotal}
-            /> */}
-            {/* <Pax  
-            category ={"Senior"} 
-            ageText={"Above 59 yrs"} 
-            price={150} 
-            count={seniorCount}
-            actionType={{
-                increase: seniorCountIncrease,
-                decrease: seniorCountDecrease
-            }}
-            total={seniorTotal}
-            /> */}
         </div>
             <div className="totalPayable">
                 <span>Total</span>

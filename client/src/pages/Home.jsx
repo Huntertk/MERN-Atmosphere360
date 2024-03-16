@@ -14,6 +14,7 @@ import {
     HomeMap,
     HomeAdditionalInformation
 } from '../components/index'
+import HomeMenu from '../components/HomeMenu'
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
      <section className='homeMainContainer'>
       <HomeTopContainer />
       <HomeCardContainer />
+      <HomeMenu />
       <HomeWhyVisit />
       <HomWhatIsTheBest />
       {/* <HomeTicketExplaination /> */}
