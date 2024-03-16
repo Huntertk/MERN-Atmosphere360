@@ -28,6 +28,7 @@ import DinnerDateManage from './pages/adminPage/DinnerDateManage'
 import TeaDateManage from './pages/adminPage/TeaDateManage'
 import LunchDateManage from './pages/adminPage/LunchDateManage'
 import Analytics from './pages/adminPage/Analytics'
+import RamadanDinnerDateManage from './pages/adminPage/RamadanDinnerDateManage'
 
 const TRACKING_ID = 'G-CZWEX6791Q'
 ReactGa.initialize(TRACKING_ID)
@@ -54,6 +55,7 @@ const App = () => {
             <Route path="/admin/all-booking" element={<AllBookings />} />
             <Route path="/admin/manage-dates" element={<ManageDates />} />
             <Route path="/admin/manage-dates/dinner" element={<DinnerDateManage />} />
+            <Route path="/admin/manage-dates/ramadan-dinner" element={<RamadanDinnerDateManage />} />
             <Route path="/admin/manage-dates/tea" element={<TeaDateManage />} />
             <Route path="/admin/manage-dates/lunch" element={<LunchDateManage />} />
             <Route path="/admin/confirmed-booking" element={<ConfirmedBooking />} />

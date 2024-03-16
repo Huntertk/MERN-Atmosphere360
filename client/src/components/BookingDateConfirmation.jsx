@@ -141,6 +141,17 @@ const BookingDateConfirmation = () => {
               }
           }
 
+          const getRamadanDinnerBlockDates = async () => {
+            try {
+                setIsLoading(true)
+                const {data} = await axios.get('/api/v1/ramadan-dinner-dates-manage/block-dates')
+                setBlockedDates(data.blockDates)
+                setIsLoading(false)
+              } catch (error) {
+                  console.log(error);
+              }
+          }
+
 
         useEffect(() => {
             if(type==='dinner'){
@@ -149,7 +160,10 @@ const BookingDateConfirmation = () => {
             } else if(type === 'lunch'){
                 getLunchBlockDates()
                 return
-            }else if(type === 'tea'){
+            } else if(type === 'ramadanDinner'){
+                getRamadanDinnerBlockDates()
+                return
+            } else if(type === 'tea'){
                 getTeaBlockDates()
                 return
             }
