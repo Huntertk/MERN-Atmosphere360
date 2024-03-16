@@ -198,7 +198,6 @@ const bookingSlice = createSlice({
             setBookingDetailsFromLocalStorage(state)
         },
         settingBookingResponse: (state, action) => {
-            console.log(action.payload);
             state.bookingResponse = ""
             state.bookingId = action.payload.createBookingId
             setBookingDetailsFromLocalStorage(state)
