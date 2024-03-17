@@ -97,11 +97,16 @@ const BookingDateConfirmation = () => {
     const dispatch = useDispatch()
     const {isPaxModal, bookingDate, type} = useSelector(store => store.booking)
     const [blockedDates, setBlockedDates] = useState([])
-    const disabledDates = blockedDates?.map((dates) => new Date(dates.blockDates))
+    const disabledDates = blockedDates?.map((dates) => new Date(dates.blockDates));
+    const teaBlockRegistration = new Date(Date.now()) > new Date(Date.now()).setHours(15,0,0,0)
+    const dinnerBlockRegistration = new Date(Date.now()) > new Date(Date.now()).setHours(17,30,0,0)
         const [selectedDate, setSelectedDate] = useState("")
         const [calenderOpen, setCalenderOpen] = useState(false)
         const disabledDays  = [
-            ...disabledDates
+            ...disabledDates,
+            type === 'tea' && teaBlockRegistration && new Date(Date.now()),
+            type === 'dinner' && dinnerBlockRegistration && new Date(Date.now()),
+            type === 'ramadanDinner' && dinnerBlockRegistration && new Date(Date.now())
         ]
         if(!type){
             return <Navigate to="/" />
