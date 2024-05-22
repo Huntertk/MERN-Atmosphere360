@@ -22,7 +22,7 @@ const Home = () => {
      <section className='homeMainContainer'>
       <HomeTopContainer />
       <HomeCardContainer />
-      <HomeMenu />
+      {/* <HomeMenu /> */}
       <HomeWhyVisit />
       <HomWhatIsTheBest />
       {/* <HomeTicketExplaination /> */}

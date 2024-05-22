@@ -1,20 +1,6 @@
 [
     {
-        "_id": "65f560113fac7af6226d9226",
-        "title": "Ramadan Special Promo - Buffet Dinner",
-        "desc": "Make your special occasions more memorable by booking a window seat view and opting for the celebration setup, whole cake, and a flower bouquet.",
-        "type": "ramadanDinner",
-        "image": [
-            "https://res.cloudinary.com/drrkaak40/image/upload/v1710579501/Malaysia%20Experience/Aras%20Resturant/TVG_Aras_ramadan_main_tzzsnd.jpg",
-            "https://res.cloudinary.com/drrkaak40/image/upload/v1710579501/Malaysia%20Experience/Aras%20Resturant/TVG_Aras_ramadan_01_ekiznc.jpg",
-            "https://res.cloudinary.com/drrkaak40/image/upload/v1710579501/Malaysia%20Experience/Aras%20Resturant/TVG_Aras_ramadan_04_np24gz.jpg",
-            "https://res.cloudinary.com/drrkaak40/image/upload/v1710579501/Malaysia%20Experience/Aras%20Resturant/TVG_Aras_ramadan_05_nnc0ok.jpg",
-            "https://res.cloudinary.com/drrkaak40/image/upload/v1710579501/Malaysia%20Experience/Aras%20Resturant/TVG_Aras_ramadan_03_iqaer5.jpg",
-            "https://res.cloudinary.com/drrkaak40/image/upload/v1710579500/Malaysia%20Experience/Aras%20Resturant/TVG_Aras_ramadan_02_hnofay.jpg"
-        ]
-    },
-    {
-        "_id": "655b09507763fa367efb0d46",
+        "_id": "65f5c264498053f07b27fd1f",
         "title": "ARAS Restaurant KL Tower - Dinner Buffet",
         "desc": "Make your special occasions more memorable by booking a window seat view and opting for the celebration setup, whole cake, and a flower bouquet.",
         "type": "dinner",
@@ -28,7 +14,23 @@
         ]
     },
     {
-        "_id": "65e210ea015f2c8c7cd00376",
+        "_id": "65f5c274498053f07b27fd20",
+        "title": "ARAS Restaurant KL Tower - Lunch Buffet",
+        "desc": "Make your special occasions more memorable by booking a window seat view and opting for the celebration setup, whole cake, and a flower bouquet.",
+        "type": "lunch",
+        "image": [
+            "https://i.postimg.cc/wMytB2J4/1.jpg",
+            "https://i.postimg.cc/8sgCzSTs/10.jpg",
+            "https://i.postimg.cc/1R2ndxhk/2.jpg",
+            "https://i.postimg.cc/qMKhVmpz/3.jpg",
+            "https://i.postimg.cc/sgRBVp2K/4.jpg",
+            "https://i.postimg.cc/T3qKhpLx/5.jpg",
+            "https://i.postimg.cc/PqXPDTYw/6.jpg"
+        ]
+    },
+
+    {
+        "_id": "65f5c274498053f07b27fd20",
         "title": "ARAS Restaurant KL Tower - Tea Buffet",
         "desc": "Make your special occasions more memorable by booking a window seat view and opting for the celebration setup, whole cake, and a flower bouquet.",
         "type": "tea",

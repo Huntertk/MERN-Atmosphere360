@@ -77,14 +77,14 @@ const bookingSlice = createSlice({
                 } else{
                     state.adultTotal =  state.adultCount *  85
                 }
-            } else if(state.type === 'ramadanDinner'){
+            } else if(state.type === 'lunch'){
                 if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
-                    state.adultTotal = state.adultCount *  236
+                    state.adultTotal = state.adultCount *  176
                    return 
                 } else if(publicHoliday){
-                    state.adultTotal = state.adultCount *  236
+                    state.adultTotal = state.adultCount *  176
                 } else{
-                    state.adultTotal =  state.adultCount *  190
+                    state.adultTotal =  state.adultCount *  160
                 }
             }
         },
@@ -108,14 +108,14 @@ const bookingSlice = createSlice({
                 } else{
                     state.childTotal =  state.childCount *  48
                 }
-            } else if(state.type === 'ramadanDinner'){
+            } else if(state.type === 'lunch'){
                 if(state.bookingDay === 'Sun' || state.bookingDay === 'Sat' || state.bookingDay === 'Fri') {
-                    state.childTotal = state.childCount *  140
+                    state.childTotal = state.childCount *  100
                    return 
                 } else if(publicHoliday){
-                    state.childTotal = state.childCount *  140
+                    state.childTotal = state.childCount *  100
                 } else{
-                    state.childTotal =  state.childCount *  112
+                    state.childTotal =  state.childCount *  90
                 }
             }
         },
