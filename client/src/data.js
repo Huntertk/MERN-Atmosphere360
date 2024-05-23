@@ -240,13 +240,19 @@ export const homeBuffetOptions = [
         id: uuidv4(),
         title:"Dinner Buffet",
         desc:"Embark on a gastronomic journey during the Dinner Buffet, featuring an opulent spread of gourmet dishes amidst the enchanting ambiance of the revolving restaurant, creating a truly memorable dining experience.",
-        image: "https://res.cloudinary.com/drrkaak40/image/upload/v1710588736/Malaysia%20Experience/Aras%20Resturant/IMG-20240129-WA0072_j8vve6.jpg"
+        image: "https://i.postimg.cc/NfLVgzM7/1.jpg"
     },
     {
         id: uuidv4(),
         title:"Tea Buffet",
         desc:"Embark on a gastronomic journey during the Tea Buffet, featuring an opulent spread of gourmet dishes amidst the enchanting ambiance of the revolving restaurant, creating a truly memorable dining experience.",
-        image: "https://res.cloudinary.com/drrkaak40/image/upload/v1709312901/Malaysia%20Experience/Aras%20Resturant/9_cr1i0t.jpg"
+        image: "https://i.postimg.cc/tTqbDNzS/1.jpg"
+    },
+    {
+        id: uuidv4(),
+        title:"Lunch Buffet",
+        desc:"Embark on a gastronomic journey during the Tea Buffet, featuring an opulent spread of gourmet dishes amidst the enchanting ambiance of the revolving restaurant, creating a truly memorable dining experience.",
+        image: "https://i.postimg.cc/1R2ndxhk/2.jpg"
     },
 ]
 
@@ -367,7 +373,8 @@ export const addQues = [
         ques:"Operating Hours ?",
         ans:[
             "Hi-Tea: 3pm to 5:30pm",
-            "Dinner: 6:30pm to 10pm"
+            "Dinner: 6:30pm to 10pm",
+            "Lunch: 11:30am to 2:30pm"
         ]
     },
     {
